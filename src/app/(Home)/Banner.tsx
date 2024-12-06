@@ -10,10 +10,10 @@ function Banner() {
             <div className=''>
               <div className='grid grid-cols-2 gap-3 p-2'>
                 <div>
-                  <Image className='rounded-xl' src={'/banner-1.webp'} width={400} height={400} alt='exam-online'></Image>
+                  <Image className='rounded-xl' src={'/banner-1.webp'} width={500} height={500} alt='exam-online'></Image>
                 </div>
                 <div className='flex flex-col justify-center space-y-3'>
-                  <Image className='rounded-xl' src={'/banner-2.webp'} width={300} height={300} alt='exam-online'></Image>
+                  <Image className='rounded-xl' src={'/banner-2.webp'} width={400} height={400} alt='exam-online'></Image>
                   <Image className='rounded-xl' src={'/banner-3.webp'} width={300} height={300} alt='exam-online'></Image>
                 </div>
               </div>

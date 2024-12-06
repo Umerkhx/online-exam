@@ -10,11 +10,11 @@ import { ModeToggle } from "@/components/ui/mode-toggle"
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/why-choose-us", label: "Why Choose Us" },
-  { href: "/our-process", label: "Our Process" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/about-us", label: "About" },
+  { href: "#", label: "Services" },
+  { href: "#", label: "Why Choose Us" },
+  { href: "#", label: "Our Process" },
+  { href: "/contact-us", label: "Contact Us" },
 ]
 
 function Navbar() {

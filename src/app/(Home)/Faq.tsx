@@ -8,7 +8,7 @@ function Faq() {
             <h2 className='text-center font-extrabold text-5xl '>Frequently Inquired Questions</h2>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4 mt-5'>
                 <div className=''>
-                    <Image className='rounded-xl' src={'/faq-1.jpg'} width={600} height={550} alt='faq'></Image>
+                    <Image className='rounded-xl' src={'/faq-1.webp'} width={600} height={550} alt='faq'></Image>
                 </div>
                 <div className='col-span-2'>
                     <Accordion className='space-y-3' type="single" collapsible>
