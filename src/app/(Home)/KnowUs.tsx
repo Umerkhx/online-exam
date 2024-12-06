@@ -38,7 +38,7 @@ function KnowUs() {
     </div>
     
     <div className="absolute lg:top-20 top-32 lg:left-[18rem] left-[11rem] lg:w-[18rem] w-[10rem] lg:h-[18rem] h-[10rem] overflow-hidden rounded-lg shadow-lg border-2 border-white">
-      <Image src={'/know-us-2.webp'} alt="Image 2" width={500} height={500} className="object-cover w-full h-full"/>
+      <Image src={'/Image-parallax-2.webp'} alt="Image 2" width={500} height={500} className="object-cover w-full h-full"/>
     </div>
 
     <div className="absolute lg:top-[22rem] top-[17rem] lg:left-[5rem] lg:w-[18rem] w-[12rem] lg:h-[18rem] h-[12rem] overflow-hidden rounded-lg shadow-lg border-2 border-white">
