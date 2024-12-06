@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -20,7 +19,7 @@ function BannerForm() {
           </Label>
           <Input
             id="fullName"
-            className=" border-0 border-b border-gray-200 rounded-none focus:ring-0 px-0 shadow-none"
+            className=" border-0 border-b border-gray-200 rounded-none  px-0 shadow-none"
             placeholder="Enter your full name"
           />
         </div>
@@ -34,7 +33,7 @@ function BannerForm() {
           <Input
             id="email"
             type="email"
-            className="border-0 border-b border-gray-200 rounded-none focus:ring-0 px-0 shadow-none"
+            className="border-0 border-b border-gray-200 rounded-none  px-0 shadow-none"
             placeholder="Enter your email"
           />
         </div>
@@ -49,7 +48,7 @@ function BannerForm() {
         <Input
           id="phone"
           type="tel"
-          className="border-0 border-b border-gray-200 rounded-none focus:ring-0 px-0 shadow-none outline-0"
+          className="border-0 border-b border-gray-200 rounded-none  px-0 shadow-none outline-0"
           placeholder="Enter your phone number"
         />
       </div>
@@ -66,7 +65,8 @@ function BannerForm() {
   </span>
 </Button>
     </form>
-  </div>  )
+  </div>  
+  )
 }
 
 export default BannerForm

@@ -43,7 +43,7 @@ function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center">
-          <Button>Chat with us</Button>
+          <Button className="text-white">Chat with us</Button>
         </div>
         <div className="flex items-center md:hidden">
           <button

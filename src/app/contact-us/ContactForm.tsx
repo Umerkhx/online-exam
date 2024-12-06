@@ -6,8 +6,8 @@ import React from 'react'
 
 function ContactForm() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100 dark:from-zinc-950 dark:to-slate-950">
-    <div className="container px-4 md:px-6">
+    <section className=" w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100 dark:from-zinc-950 dark:to-slate-950">
+    <div className="max-w-screen-xl mx-auto px-4 md:px-6">
       <div className="flex flex-col items-center space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -44,7 +44,7 @@ function ContactForm() {
                 <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
                 <Textarea className="min-h-[100px]" id="message" placeholder="Enter your message here" />
               </div>
-              <Button className="w-full" type="submit">Send message</Button>
+              <Button className="w-full text-white" type="submit">Send message</Button>
             </form>
           </CardContent>
         </Card>

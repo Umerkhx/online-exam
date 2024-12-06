@@ -8,7 +8,7 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' bg-gradient-to-br from-blue-300 to-purple-200 dark:bg-gradient-to-br dark:from-blue-900 dark:to-purple-900  '>
-      <div className='grid lg:grid-cols-4 grid-cols-1 px-8 py-7'>
+      <div className='grid lg:grid-cols-4 grid-cols-1 px-8 py-7 max-w-screen-xl mx-auto'>
         <div className=''>
           <Image src={'/logo (1).png'} width={200} height={200} alt='logo'></Image>
           <p className='text-sm font-medium p-2'>Online Class Relief offers top-tier solutions with a team of PhD tutors and dependable resources, using a goal-driven approach to achieve desired outcomes.</p>
@@ -69,7 +69,7 @@ function Footer() {
 
 
       </div>
-      <div className='lg:flex flex-col lg:flex-row justify-between items-center mt-3  px-8 py-4'>
+      <div className='lg:flex flex-col lg:flex-row justify-between items-center mt-3  px-8 py-4 max-w-screen-xl mx-auto'>
         <div className='font-medium text-sm '>Copyright © 2024 Online Exam Relief All Rights Reserved</div>
         <div className='space-x-3 font-medium text-sm'>
           <Link href={'/terms-and-condtions'} >Terms of service</Link>
