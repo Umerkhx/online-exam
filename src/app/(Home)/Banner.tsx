@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Banner() {
   return (
-    <div className='pt-10 bg-gradient-to-br from-[#2196f382] via-blue-100 to-zinc-100 dark:bg-gradient-to-br dark:from-[#0a7ddb] dark:via-[#183044] dark:to-zinc-900 '>
+    <div className='pt-10 bg-gradient-to-br from-blue-400 to-purple-400 dark:bg-gradient-to-br dark:from-blue-900 dark:to-purple-900 '>
         <div className='mx-auto max-w-screen-xl'>
         <div className='grid lg:grid-cols-2 grid-cols-1 gap-4 p-4'>
             <div className=''>
@@ -19,7 +19,7 @@ function Banner() {
               </div>
             </div>
             <div className=''>
-                <h1 className='lg:text-5xl text-4xl font-bold pt-5 lg:text-left text-center  '>Best Online Exam <br /> Class, and <br /> Assignment Help
+                <h1 className='lg:text-5xl text-4xl font-bold pt-5 lg:text-left text-center text-zinc-100 '>Best Online Exam <br /> Class, and <br /> Assignment Help
                 </h1>
                 <div className='py-4 lg:scale-100 scale-90'>
                 <BannerForm/>
