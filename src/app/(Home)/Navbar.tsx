@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <nav className="bg-zinc-50 dark:bg-slate-900 sticky top-0 shadow-xl z-50">
-    <div className="max-w-7xl bg-transparent mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl py-2 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between py-2">
         <div className="flex items-center">
           <Link href="/" className="flex-shrink-0 flex items-center">

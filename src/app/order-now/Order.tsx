@@ -110,7 +110,7 @@ function Order() {
 
     return (
     <div className='mx-auto max-w-screen-xl pb-10'>
-    <div className='py-16 md:text-4xl text-3xl font-bold text-center px-4'>Place Your Order In Simple Steps</div>
+    <div className='py-16 md:text-4xl text-3xl font-bold text-center px-4'>Order Easily in Just a Few Steps</div>
     <Modal/>
     <div>
 
@@ -137,7 +137,7 @@ function Order() {
         </div>
 
         <div>
-            <div className=' py-5 px-2 bg-gradient-to-t from-sky-200 via-purple-200 to-zinc-100 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] rounded-2xl overflow-hidden'>
+            <div className=' py-5 px-2 bg-gradient-to-br from-blue-200 via-violet-100 to-purple-300 dark:bg-gradient-to-br dark:from-blue-950 dark:via-violet-900 dark:to-purple-900 rounded-2xl overflow-hidden'>
                 <div className='text-xl md:text-3xl text-center py-3 font-bold '>Order Summary</div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Topic Of Paper</div>
