@@ -2,13 +2,17 @@
 import nodemailer from "nodemailer";
 
 
-export async function sendEmails(p0: null, formData: FormData) {
+export async function sendEmails(formData: FormData) {
 
   try {
-    const name = formData.get("name") as string;
     const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-
+    const date = formData.get("date") as string;
+    const phone = formData.get("phone");
+    const activeButton = formData.get("activeButton");
+    const wordCount = formData.get("wordCount")   // Ensure it's a number
+    const selectedService = formData.get("selectedService");
+    const selectedSubject = formData.get("selectedSubject");
+    const selectedQuestions = formData.get("selectedQuestions");
 
     // Transporter configuration
     const transporter = nodemailer.createTransport({
@@ -103,10 +107,14 @@ export async function sendEmails(p0: null, formData: FormData) {
             <div style="font-family: Arial, sans-serif; line-height: 1.6;">
                 <p><b>New Submission Details:</b></p>
                 <ul>
-                <li><b>name:</b> ${name}</li>
                     <li><b>Email:</b> ${email}</li>
+                    <li><b>Deadline:</b> ${date}</li>
                     <li><b>Phone Number:</b> ${phone}</li>
-
+                    <li><b>Purpose:</b> ${activeButton}</li>
+                    <li><b>Word Count:</b> ${wordCount}</li>
+                    <li><b>Selected Service:</b> ${selectedService}</li>
+                    <li><b>Selected Subject:</b> ${selectedSubject}</li>
+                    <li><b>Selected Questions:</b> ${selectedQuestions}</li>
                 </ul>
                 <p>Please take the necessary actions.</p>
             </div>
