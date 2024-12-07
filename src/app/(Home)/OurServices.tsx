@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function OurServices() {
@@ -43,9 +44,13 @@ function OurServices() {
         </div>
       </div>
       <div className="flex justify-center items-center mt-5">
-        <div className="px-5 py-3 text-center bg-gradient-to-r from-blue-600 to-purple-600 border-[2px] text-zinc-200 border-white rounded-lg overflow-hidden relative group">
-          <div className="whitespace-nowrap group-hover:animate-marquee">Avail Upto 50% Discount</div>
-        </div>
+        <Link href={'/order-now'}>
+
+          <div className="px-5 py-3 text-center bg-gradient-to-r from-blue-600 to-purple-600 border-[2px] text-zinc-200 border-white rounded-lg overflow-hidden relative group">
+            <div className="whitespace-nowrap group-hover:animate-marquee">Avail Upto 50% Discount</div>
+          </div>
+        </Link>
+
       </div>
     </div>
   )

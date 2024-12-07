@@ -23,9 +23,8 @@ function Footer() {
             <Link href={'/'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Home</Link>
             <Link href={'/about-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>About Us</Link>
             <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Services</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Why Choose Us</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Our Process</Link>
             <Link href={'/contact-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Contact Us</Link>
+            <Link href={'/order-now'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Order Now</Link>
           </ul>
         </div>
 
@@ -48,23 +47,8 @@ function Footer() {
             <li className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Phone: +1-929-322-8709</li>
             <li className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>E-mail: info@onlineclassrelief.com</li>
           </ul>
-          <div className="mt-4">
-            <Label
-              htmlFor="email"
-              className=" font-medium "
-            >
-              Email
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              className="outline-none border-0 border-b border-gray-200 rounded-none  px-0 shadow-none"
-              placeholder="Enter your email"
-            />
-          </div>
-          <div className='group'>
-            <div className=' flex items-center gap-1 mt-5 px-5 py-3 rounded-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-zinc-100 w-40 group-hover:shadow-xl transition ease-in duration-300 delay-300 cursor-pointer '>Submit Now <ArrowRightIcon className='w-5 h-5 group-hover:translate-x-3 transition ease-in duration-300 delay-300 ' /></div>
-          </div>
+    
+  
           </div>
 
 
