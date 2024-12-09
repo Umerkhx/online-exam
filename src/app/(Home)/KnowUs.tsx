@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function KnowUs() {
@@ -27,7 +28,9 @@ function KnowUs() {
       <p className="">We offer highly-affordable solutions so every student can achieve their academic goals with ease.</p>
       </div>
 
-      <div className=' px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600  text-zinc-100  text-center font-semibold w-36 hover:scale-105 transition ease-in duration-200 delay-200 cursor-pointer'>Join Us Now</div>
+       <Link href={'/order-now'}>
+      <div className='scale-95 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600  text-zinc-100  text-center font-semibold w-36 hover:scale-100 transition ease-in duration-200 delay-200 cursor-pointer'>Join Us Now</div>
+      </Link>
 
     </div>
   </div>

@@ -1,36 +1,10 @@
-"use server";
-import nodemailer from "nodemailer";
-
-
-export async function sendEmails(formData: FormData) {
-
-  try {
-    const email = formData.get("email") as string;
-    const date = formData.get("date") as string;
-    const phone = formData.get("phone");
-    const activeButton = formData.get("activeButton");
-    const wordCount = formData.get("wordCount")   // Ensure it's a number
-    const selectedService = formData.get("selectedService");
-    const selectedSubject = formData.get("selectedSubject");
-    const selectedQuestions = formData.get("selectedQuestions");
-
-    // Transporter configuration
-    const transporter = nodemailer.createTransport({
-      host: process.env.NEXT_PUBLIC_HOST as string,
-      port: process.env.NEXT_PUBLIC_PORTS as unknown as number,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: process.env.NEXT_PUBLIC_USER, // your SMTP username
-        pass: process.env.NEXT_PUBLIC_PASSWORD, // your SMTP password
-      },
-    });
-
-    // Email options for the client
-    const clientMailOptions = {
-      from: `Taking My Classes Online® Alert - DLF Recieved <${process.env.NEXT_PUBLIC_MAILFROM}>`,
-      to: email,
-      subject: 'Your Service Form Submission Confirmation',
-      html: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body style="margin: 0; padding: 0;   color: black;">
     <div style="width: 100%; max-width: 600px; border-radius: 20px; margin: 0 auto; background-color: #f4eefd;  font-family: Google Sans;">
     
@@ -93,42 +67,4 @@ export async function sendEmails(formData: FormData) {
       </div>
     </div>
     </body>
-            `
-    };
-
-    // Send the client email
-    await transporter.sendMail(clientMailOptions);
-
-    // Email options for the support team
-    const supportMailOptions = {
-      from: `Taking My Classes Online® Alert - DLF Recieved <${process.env.NEXT_PUBLIC_MAILFROM}>`,
-      to: `${process.env.NEXT_PUBLIC_MAILTO}`,
-      subject: 'New DLF Form Submission',
-      html: `
-            <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-                <p><b>New Submission Details:</b></p>
-                <ul>
-                    <li><b>Email:</b> ${email}</li>
-                    <li><b>Deadline:</b> ${date}</li>
-                    <li><b>Phone Number:</b> ${phone}</li>
-                    <li><b>Purpose:</b> ${activeButton}</li>
-                    <li><b>Word Count:</b> ${wordCount}</li>
-                    <li><b>Selected Service:</b> ${selectedService}</li>
-                    <li><b>Selected Subject:</b> ${selectedSubject}</li>
-                    <li><b>Selected Questions:</b> ${selectedQuestions}</li>
-                </ul>
-                <p>Please take the necessary actions.</p>
-            </div>
-            `
-    };
-
-    // Send the support email
-    await transporter.sendMail(supportMailOptions);
-
-    return { success: "Confirmation and notification emails sent successfully." };
-
-  } catch (error) {
-    console.error('Error sending emails:', error);
-    return { error: "Failed to send emails." };
-  }
-}
+</html>

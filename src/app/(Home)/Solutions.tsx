@@ -16,7 +16,7 @@ function Solutions() {
 
             <div className='group'>
                 <div className='p-4 scale-95 bg-gradient-to-br from-blue-400 to-purple-400 dark:bg-gradient-to-br dark:from-blue-900 dark:to-purple-900 shadow-lg rounded-lg group-hover:-translate-y-3 transition ease-in duration-300 delay-300 h-[250px] text-gray-100'>
-                  <div className='flex justify-center items-center pt-4'><Image src={'/server.png'} width={80} height={80} alt='tasklist'></Image></div>
+                  <div className='flex justify-center items-center pt-4'><Image src={'/security.png'} width={80} height={80} alt='server'></Image></div>
                   <h2 className='text-center pt-2 font-bold text-xl'>Advanced Security</h2>
                   <p className='text-center font-medium px-5 pt-3'>We prioritize cutting-edge data security measures to safeguard every student's information and ensure it is never shared.</p>
                 </div>

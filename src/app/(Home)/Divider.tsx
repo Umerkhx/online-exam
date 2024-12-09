@@ -1,4 +1,5 @@
-import { Phone, PhoneIcon } from 'lucide-react'
+import { MessageCircleMore, Phone, PhoneIcon } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 function Divider() {
@@ -11,8 +12,8 @@ function Divider() {
                         We're Here to Help You</h2>
 
                         <div className='flex justify-center items-center'>
-                        <button className='flex items-center gap-2 mt-5 px-5 py-3 text-center bg-gradient-to-r from-blue-500 to-purple-800 text-zinc-200 rounded-lg scale-95 hover:scale-100 transition ease-in duration-200 delay-200'> Contact Us <PhoneIcon className='w-5 h-5'/>
-                        </button>
+                        <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank" rel="noopener noreferrer" className='flex items-center gap-2 mt-5 px-5 py-3 text-center bg-gradient-to-r from-blue-500 to-purple-700 text-zinc-200 rounded-lg scale-95 hover:scale-100 transition ease-in duration-200 delay-200'> Chat With Us <MessageCircleMore className='w-5 h-5'/>
+                        </Link>
                         </div>
                     </div>
                 </div>
