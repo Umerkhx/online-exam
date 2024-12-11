@@ -7,8 +7,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className=' bg-gradient-to-br from-blue-300 to-purple-200 dark:bg-gradient-to-br dark:from-blue-900 dark:to-purple-900  '>
-      <div className='grid lg:grid-cols-4 grid-cols-1 px-8 py-7 max-w-screen-xl mx-auto'>
+    <div className=' bg-gradient-to-b from-[#a9d6e5] via-[#89c2d9] to-[#eef4ed]  dark:bg-gradient-to-b dark:from-[#03045e] dark:via-[#1d1e4e] dark:to-[#2a6f97]  '>
+      <div className='grid lg:grid-cols-4 grid-cols-1 px-8 py-7 max-w-screen-xl mx-auto text-zinc-700 dark:text-zinc-100'>
         <div className=''>
           <Image src={'/logo (1).png'} width={200} height={200} alt='logo'></Image>
           <p className='text-sm font-medium p-2'>Online Class Relief offers top-tier solutions with a team of PhD tutors and dependable resources, using a goal-driven approach to achieve desired outcomes.</p>

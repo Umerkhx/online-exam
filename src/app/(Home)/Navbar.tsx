@@ -16,7 +16,7 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-zinc-50 dark:bg-slate-900 sticky top-0 shadow-xl z-50">
+    <nav className="bg-zinc-50 dark:bg-[#1A1A1D] sticky top-0 shadow-xl z-50">
       <div className="max-w-7xl py-2 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between py-2">
           <div className="flex items-center">
@@ -64,7 +64,7 @@ function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center">
-            <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'}  target="_blank" ><Button className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition ease-in duration-200 delay-200"><MessageCircle /> Chat with us </Button>
+            <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'}  target="_blank" ><Button className="text-white bg-gradient-to-br from-[#00b4d8] via-[#4361ee] to-[#023047] transition ease-in duration-200 delay-200"><MessageCircle /> Chat with us </Button>
             </Link>
 
           </div>

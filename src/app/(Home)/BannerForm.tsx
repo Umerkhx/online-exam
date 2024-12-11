@@ -101,9 +101,9 @@ function BannerForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="xl:ml-28 pb-16 bg-muted shadow-2xl rounded-xl lg:w-[480px] dark:bg-gradient-to-r from-purple-950 via-violet-950 to-zinc-950 ">
-        <div className="flex justify-center items-center lg:-translate-y-4    -translate-y-4">
-          <div className=" w-1/2 shadow-2xl rounded rounded-tl-2xl rounded-br-2xl bg-indigo-600 py-3 ">
+      <div className="xl:ml-28 pb-16 bg-muted shadow-2xl rounded-xl lg:w-[480px] dark:bg-gradient-to-bl dark:from-[#03045e] dark:via-[#1d1e4e] dark:to-[#43698b]">
+        <div className="flex justify-center items-center lg:-translate-y-4 -translate-y-4">
+          <div className=" w-1/2 shadow-2xl rounded-full bg-blue-400 py-3 ">
             <div className="text-center font-medium text-zinc-100 text-sm md:text-base  ">
               Upto 50% Discount
             </div>
@@ -332,8 +332,7 @@ function BannerForm() {
           <button
           type="submit"
             disabled={pending}
-            className={`relative w-2/4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 
-      transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group 
+            className={`relative w-2/4 bg-gradient-to-br from-[#00b4d8] via-[#4361ee] to-[#023047] transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group 
       ${pending ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             <span className="relative flex items-center justify-center">

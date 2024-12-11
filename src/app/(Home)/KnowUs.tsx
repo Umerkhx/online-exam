@@ -29,7 +29,7 @@ function KnowUs() {
       </div>
 
        <Link href={'/order-now'}>
-      <div className='scale-95 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600  text-zinc-100  text-center font-semibold w-36 hover:scale-100 transition ease-in duration-200 delay-200 cursor-pointer'>Join Us Now</div>
+      <div className='scale-95 px-6 py-3 rounded-lg bg-gradient-to-br from-[#00b4d8] via-[#4361ee] to-[#023047]  text-zinc-100  text-center font-semibold w-36 hover:scale-100 transition ease-in duration-200 delay-200 cursor-pointer'>Join Us Now</div>
       </Link>
 
     </div>
