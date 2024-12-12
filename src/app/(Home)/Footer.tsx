@@ -14,44 +14,43 @@ function Footer() {
           <p className='text-sm font-medium p-2'>Online Class Relief offers top-tier solutions with a team of PhD tutors and dependable resources, using a goal-driven approach to achieve desired outcomes.</p>
           <div className='group'>
             <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target='_blank'>
-            <div className=' flex items-center gap-1 mt-5 px-5 py-3 rounded-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-zinc-100 w-36 group-hover:shadow-xl transition ease-in duration-300 delay-300 cursor-pointer '>Contact Us <ArrowRightIcon className='w-5 h-5 group-hover:translate-x-3 transition ease-in duration-300 delay-300 ' /></div>
+              <div className=' flex items-center gap-1 mt-5 px-5 py-3 rounded-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-zinc-100 w-36 group-hover:shadow-xl transition ease-in duration-300 delay-300 cursor-pointer '>Contact Us <ArrowRightIcon className='w-5 h-5 group-hover:translate-x-3 transition ease-in duration-300 delay-300 ' /></div>
             </Link>
           </div>
         </div>
         <div className='p-4'>
           <h2 className='font-bold text-2xl '>Useful Links</h2>
-          <ul className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
+          <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
 
             <Link href={'/'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Home</Link>
             <Link href={'/about-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>About Us</Link>
             <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Services</Link>
             <Link href={'/contact-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Contact Us</Link>
             <Link href={'/order-now'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Order Now</Link>
-          </ul>
+          </div>
         </div>
 
         <div className='p-4'>
           <h2 className='font-bold text-2xl '>Our Services</h2>
-          <ul className=' space-y-2 font-medium   transition ease-in duration-200 delay-200'>
+          <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
 
-            <li className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Class</li>
-            <li className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Exam</li>
-            <li className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Course</li>
-            <li className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Assignment</li>
-          </ul>
+            <Link href={'#'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Class</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Homework</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Course</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Assignment</Link>
+
+          </div>
         </div>
 
 
 
         <div className='p-4'>
           <h2 className='font-bold text-2xl '>Get In Touch</h2>
-          <ul className=' space-y-2 font-medium   transition ease-in duration-200 delay-200'>
-            <li className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Phone: +1-929-322-8709</li>
-            <li className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>E-mail: info@onlineclassrelief.com</li>
-          </ul>
-    
-  
+          <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
+            <Link href={'#'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Phone: +1-929-322-8709</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>E-mail: info@onlineclassrelief.com</Link>
           </div>
+        </div>
 
 
       </div>

@@ -11,10 +11,11 @@ function OurValues() {
         <Card>
           <CardHeader>
             <ShieldCheck className="w-12 h-12 text-primary mb-4" />
-            <CardTitle>Integrity</CardTitle>
+            <CardTitle>Upholding Ethical Principles</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>We believe in doing the right thing, always. Our commitment to ethical practices is unwavering.</p>
+            <p>
+            We are dedicated to upholding the highest standards of integrity and ethical conduct in all our practices. Our commitment to these principles is steadfast.</p>
           </CardContent>
         </Card>
         <Card>
@@ -23,16 +24,16 @@ function OurValues() {
             <CardTitle>Innovation</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>We're constantly pushing boundaries and thinking outside the box to deliver cutting-edge solutions.</p>
+            <p>We are continually expanding horizons and exploring innovative approaches to provide advanced solutions.</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
             <Users className="w-12 h-12 text-primary mb-4" />
-            <CardTitle>Collaboration</CardTitle>
+            <CardTitle>Partnerships and Collaborations</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>We believe in the power of teamwork. Together, we can achieve more than we ever could individually.</p>
+            <p>We value the strength of collaboration, recognizing that together we can accomplish far more than we could alone.</p>
           </CardContent>
         </Card>
       </div>

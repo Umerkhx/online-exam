@@ -13,7 +13,7 @@ export const InfiniteMovingCards = ({
   items: {
     quote: string;
     name: string;
-    title: string;
+    rating: number;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -107,9 +107,20 @@ export const InfiniteMovingCards = ({
                   <span className=" text-sm leading-[1.6] text-gray-200 font-normal">
                     {item.name}
                   </span>
-                  <span className=" text-sm leading-[1.6] text-gray-200 font-normal">
-                    {item.title}
-                  </span>
+             
+                  <div className="flex items-center gap-1 mt-2">
+                    {Array.from({ length: item.rating }).map((_, starIndex) => (
+                      <svg
+                        key={starIndex}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 text-yellow-400"
+                      >
+                        <path d="M12 .587l3.668 7.455 8.225 1.196-5.957 5.807 1.407 8.204L12 18.896l-7.343 3.853 1.407-8.204L.107 9.238l8.225-1.196z" />
+                      </svg>
+                    ))}
+                  </div>
                 </span>
               </div>
             </blockquote>

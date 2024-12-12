@@ -9,18 +9,19 @@ function OurStory() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card>
           <CardHeader>
-            <CardTitle>Our Beginnings</CardTitle>
+            <CardTitle>
+            Our Origins</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Founded in 2010, our company started with a simple idea: to make technology accessible to everyone. We began in a small garage with just three passionate individuals.</p>
+            <p>Established in 2010, our institution was founded with the core mission of making technology accessible to all. Beginning in a small garage with a team of just three committed individuals, we have since grown into a prominent entity in the field, advancing the reach and impact of technology in education and beyond.</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Growth and Innovation</CardTitle>
+            <CardTitle>Advancement and Innovation</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Over the years, we've grown into a global team of over 500 employees. We've launched groundbreaking products and have been recognized as industry leaders in innovation.</p>
+            <p>Over the years, we have expanded into a global team of over 500 professionals. Our innovative products have set new benchmarks in the industry, earning us recognition as leaders in advancement and research.</p>
           </CardContent>
         </Card>
       </div>

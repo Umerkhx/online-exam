@@ -24,7 +24,7 @@ function ThankYou() {
       </p>
       <div className="mt-6 flex flex-col items-center md:flex-row justify-center gap-4">
 
-      <Link href={'https://wa.me/19179331132?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank" rel="noopener noreferrer">
+      <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank" rel="noopener noreferrer">
       <div className='flex items-center justify-center hover:scale-105 transition ease-in duration-200 delay-200 py-3 bg-zinc-200 dark:bg-zinc-900 w-[220px] border-[2px] border-black dark:border-white rounded-lg'>
         <Image src={"/imgs/whatsapp.png"} width={25} height={25} alt='whatsapp' />
         <button className='font-medium ml-2 text-background md:text-base text-sm text-black dark:text-zinc-100 '>Chat On Whatsapp</button>
