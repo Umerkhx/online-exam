@@ -6,6 +6,8 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { sendEmails } from "../(backend)/action/formAction";
 import { DatePickerDemo } from "@/components/ui/datepicker";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { TypewriterEffectSmoothDemo } from "./TypeWriterForm";
 
 function BannerForm() {
   const [date, setDate] = React.useState<Date>();
@@ -101,18 +103,23 @@ function BannerForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="xl:ml-28 pb-16 bg-muted shadow-2xl rounded-xl lg:w-[480px] dark:bg-gradient-to-bl dark:from-[#03045e] dark:via-[#1d1e4e] dark:to-[#43698b]">
+      <div className="xl:ml-28 pb-16 bg-muted shadow-2xl rounded-xl lg:w-[480px] dark:bg-zinc-900 ">
+       
+
         <div className="flex justify-center items-center lg:-translate-y-4 -translate-y-4">
-          <div className=" w-1/2 shadow-2xl rounded-full bg-blue-400 py-3 ">
-            <div className="text-center font-medium text-zinc-100 text-sm md:text-base  ">
-              Upto 50% Discount
-            </div>
-          </div>
+        <HoverBorderGradient
+        containerClassName="rounded-full"
+        as="button"
+        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+      >
+        <span>Upto 50% Discount </span>
+      </HoverBorderGradient>
         </div>
-        <div className="text-center font-bold text-lg md:text-2xl mt-2 px-3  ">
-          Get Instant Help From Our Experts
+        <div className="flex justify-center  ">
+          <TypewriterEffectSmoothDemo/>
+          
         </div>
-        <div className="flex justify-center items-center mt-3">
+        <div className="flex justify-center items-center ">
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] rounded rounded-tl-lg rounded-bl-lg ${activeButton === "writing"
@@ -360,3 +367,5 @@ function BannerForm() {
 }
 
 export default BannerForm;
+
+

@@ -12,10 +12,10 @@ function Banner() {
     <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-20 lg:px-8">
       <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
         <div className='pt-24'>
-        <h1 className="text-3xl font-extrabold tracking-tight lg:text-left text-center text-white sm:text-4xl md:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight lg:text-left text-center text-white sm:text-4xl md:text-5xl">
         Let Experts Take Your Online Exam and Ace It for You
         </h1>
-        <h2 className="text-2xl font-bold tracking-tight text-white lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
+        <h2 className="text-2xl font-semibold tracking-tight text-white lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
         Secure Academic Success with Affordable Online Exam Assistance
         </h2>
         <p className="mt-6 text-lg text-white max-w-prose text-left">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
