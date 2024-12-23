@@ -103,7 +103,7 @@ function BannerForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="xl:ml-28 pb-16 bg-muted shadow-md rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-green-500 hover:scale-[1.02] border-2 border-transparent">
+      <div className="xl:ml-28 pb-16 bg-muted shadow-md rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-zinc-800 dark:hover:border-zinc-100 hover:scale-[1.02] border-2 border-transparent">
        
 
         <div className="flex justify-center items-center lg:-translate-y-4 -translate-y-4">
@@ -123,7 +123,7 @@ function BannerForm() {
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] rounded rounded-tl-lg rounded-bl-lg ${activeButton === "writing"
-                ? "bg-blue-600 text-white"
+                ? "bg-sky-400 text-white"
                 : " bg-zinc-200 text-zinc-800"
               }`}
             onClick={() => handleClick("writing")}
@@ -133,7 +133,7 @@ function BannerForm() {
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] ${activeButton === "rewriting"
-                ? "bg-blue-600 text-white"
+                ? "bg-sky-400 text-white"
                 : "bg-zinc-200 text-zinc-800"
               }`}
             onClick={() => handleClick("rewriting")}
@@ -143,7 +143,7 @@ function BannerForm() {
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px]  rounded rounded-tr-lg rounded-br-lg  ${activeButton === "editing"
-                ? "bg-blue-600 text-white"
+                ? "bg-sky-400 text-white"
                 : "bg-zinc-200 text-zinc-800"
               }`}
             onClick={() => handleClick("editing")}
@@ -339,7 +339,7 @@ function BannerForm() {
           <button
           type="submit"
             disabled={pending}
-            className={`relative w-2/4 bg-gradient-to-br from-[#00b4d8] via-[#4361ee] to-[#023047] transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group 
+            className={`relative w-2/4   transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group bg-gradient-to-r from-[#000000] to-[#52A39F] 
       ${pending ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             <span className="relative flex items-center justify-center">

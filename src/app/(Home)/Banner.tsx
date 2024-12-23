@@ -23,16 +23,16 @@ function Banner() {
     <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-20 lg:px-8">
       <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
         <div className='pt-24'>
-        <h1 className="text-3xl font-bold tracking-tight lg:text-left text-center  sm:text-4xl md:text-5xl">
+        <h1 className="text-xl font-bold tracking-tight lg:text-left text-center  sm:text-4xl md:text-5xl">
         Let Experts Take Your Online Exam and Ace It for You
         </h1>
-        <h2 className="text-2xl font-semibold tracking-tight  lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
+        <h2 className="text-lg font-semibold tracking-tight  lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
         Secure Academic Success with Affordable Online Exam Assistance
         </h2>
-        <p className="mt-6 text-lg  max-w-prose text-left">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
+        <p className="mt-6 text-base  max-w-prose text-left">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
 
         <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 items-center px-2  gap-5 py-5 bg-[#f4f4f5f3] 
-            lg:w-[550px] justify-center rounded-xl">
+            lg:w-[550px] justify-center rounded-xl border border-zinc-800 dark:border-zinc-100 shadow-xl">
               <div className="flex items-center justify-center scale-95 hover:scale-100 transition ease-in duration-200 delay-200">
                 <a href="#">
                   <Image className="lg:translate-y-[12px]" src="/bark.webp" alt="bark"  width={100} height={100} />
@@ -67,7 +67,7 @@ function Banner() {
                   </a>
                 </div>
               </div>
-            </div>
+        </div>
 
         <CtaButtons/>
         </div>

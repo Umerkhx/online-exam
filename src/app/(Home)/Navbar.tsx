@@ -27,7 +27,7 @@ function Navbar() {
     <div className="max-w-7xl py-2 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between py-2">
         <div className="flex items-center">
-          <Link href="/" className="flex-shrink-0 flex items-center">
+          <Link href="/" className="flex items-center">
             <Image src={'/logo (1).png'} width={200} height={200} alt="logo" />
           </Link>
         </div>
@@ -54,7 +54,7 @@ function Navbar() {
 
         <div className="hidden md:flex items-center">
           <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
-            <Button className="text-white bg-gradient-to-br from-[#00b4d8] via-[#4361ee] to-[#023047] transition ease-in duration-200 delay-200">
+            <Button className="bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 transition ease-in duration-200 delay-200">
               <MessageCircle className="mr-2" /> Chat with us
             </Button>
           </Link>
