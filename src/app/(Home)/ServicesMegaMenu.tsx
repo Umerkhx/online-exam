@@ -53,23 +53,23 @@ const services = [
 ]
 
 function ServicesMegaMenu() {
-  const [activeCategory, setActiveCategory] = React.useState<string | null>(null)
+  const [activeCategory, setActiveCategory] = React.useState<string>(services[0].category); 
 
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">
-            Services 
+          <NavigationMenuTrigger
+            className="bg-transparent"
+            onMouseEnter={() => setActiveCategory(services[0].category)} 
+          >
+            Services
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="flex justify-center p-4 lg:w-[800px]">
               <div className="w-1/3 border-r pr-4">
                 {services.map((service) => (
-                  <NavigationMenuLink
-                    key={service.category}
-                    asChild
-                  >
+                  <NavigationMenuLink key={service.category} asChild>
                     <Link
                       href={service.href}
                       onMouseEnter={() => setActiveCategory(service.category)}

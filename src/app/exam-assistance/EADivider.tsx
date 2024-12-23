@@ -10,7 +10,7 @@ const words = `Stress during exams can feel overwhelming, but with the right ass
 
 function EADivider() {
   return (
-    <div className='my-10 dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8]'>
+    <div className='my-10 dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-300 to-[#77BBB8]'>
       <div className='p-5 mx-auto max-w-screen-xl mt-10'>
     <TextGenerateEffect words={words} />
     <div className='flex justify-center items-center my-3'>
