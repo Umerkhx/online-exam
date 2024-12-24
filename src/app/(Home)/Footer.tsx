@@ -24,7 +24,6 @@ function Footer() {
 
             <Link href={'/'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Home</Link>
             <Link href={'/about-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>About Us</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Services</Link>
             <Link href={'/contact-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Contact Us</Link>
             <Link href={'/order-now'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Order Now</Link>
           </div>
@@ -34,10 +33,11 @@ function Footer() {
           <h2 className='font-bold text-2xl '>Our Services</h2>
           <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
 
-            <Link href={'#'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Class</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Homework</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Course</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Online Assignment</Link>
+            <Link href={'/exam-assistance'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Exam Assistance Services</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Subject-Specific Services</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Assignment Help Services</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Test Preparation Packages</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Emergency Exam Support</Link>
 
           </div>
         </div>

@@ -30,7 +30,7 @@ function Banner() {
         <h2 className="text-lg font-semibold tracking-tight  lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
         Secure Academic Success with Affordable Online Exam Assistance
         </h2>
-        <p className="mt-6 text-base  max-w-prose text-left">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
+        <p className="mt-6 md:text-base text-sm  max-w-prose lg:text-left text-center">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
 
         <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 items-center px-2  gap-5 py-5 bg-[#f4f4f5f3] 
             lg:w-[550px] justify-center rounded-xl border border-zinc-800 dark:border-zinc-100 shadow-xl">

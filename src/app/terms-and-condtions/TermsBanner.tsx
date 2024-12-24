@@ -3,14 +3,14 @@ import React from 'react'
 function TermsBanner() {
   return (
     <section className="relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-400 dark:bg-gradient-to-br dark:from-blue-900 dark:to-purple-900" />
+    <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-300 to-[#77BBB8]" />
     <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
     <div className="relative container mx-auto px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <h1 className="text-4xl font-extrabold tracking-tight dark:text-zinc-200 text-zinc-800  sm:text-5xl md:text-6xl">
           Our Terms & Conditions
         </h1>
-        <p className="mt-6 text-xl text-indigo-100 max-w-prose mx-auto">
+        <p className="mt-6 text-xl dark:text-zinc-200 text-zinc-950 max-w-prose mx-auto">
         Our mission is to transform the industry through innovative solutions and a commitment to delivering exceptional customer service.
         </p>
     
