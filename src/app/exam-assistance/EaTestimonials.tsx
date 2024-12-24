@@ -15,14 +15,14 @@ function EaTestimonials() {
             "Exceptional guidance—made complex topics so simple",
           name: "Michael Lee",
           designation: "Graduate Student, Computer Science",
-          src: "/testimonial-2.jpg",
+          src: "/testimonial-2.webp",
         },
         {
           quote:
             "Their tips and resources were a game-changer for my studies.",
           name: "Maddison Beer",
           designation: "Sophomore, Psychology",
-          src: "/testimonial-3.jpg",
+          src: "/testimonial-3.webp",
         },
         {
           quote:
@@ -36,7 +36,7 @@ function EaTestimonials() {
             "I felt fully prepared and supported throughout exam season.",
           name: "Elena Garcia",
           designation: "Master's Student, Literature",
-          src: "/testimonial-1.png",
+          src: "/testimonial-1.webp",
         },
       ];
   return (

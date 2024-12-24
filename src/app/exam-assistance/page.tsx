@@ -6,11 +6,13 @@ import EaBenfits from './EaBenfits'
 import EaNumbers from './EaNumbers'
 import EaTestimonials from './EaTestimonials'
 import EaFaq from './EaFaq'
+import EaUrlPin from './EaUrlPin'
 
 function page() {
   return (
     <div>
         <EaBanner/>
+        <EaUrlPin/>
         <OurProcess/>
         <EADivider/>
         <EaBenfits/>

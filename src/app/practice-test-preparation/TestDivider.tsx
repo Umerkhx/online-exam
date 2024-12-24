@@ -1,22 +1,22 @@
-"use client"
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
-import React from 'react'
-import { CtaButtons } from '../(Home)/Banner';
 import { Package } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react'
 
 
-const words = `Stress during exams can feel overwhelming, but with the right assistance, you gain clarity, confidence, and calm to face any challenge. `;
+const words = `Stress during mock exams and test preparation can feel overwhelming, but with the right support, you can achieve clarity, confidence, and a sense of calm to tackle any challenge. `;
 
-function EADivider() {
+
+function TestDivider() {
   return (
     <div className='my-10 dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-300 to-[#77BBB8]'>
-      <div className='p-5 mx-auto max-w-screen-xl mt-10'>
-    <TextGenerateEffect words={words} />
+    <div className='p-5 mx-auto max-w-screen-xl mt-10'>
+  <TextGenerateEffect words={words} />
 
 
-    <div className='flex flex-col lg:flex-row justify-center items-center gap-3 p-3 '>
+
+<div className='flex flex-col lg:flex-row justify-center items-center gap-3 p-3 '>
 <div className='flex justify-center items-center my-3'>
     <Link href={"https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?"} target="_blank" rel="noopener noreferrer">
   <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
@@ -42,9 +42,9 @@ function EADivider() {
   </div>
   </div>
 
-    </div>
-    </div>
+  </div>
+  </div>
   )
 }
 
-export default EADivider
+export default TestDivider

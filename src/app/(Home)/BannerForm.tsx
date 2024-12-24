@@ -103,7 +103,7 @@ function BannerForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="xl:ml-28 pb-16 bg-muted shadow-md rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-zinc-800 dark:hover:border-zinc-100 hover:scale-[1.02] border-2 border-transparent">
+      <div className="xl:ml-28 pb-16 bg-slate-200 shadow-xl rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-zinc-800 dark:hover:border-zinc-100 hover:scale-[1.02] border-2 border-transparent">
        
 
         <div className="flex justify-center items-center lg:-translate-y-4 -translate-y-4">

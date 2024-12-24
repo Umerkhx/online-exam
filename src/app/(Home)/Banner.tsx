@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AuroraBackground } from '@/components/ui/aurora-background'
 import { motion } from "framer-motion";
+import { Package2 } from 'lucide-react'
 
 
 function Banner() {
@@ -91,31 +92,30 @@ export default Banner
 
 export function CtaButtons() {
   return (
-    <div className="flex flex-col md:flex-row lg:justify-start justify-center items-center mt-5 scale-90 md:scale-100">
-      <Link href={"/order-now"}>
-        <div className="flex justify-center items-center border-[2px] border-zinc-400 bg-zinc-100
-    transition ease-in duration-200 delay-200 hover:scale-105 hover:shadow-lg py-2 px-4 rounded-lg  m-2">
-          <Image src={"/fulfillment.png"} width={30} height={30} alt="order" />
-          <button className="font-medium ml-2 text-zinc-800 md:text-base text-sm ">
-            Order Now
-          </button>
-        </div>
-      </Link>
+    <div className="flex flex-col md:flex-row lg:justify-start justify-center items-center mt-3 gap-3 scale-90 md:scale-100">
+<div className='flex justify-center items-center my-3'>
+    <Link href={"https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?"} target="_blank" rel="noopener noreferrer">
+  <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+      <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+      <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl gap-2">
+        <Image src={'/whatsapp.png'} width={22} height={22} alt='whatsapp'/>  Whatsapp Now
+      </span>
+    </button>
+    </Link>
+  </div>
 
-      <Link href={"https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?"} target="_blank" rel="noopener noreferrer">
-        <div className="flex justify-center items-center border-[2px] bg-zinc-100 
-transition ease-in duration-200 delay-200 hover:scale-105 hover:shadow-lg py-[11px] px-4 rounded-lg m-2">
-          <Image
-            src={"/whatsapp.png"}
-            width={25}
-            height={25}
-            alt="whatsapp"
-          />
-          <button className="font-medium ml-2 text-zinc-800  md:text-base text-sm">
-            Chat On Whatsapp
-          </button>
-        </div>
-      </Link>
+
+  <div className='flex justify-center items-center'>
+    <Link href={'/order-now'}>
+  <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+      <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+      <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+        <Package2 className='mr-2'/>  Order Now
+      </span>
+    </button>
+    </Link>
+
+  </div>
     </div>
   );
 }

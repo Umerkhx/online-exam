@@ -210,6 +210,14 @@ const config: Config = {
 				  backgroundPosition: "350% 50%, 350% 50%",
 				},
 			  },
+			  meteor: {
+				"0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+				"70%": { opacity: "1" },
+				"100%": {
+				  transform: "rotate(215deg) translateX(-500px)",
+				  opacity: "0",
+				},
+			  },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
@@ -217,6 +225,7 @@ const config: Config = {
   			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
   			marquee: 'marquee 5s linear infinite',
 			aurora: "aurora 60s linear infinite",
+			"meteor-effect": "meteor 5s linear infinite",
   		}
   	}
   },
