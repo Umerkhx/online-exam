@@ -3,13 +3,11 @@ import React from 'react'
 import { AuroraBackground } from '@/components/ui/aurora-background'
 import Image from 'next/image'
 import { motion } from "framer-motion";
-import { CtaButtons } from '../(Home)/Banner';
-import BannerForm from '../(Home)/BannerForm';
+import { CtaButtons } from '../../(Home)/Banner';
+import BannerForm from '../../(Home)/BannerForm';
 
 
-
-
-function TimedTestBanner() {
+function TestBanner() {
   return (
     <AuroraBackground>
     <motion.div
@@ -26,12 +24,12 @@ function TimedTestBanner() {
     <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
       <div className='pt-24'>
       <h1 className="text-xl font-bold tracking-tight lg:text-left text-center  sm:text-4xl md:text-5xl">
-      Master Timed Tests and Ace Your Exams!
+      Let Experts Help You Prepare for Your Mock Exams and Ace Your Tests!
       </h1>
       <h2 className="text-lg font-semibold tracking-tight  lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
-      Master Timed Tests with Affordable Exam Preparation Support      </h2>
+      Achieve Academic Excellence with Affordable Mock Exam and Test Preparation Assistance      </h2>
       <p className="mt-6 text-base  max-w-prose text-left">
-      Our mission is to transform timed test preparation with cutting-edge solutions and exceptional support for students.</p>
+      Our mission is to revolutionize exam and test preparation with innovative solutions and outstanding support for students.</p>
 
       <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 items-center px-2  gap-5 py-5 bg-[#f4f4f5f3] 
           lg:w-[550px] justify-center rounded-xl border border-zinc-800 dark:border-zinc-100 shadow-xl">
@@ -86,4 +84,4 @@ function TimedTestBanner() {
   )
 }
 
-export default TimedTestBanner
+export default TestBanner

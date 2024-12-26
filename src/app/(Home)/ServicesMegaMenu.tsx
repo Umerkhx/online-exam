@@ -9,9 +9,9 @@ const services = [
     category: "Exam Assistance Services",
     href: "/exam-assistance",
     subcategories: [
-      { name: "Mock Exams & Practice Tests", href: "/practice-test-preparation" },
-      { name: "Timed Test Support", href: "/timed-test-support" },
-      { name: "Live Exam Support", href: "/live-exam-help" },
+      { name: "Mock Exams & Practice Tests", href: "/exam-assistance/practice-test-preparation" },
+      { name: "Timed Test Support", href: "/exam-assistance/timed-test-support" },
+      { name: "Live Exam Support", href: "/exam-assistance/live-exam-help" },
     ],
   },
   {

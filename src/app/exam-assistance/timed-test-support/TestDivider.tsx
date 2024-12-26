@@ -1,6 +1,6 @@
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import React from 'react'
-import { CtaButtons } from '../(Home)/Banner';
+import { CtaButtons } from '../../(Home)/Banner';
 
 function TestDivider() {
     const words = `Stress during mock exams and test preparation can feel overwhelming, but with the right support, you can achieve clarity, confidence, and a sense of calm to tackle any challenge. `;

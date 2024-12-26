@@ -1,6 +1,6 @@
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import React from 'react'
-import { CtaButtons } from '../(Home)/Banner'
+import { CtaButtons } from '../../(Home)/Banner'
 
 function ExamHelpDivider() {
     const words = `Exams can be stressful, but with the right support, you can gain clarity, confidence, and the calm needed to face any challenge head-on. Our live exam help service is here to guide you every step of the way.`;
