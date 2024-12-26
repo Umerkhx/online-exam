@@ -11,7 +11,7 @@ function Faq() {
                     <Image className='rounded-xl' src={'/faq-1.webp'} width={600} height={550} alt='faq'></Image>
                 </div>
                 <div className='col-span-2'>
-                    <Accordion className='space-y-3' type="single" collapsible>
+                    <Accordion className='space-y-3' type="single" collapsible defaultValue='item-1'>
                         <AccordionItem className='dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8]  p-2 rounded-lg' value="item-1">
                             <AccordionTrigger className='text-lg font-semibold'>Is it Ethical to Seek Assistance from Online Class Relief?</AccordionTrigger>
                             <AccordionContent>

@@ -4,7 +4,7 @@ import React from 'react'
 function EaUrlPin() {
   return (
     <div className='mt-10 mx-auto max-w-screen-xl'>
-        <h2 className='text-center font-bold text-4xl'>Sub-Categories Of Exam Assistance</h2>
+        <h2 className='text-center font-bold md:text-4xl text-2xl'>Sub-Categories Of Exam Assistance</h2>
         <div className='grid lg:grid-cols-3 grid-cols-1 p-4 sm:gap-3 gap-6'>
             <div>
             <PinContainer

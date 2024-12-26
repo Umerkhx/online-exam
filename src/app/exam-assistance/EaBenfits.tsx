@@ -1,5 +1,6 @@
 import { DirectionAwareHover } from '@/components/ui/direction-aware-hover'
 import React from 'react'
+import EaFocusCards from './EaFocusCards';
 
 function EaBenfits() {
     const imageUrl = "/exam-card-1.webp";
@@ -12,6 +13,7 @@ function EaBenfits() {
     return (
         <div className='mt-10 mx-auto max-w-screen-xl'>
             <h1 className='font-bold text-4xl text-center'>Key Advantages of Our Exam Assistance Service</h1>
+
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-3 p-3 my-5'>
                 <div className='flex justify-center items-center '>
                     <DirectionAwareHover imageUrl={imageUrl}>
@@ -55,6 +57,8 @@ function EaBenfits() {
                 </div>
 
             </div>
+
+            <EaFocusCards/>
 
         </div>
     )

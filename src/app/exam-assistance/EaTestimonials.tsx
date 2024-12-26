@@ -40,9 +40,11 @@ function EaTestimonials() {
         },
       ];
   return (
-    <div className='mx-auto max-w-screen-xl mt-20 -z-[999]'>
-        <h2 className='text-center mt-5 font-bold text-3xl md:text-5xl'>Our Testimonials</h2>
+    <div className='mx-auto max-w-screen-xl mt-10 -z-[999]'>
+        <h2 className='text-center mt-5 font-extrabold text-3xl md:text-5xl'>Our Testimonials</h2>
+        <div className='p-5'>
         <AnimatedTestimonials testimonials={testimonials} />
+        </div>
     </div>
   )
 }

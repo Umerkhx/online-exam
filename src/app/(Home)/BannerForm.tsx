@@ -339,7 +339,7 @@ function BannerForm() {
           <button
           type="submit"
             disabled={pending}
-            className={`relative w-2/4   transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group bg-gradient-to-r from-[#000000] to-[#52A39F] 
+            className={`relative w-[80%] lg:w-2/4   transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group bg-gradient-to-r from-[#000000] to-[#52A39F] 
       ${pending ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             <span className="relative flex items-center justify-center">

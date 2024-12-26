@@ -3,8 +3,8 @@ import TestBanner from './TestBanner'
 import TestServiceCard from './TestServiceCard'
 import TestDivider from './TestDivider'
 import TestLongContent from './TestLongContent'
-import EaTestimonials from '../exam-assistance/EaTestimonials'
 import TestFaq from './TestFaq'
+import TestServiceTestimonial from './TestServiceTestimonial'
 
 function page() {
   return (
@@ -13,7 +13,7 @@ function page() {
     <TestServiceCard/>
     <TestDivider/>
     <TestLongContent/>
-    <EaTestimonials/>
+    <TestServiceTestimonial/>
     <TestFaq/>
     </div>
   )
