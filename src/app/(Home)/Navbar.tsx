@@ -28,7 +28,7 @@ function Navbar() {
       <div className="flex justify-between py-2">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Image src={'/logo (1).png'} width={200} height={200} alt="logo" />
+            <Image src={'/navbar-logo.png'} width={200} height={65} alt="logo" />
           </Link>
         </div>
         <div className="hidden md:flex items-center justify-center flex-1 gap-2">

@@ -7,6 +7,7 @@ import EaTestimonials from './EaTestimonials'
 import EaFaq from './EaFaq'
 import EaUrlPin from './EaUrlPin'
 import EaFocusCards from './EaFocusCards'
+import EaLongContent from './EaLongContent'
 
 function page() {
   return (
@@ -16,6 +17,7 @@ function page() {
         <OurProcess/>
         <EADivider/>
         <EaFocusCards/>
+        <EaLongContent/>
         <EaNumbers/>
         <EaTestimonials/>
         <EaFaq/>
