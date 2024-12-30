@@ -235,8 +235,6 @@ function Navbar() {
         </div>
       </div>
     </div>
-
-
             <div className="px-3 py-2">
               <ModeToggle />
             </div>

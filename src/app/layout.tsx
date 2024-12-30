@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./(Home)/Navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Footer from "./(Home)/Footer";
+import TopBar from "./(Home)/TopBar";
 
 const inter = Outfit({
   subsets: ["latin"],
@@ -41,7 +42,8 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >  
+        >
+        <TopBar/>  
         <Navbar />
         {children}
         <Footer/>
