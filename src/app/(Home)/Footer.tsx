@@ -1,5 +1,3 @@
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import { ArrowRightIcon, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +6,7 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' dark:bg-gradient-to-tr dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-200 to-[#77BBB8] '>
-      <div className='grid lg:grid-cols-4 grid-cols-1 px-8 py-7 max-w-screen-xl mx-auto '>
+      <div className='grid lg:grid-cols-4 grid-cols-1 lg:px-8 px-4 py-7 max-w-screen-xl mx-auto '>
         <div className=''>
           <Image src={'/logo (1).png'} width={200} height={200} alt='logo'></Image>
           <p className='text-sm font-medium p-2'>Online Class Relief offers top-tier solutions with a team of PhD tutors and dependable resources, using a goal-driven approach to achieve desired outcomes.</p>

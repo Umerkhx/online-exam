@@ -5,7 +5,7 @@ function TestLongContent() {
   return (
     <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div className="">
-      <h1 className="text-4xl font-extrabold  text-center mb-8">
+      <h1 className="lg:text-4xl text-2xl font-extrabold  text-center mb-8">
         Mock Exams and Test Preparation: Your Ultimate Guide to Success
       </h1>
       

@@ -42,8 +42,8 @@ function TestServiceCard() {
       ];
   return (
     <div className="mx-auto max-w-screen-xl mt-12">
-      <h2 className="text-center font-extrabold text-4xl">Mock Exam & Test Preparation Services</h2>
-      <div className="grid lg:grid-cols-3 grid-cols-1 p-4 gap-4 my-5">
+      <h2 className="text-center font-extrabold lg:text-4xl text-2xl">Mock Exam & Test Preparation Services</h2>
+      <div className="grid lg:grid-cols-3 grid-cols-1 p-4 gap-4 my-5 ">
         {services.map((service, index) => (
           <ServiceCard
             key={index}
