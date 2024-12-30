@@ -21,16 +21,16 @@ function Banner() {
         }}
      className="relative overflow-hidden dark:text-zinc-100 text-zinc-800">
 
-    <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-20 lg:px-8">
+    <div className="relative max-w-screen-xl container mx-auto px-5 py-10 sm:px-6 sm:py-20 lg:px-8">
       <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
-        <div className='pt-24'>
-        <h1 className="text-xl font-bold tracking-tight lg:text-left text-center  sm:text-4xl md:text-5xl">
+        <div className='lg:pt-24 pt-12'>
+        <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl md:text-5xl">
         Let Experts Take Your Online Exam and Ace It for You
         </h1>
-        <h2 className="text-lg font-semibold tracking-tight  lg:text-left text-center sm:text-3xl md:text-4xl pt-3">
+        <h2 className="text-lg font-semibold lg:text-left text-center sm:text-3xl md:text-4xl pt-1 lg:pt-3">
         Secure Academic Success with Affordable Online Exam Assistance
         </h2>
-        <p className="mt-6 md:text-base text-sm  max-w-prose lg:text-left text-center">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
+        <p className="mt-2 lg:mt-5 md:text-base text-sm lg:text-left text-center">Our mission is to transform the industry with groundbreaking solutions and exceptional customer service.</p>
 
         <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 items-center px-2  gap-5 py-5 bg-[#f4f4f5f3] lg:scale-100 scale-75 lg:w-[550px] justify-center rounded-xl border border-zinc-800 dark:border-zinc-100 shadow-xl">
               <div className="flex items-center justify-center scale-95 hover:scale-100 transition ease-in duration-200 delay-200">
@@ -91,7 +91,7 @@ export default Banner
 
 export function CtaButtons() {
   return (
-    <div className="flex flex-col md:flex-row lg:justify-start justify-center items-center mt-3 gap-3 scale-90 md:scale-100">
+    <div className="flex flex-row lg:justify-start justify-center items-center mt-3 gap-3 scale-90 md:scale-100">
 <div className='flex justify-center items-center my-3'>
     <Link href={"https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?"} target="_blank" rel="noopener noreferrer">
   <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">

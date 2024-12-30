@@ -103,7 +103,7 @@ function BannerForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="xl:ml-28 pb-16 bg-slate-200 shadow-xl rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-zinc-800 dark:hover:border-zinc-100 hover:scale-[1.02] border-2 border-transparent">
+      <div className="xl:ml-28 pb-16 lg:scale-100 scale-90 bg-slate-200 shadow-xl rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-zinc-800 dark:hover:border-zinc-100 lg:hover:scale-[1.02] hover:scale-95 border-2 border-transparent">
        
 
         <div className="flex justify-center items-center lg:-translate-y-4 -translate-y-4">
@@ -119,7 +119,7 @@ function BannerForm() {
           <TypewriterEffectSmoothDemo/>
           
         </div>
-        <div className="flex justify-center items-center ">
+        <div className="flex justify-center items-center lg:scale-100 scale-75 ">
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] rounded rounded-tl-lg rounded-bl-lg ${activeButton === "writing"
