@@ -85,7 +85,7 @@ function Navbar() {
         <div className="hidden md:flex items-center justify-center flex-1 gap-2">
           <NavigationMenu>
             <NavigationMenuList>
-            <NavigationMenuItem>
+              <NavigationMenuItem>
                 <ServicesMegaMenu />
               </NavigationMenuItem>
               {navLinks.map((link) => (

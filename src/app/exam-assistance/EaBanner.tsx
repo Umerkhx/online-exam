@@ -20,14 +20,14 @@ function EaBanner() {
         className="relative overflow-hidden dark:text-zinc-100 text-zinc-800">
         <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-20 lg:px-8">
           <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
-            <div className='pt-24'>
-              <h1 className="text-2xl font-bold tracking-tight lg:text-left text-center  sm:text-3xl md:text-4xl">
+            <div className='lg:pt-24 pt-12'>
+              <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl md:text-5xl">
                 Ace Your Online Exams with Expert Assistance
               </h1>
-              <h2 className="text-xl font-semibold tracking-tight  lg:text-left text-center sm:text-2xl md:text-3xl pt-3">
+              <h2 className="text-lg font-semibold lg:text-left text-center sm:text-3xl md:text-4xl pt-1 lg:pt-3">
                 Achieve Academic Success with Budget-Friendly Online Exam Help
               </h2>
-              <p className="mt-6 text-base  max-w-prose text-left">Our mission is to revolutionize exam assistance with innovative solutions and outstanding support for students.</p>
+              <p className="mt-2 lg:mt-5 md:text-base text-sm lg:text-left text-center">Our mission is to revolutionize exam assistance with innovative solutions and outstanding support for students.</p>
 
               <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 items-center px-2  gap-5 py-5 bg-[#f4f4f5f3] lg:w-[550px] lg:scale-100 scale-75 justify-center rounded-xl border border-zinc-800 dark:border-zinc-100 shadow-xl">
                 <div className="flex items-center justify-center scale-95 hover:scale-100 transition ease-in duration-200 delay-200">
