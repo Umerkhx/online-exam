@@ -4,7 +4,7 @@ import React from 'react'
 function Solutions() { 
   return (
     <div className='mt-16 max-w-screen-xl mx-auto'> 
-        <h2 className='text-center font-extrabold text-5xl '>Why Choose <br />Online Exam Relief</h2>
+        <h2 className='text-center font-extrabold lg:text-5xl text-3xl '>Why Choose <br />Online Exam Relief</h2>
          <div className='grid lg:grid-cols-3 grid-cols-1 gap-3 p-3 mt-5'>
             <div className='group'>
                 <div className='p-4 scale-95 dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8] shadow-lg rounded-lg group-hover:-translate-y-3 transition ease-in duration-300 delay-300 h-[250px] '>

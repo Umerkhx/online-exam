@@ -163,8 +163,8 @@ function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="px-3 py-2">
-            <div>
+
+<div className="px-2 py-1">
       {/* Mobile Menu Button */}
       <button
         className="lg:hidden bg-zinc-800 hover:bg-blue-400 hover:text-zinc-50 dark:bg-zinc-200 dark:hover:text-blue-500 dark:text-zinc-800 text-zinc-200 px-2 py-2 rounded-lg font-semibold"
@@ -192,21 +192,28 @@ function Navbar() {
           {services.map((service) => (
             <div key={service.category} className="lg:w-auto">
               {/* Main Category */}
-              <button
-                className="flex items-center justify-between w-full px-4 py-2 text-left text-sm rounded-md border lg:border-none hover:bg-gray-100"
-                onClick={() =>
-                  setActiveCategory(
-                    activeCategory === service.category ? null : service.category
-                  )
-                }
-              >
-                {service.category}
-                {activeCategory === service.category ? (
-                  <ChevronDown className="h-4 w-4" />
-                ) : (
-                  <ChevronRight className="h-4 w-4" />
-                )}
-              </button>
+              <div className="flex items-center justify-between w-full px-4 py-2 text-left text-sm rounded-md border lg:border-none hover:bg-gray-100">
+                <Link
+                  href={service.href}
+                  className="text-left  hover:text-blue-500 flex-1"
+                >
+                  {service.category}
+                </Link>
+                <button
+                  className="ml-2 flex items-center"
+                  onClick={() =>
+                    setActiveCategory(
+                      activeCategory === service.category ? null : service.category
+                    )
+                  }
+                >
+                  {activeCategory === service.category ? (
+                    <ChevronDown className="h-4 w-4" />
+                  ) : (
+                    <ChevronRight className="h-4 w-4" />
+                  )}
+                </button>
+              </div>
 
               {/* Subcategories */}
               {activeCategory === service.category && (
@@ -228,7 +235,8 @@ function Navbar() {
         </div>
       </div>
     </div>
-            </div>
+
+
             <div className="px-3 py-2">
               <ModeToggle />
             </div>

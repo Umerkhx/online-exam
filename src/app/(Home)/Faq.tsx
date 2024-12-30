@@ -5,7 +5,7 @@ import Image from 'next/image'
 function Faq() {
     return (
         <div className='mt-20 mx-auto max-w-screen-xl'>
-            <h2 className='text-center font-extrabold text-5xl '>Frequently Inquired Questions</h2>
+            <h2 className='text-center font-extrabold lg:text-5xl text-3xl '>Frequently Inquired Questions</h2>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-4 mt-5 '>
                 <div className=''>
                     <Image className='rounded-xl' src={'/faq-1.webp'} width={600} height={550} alt='faq'></Image>

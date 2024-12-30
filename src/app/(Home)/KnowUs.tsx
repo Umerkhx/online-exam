@@ -7,9 +7,9 @@ function KnowUs() {
     <div className='lg:mt-20 mt-10 max-w-screen-xl mx-auto'>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4   ">
   <div>
-    <h2 className="text-3xl font-extrabold  mb-4">Make Wise Decision For Academic Success</h2>
-    <p className="text-lg  mb-4">
-      Online ClassclassName Relief is the leading platform for providing help in online classNamees, exams, and assignments. We have been working for years in the industry and providing our services so students can improve their grades.
+    <h2 className="text-3xl font-extrabold lg:text-left text-center mb-4">Make Wise Decision For Academic Success</h2>
+    <p className="lg:text-lg lg:text-left text-center mb-4">
+      Online Exam Relief is the leading platform for providing help in online classNamees, exams, and assignments. We have been working for years in the industry and providing our services so students can improve their grades.
     </p>
     <div className="space-y-4 lg:-translate-x-6">
         <div className='group scale-95 hover:scale-100 transition ease-in duration-200 delay-200 hover:shadow-lg  cursor-pointer px-2 py-2'>

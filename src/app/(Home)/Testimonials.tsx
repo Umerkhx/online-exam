@@ -6,7 +6,7 @@ function Testimonials() {
   return (
     <> 
     <div className='mx-auto max-w-screen-xl mt-20'>
-      <h2 className='text-center font-bold text-5xl '>Our Testimonials</h2>
+      <h2 className='text-center font-bold lg:text-5xl text-3xl '>Our Testimonials</h2>
    <div className="mt-10 mb-20 rounded-md flex flex-col antialiased  dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
     <InfiniteMovingCards
       items={testimonials}
