@@ -21,10 +21,10 @@ function EaBanner() {
         <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
           <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
             <div className='lg:pt-[5rem] pt-12'>
-              <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl md:text-[45px] leading-none">
+              <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl  leading-none">
                 Ace Your Online Exams with Expert Assistance
               </h1>
-              <h2 className="text-lg font-medium lg:text-left text-center sm:text-3xl md:text-[30px] pt-1 lg:pt-3">
+              <h2 className="text-lg font-medium lg:text-left text-center sm:text-2xl md:text-[27px] pt-1 lg:pt-3">
                 Achieve Academic Success with Budget-Friendly Online Exam Help
               </h2>
               <p className="mt-2  md:text-base text-sm lg:text-left text-center">Our mission is to revolutionize exam assistance with innovative solutions and outstanding support for students.</p>
