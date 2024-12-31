@@ -232,7 +232,7 @@ function PaperType({ onNext }: { onNext: () => void }) {
 
                 </CardContent>
                 <div className='flex justify-end '>
-                    <button onClick={onNext} className='py-3 rounded-lg bg-purple-600 text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-semibold'>NEXT</button>
+                    <button onClick={onNext} className='py-3 rounded-lg bg-[#52A39F] text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-semibold'>NEXT</button>
                     </div>
             </Card>
       

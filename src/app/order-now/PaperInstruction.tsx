@@ -156,10 +156,10 @@ function PaperInstruction({ onNext, onPrevious }: { onNext: () => void, onPrevio
 
                 </CardContent>
                 <div className='flex justify-between'>
-                    <button onClick={onPrevious} className='py-3 rounded-lg bg-purple-600 text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-medium'>
+                    <button onClick={onPrevious} className='py-3 rounded-lg bg-[#52A39F] text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-medium'>
                         PREVIOUS
                     </button>
-                    <button onClick={onNext} className='py-3 rounded-lg bg-purple-600 text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-medium'>
+                    <button onClick={onNext} className='py-3 rounded-lg bg-[#52A39F] text-white text-center m-4 w-[100px] hover:scale-105 transition ease-in duration-200 font-medium'>
                         NEXT
                     </button>
                 </div>

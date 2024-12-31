@@ -210,10 +210,10 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
             </div>
 
             <div className="flex justify-between  ">
-              <button onClick={onPrevious} className='py-1 rounded-lg bg-purple-600 text-white text-center m-4 w-[120px] hover:scale-105 transition ease-in duration-200 font-medium'>
+              <button onClick={onPrevious} className='py-1 rounded-lg bg-[#52A39F] text-white text-center m-4 w-[120px] hover:scale-105 transition ease-in duration-200 font-medium'>
                 PREVIOUS
               </button>
-              <button type="submit" disabled={pending} className="flex m-5 py-3 px-5 bg-purple-600 text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium">
+              <button type="submit" disabled={pending} className="flex m-5 py-3 px-5 bg-[#52A39F] text-zinc-50 rounded-lg hover:scale-105 transition ease-in duration-200 delay-200 font-medium">
                 {pending ? (
                   <>
                     <Loader2 className="animate-spin mr-2 h-5 w-5" />{" "}
