@@ -22,13 +22,13 @@ function TestBanner() {
 
   <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
     <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
-      <div className='lg:pt-24 pt-12'>
-      <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl md:text-[45px]">
+      <div className='lg:pt-[5rem] pt-12'>
+      <h1 className="text-xl font-bold lg:text-left text-center sm:text-[35px] leading-none">
       Let Experts Help You Prepare for Your Mock Exams and Ace Your Tests!
       </h1>
-      <h2 className="text-lg font-semibold lg:text-left text-center sm:text-3xl md:text-4xl pt-1 lg:pt-3">
+      <h2 className="text-lg font-medium lg:text-left text-center sm:text-[28px] pt-1 lg:pt-3">
       Achieve Academic Excellence with Affordable Mock Exam and Test Preparation Assistance      </h2>
-      <p className="mt-2 lg:mt-5 md:text-base text-sm lg:text-left text-center">
+      <p className="mt-2 md:text-base text-sm lg:text-left text-center">
       Our mission is to revolutionize exam and test preparation with innovative solutions and outstanding support for students.</p>
 
       <div className="grid lg:grid-cols-3 grid-cols-1 mt-6 items-center px-2  gap-5 py-5 bg-[#f4f4f5f3] 
