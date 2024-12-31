@@ -3,7 +3,7 @@ import React from 'react'
 function OurProcess() {
   return (
     <div className='mx-auto max-w-screen-xl mt-10'>
-        <h2 className='text-center py-2 text-4xl font-bold'>Our Work Process</h2>
+        <h2 className='text-center py-2 lg:text-4xl text-2xl font-bold'>Our Work Process</h2>
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-9 p-8">
       <div

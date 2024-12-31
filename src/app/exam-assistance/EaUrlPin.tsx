@@ -4,7 +4,7 @@ import React from 'react'
 function EaUrlPin() {
   return (
     <div className='mt-10 mx-auto max-w-screen-xl'>
-        <h2 className='text-center font-bold md:text-4xl text-2xl'>Sub-Categories Of Exam Assistance</h2>
+        <h2 className='text-center font-bold md:text-4xl text-2xl px-2'>Sub-Categories Of Exam Assistance</h2>
         <div className='grid lg:grid-cols-3 grid-cols-1 p-4 sm:gap-3 gap-6'>
             <div>
             <PinContainer
@@ -16,11 +16,11 @@ function EaUrlPin() {
           Mock Exam & Test Preparation 
           </h3>
           <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-muted-foreground ">
-            Get ready for your mock exams and test preparation
+            <span className="text-zinc-700 dark:text-zinc-200 ">
+            Get ready for your mock exams and test preparation with our assistance and support services.
             </span>
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4  bg-gradient-to-br from-[#000000] to-[#52A39F]" />
+          {/* <div className="flex flex-1 w-full rounded-lg mt-4  bg-gradient-to-br from-[#000000] to-[#52A39F]" /> */}
         </div>
       </PinContainer>
             </div>
@@ -35,11 +35,11 @@ function EaUrlPin() {
           Timed Test Support
           </h3>
           <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-muted-foreground ">
-            Assistance for Timed Tests
+            <span className="text-zinc-700 dark:text-zinc-200 ">
+            Receive support and strategies to effectively manage and excel in your timed tests.
             </span>
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4  bg-gradient-to-br from-[#000000] to-[#52A39F]" />
+          {/* <div className="flex flex-1 w-full rounded-lg mt-4  bg-gradient-to-br from-[#000000] to-[#52A39F]" /> */}
         </div>
       </PinContainer>
             </div>
@@ -54,11 +54,11 @@ function EaUrlPin() {
           Live Exam Support 
           </h3>
           <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-muted-foreground ">
-            Real-Time Exam Assistance.
+            <span className="text-zinc-700 dark:text-zinc-200 ">
+            Real-Time Exam Assistance to help you navigate through your exams with expert guidance and support.
             </span>
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4  bg-gradient-to-br from-[#000000] to-[#52A39F]" />
+          {/* <div className="flex flex-1 w-full rounded-lg mt-4  bg-gradient-to-br from-[#000000] to-[#52A39F]" /> */}
         </div>
       </PinContainer>
             </div>

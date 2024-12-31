@@ -30,7 +30,7 @@ function EaFocusCards() {
       ];
   return (
     <div className='mt-10 mx-auto max-w-screen-xl'>
-    <h1 className='font-bold md:text-5xl text-3xl text-center'>Key Advantages of Our Exam Assistance Service</h1>
+    <h1 className='font-bold lg:text-5xl text-2xl text-center'>Key Advantages of Our Exam Assistance Service</h1>
     <div className='mt-8 p-5'>
     <FocusCards cards={cards} />
     </div>
