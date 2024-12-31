@@ -11,7 +11,7 @@ function EaUrlPin() {
         title="/practice-test-preparation"
         href="/exam-assistance/practice-test-preparation"
       >
-        <div className=" flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[16rem] ">
+        <div className=" flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[12rem] ">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-zinc-900 dark:text-zinc-200">
           Mock Exam & Test Preparation 
           </h3>
@@ -30,7 +30,7 @@ function EaUrlPin() {
         title="/timed-test-support"
         href="/exam-assistance/timed-test-support"
       >
-        <div className=" flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[16rem] ">
+        <div className=" flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[12rem] ">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-zinc-900 dark:text-zinc-200">
           Timed Test Support
           </h3>
@@ -49,7 +49,7 @@ function EaUrlPin() {
         title="/live-exam-help"
         href="/exam-assistance/live-exam-help"
       >
-        <div className=" flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[16rem] ">
+        <div className=" flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[16rem] h-[12rem] ">
           <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-zinc-900 dark:text-zinc-200">
           Live Exam Support 
           </h3>
