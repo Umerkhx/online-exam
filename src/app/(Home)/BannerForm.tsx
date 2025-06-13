@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeftCircle, Loader2, Loader2Icon } from "lucide-react";
+import { ArrowLeftCircle, ArrowRight, Calendar, FileText, Hash, Loader2, Loader2Icon, Mail, Minus, Phone, Plus, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
@@ -102,270 +102,267 @@ function BannerForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="xl:ml-28 pb-16 lg:scale-100 scale-90 bg-slate-200 shadow-xl rounded-xl lg:w-[480px] dark:bg-zinc-900 transition-all duration-300 hover:shadow-2xl hover:border-zinc-800 dark:hover:border-zinc-100 lg:hover:scale-[1.02] hover:scale-95 border-2 border-transparent">
-       
+    <div className="  flex items-center justify-center rounded-lg p-4 scale-95">
+      <div className="w-full ">
 
-        <div className="flex justify-center items-center lg:-translate-y-4 -translate-y-4">
-        <HoverBorderGradient
-        containerClassName="rounded-full"
-        as="button"
-        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-      >
-        <span>Upto 50% Discount </span>
-      </HoverBorderGradient>
-        </div>
-        <div className="flex justify-center  ">
-          <TypewriterEffectSmoothDemo/>
-          
-        </div>
-        <div className="flex justify-center items-center lg:scale-100 scale-75 ">
-          <button
-            type="button"
-            className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] rounded rounded-tl-lg rounded-bl-lg ${activeButton === "writing"
-                ? "bg-sky-700 text-white"
-                : " bg-zinc-200 text-zinc-800"
-              }`}
-            onClick={() => handleClick("writing")}
-          >
-            Writing
-          </button>
-          <button
-            type="button"
-            className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] ${activeButton === "rewriting"
-                ? "bg-sky-700 text-white"
-                : "bg-zinc-200 text-zinc-800"
-              }`}
-            onClick={() => handleClick("rewriting")}
-          >
-            Rewriting
-          </button>
-          <button
-            type="button"
-            className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px]  rounded rounded-tr-lg rounded-br-lg  ${activeButton === "editing"
-                ? "bg-sky-700 text-white"
-                : "bg-zinc-200 text-zinc-800"
-              }`}
-            onClick={() => handleClick("editing")}
-          >
-            Editing
-          </button>
-        </div>
-
-        <div className="pt-4 w-full px-3">
-          <input
-            className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter Your Name"
-            required
-          />
-        </div>
-        <div className="pt-2 w-full px-3">
-          <input
-            className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter Your Email"
-            required
-          />
-        </div>
-        <div className="pt-2 w-full px-3 ">
-          <PhoneInput
-            placeholder="Enter Your Phone Number"
-            defaultCountry="US"
-            value={phone}
-            onChange={setPhone}
-            className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base bg-white text-black dark:bg-transparent dark:text-white dark:page-specific"
-          />
-        </div>
-
-        <div className="grid grid-cols-2 gap-2 pt-2 px-3">
-          <div className={`col-span-${showSubject ? "1" : "2"}`}>
-            <select
-              className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
-              name="service"
-              required
-              onChange={handleServiceChange}
-              aria-label="service"
-            >
-              <option value="option">Services</option>
-              <option value="Assignment/ Coursework">
-                Assignment/ Coursework
-              </option>
-              <option value="Essay">Essay</option>
-              <option value="Dissertation / Thesis / Proposal">
-                Dissertation / Thesis / Proposal
-              </option>
-              <option value="Question And Answers">Question And Answers</option>
-              <option value="SOP">SOP</option>
-              <option value="Editing / Proofreading">
-                Editing / Proofreading
-              </option>
-              <option value="PPT">PPT</option>
-              <option value="Resume / CV">Resume / CV</option>
-              <option value="Others / Custom Orders">
-                Others / Custom Orders
-              </option>
-              <option value="Class">Class</option>
-              <option value="Exam">Exam</option>
-              <option value="Test">Test</option>
-              <option value="Quiz">Quiz</option>
-              <option value="Course">Course</option>
-              <option value="Homework">Homework</option>
-            </select>
+        <form onSubmit={handleSubmit} className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-700/20 overflow-hidden py-5">
+          <div className="inline-flex items-center px-4 py-2 dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 rounded-full text-sm font-medium mb-4 shadow-lg">
+            <span className="animate-pulse mr-2">✨</span>
+            Up to 50% Discount Available
           </div>
-
-          {showSubject && (
-            <div>
-              <select
-                value={selectedSubject}
-                onChange={(e) => setSelectedSubject(e.target.value)}
-                className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
-                name="subject"
-                required
-                aria-label="subject"
-              >
-                <option disabled value="option">
-                  Subject
-                </option>
-                <option value="Hospitality">Hospitality</option>
-                <option value="Management">Management</option>
-                <option value="Project Cost Management">
-                  Project Cost Management
-                </option>
-                <option value="Law">Law</option>
-                <option value="Finance">Finance</option>
-                <option value="Auditing">Auditing</option>
-                <option value="Research Methodology">
-                  Research Methodology
-                </option>
-                <option value="Economics - Theory">Economics - Theory</option>
-                <option value="Economics - Calculation">
-                  Economics - Calculation
-                </option>
-                <option value="Arts and Humanities">Arts and Humanities</option>
-                <option value="Psychology">Psychology</option>
-                <option value="Health & Social Care">
-                  Health & Social Care
-                </option>
-                <option value="Nursing">Nursing</option>
-                <option value="Medical">Medical</option>
-                <option value="Pharmacy">Pharmacy</option>
-                <option value="Physiology">Physiology</option>
-                <option value="Travel & Tourism">Travel & Tourism</option>
-                <option value="Biotechnology">Biotechnology</option>
-                <option value="Biology">Biology</option>
-                <option value="Information Technology">
-                  Information Technology
-                </option>
-                <option value="Computer Science">Computer Science</option>
-                <option value="Mathematics">Mathematics</option>
-                <option value="Programming / Coding">
-                  Programming / Coding
-                </option>
-                <option value="Statistics">Statistics</option>
-                <option value="ANOVA">ANOVA</option>
-                <option value="SPSS">SPSS</option>
-                <option value="NVIVO">NVIVO</option>
-                <option value="SAS">SAS</option>
-                <option value="Eviews">Eviews</option>
-                <option value="Accounts">Accounts</option>
-                <option value="Education">Education</option>
-                <option value="Architecture">Architecture</option>
-                <option value="Geology">Geology</option>
-                <option value="English Literature">English Literature</option>
-                <option value="Mechanics">Mechanics</option>
-                <option value="Chemistry">Chemistry</option>
-                <option value="Physics">Physics</option>
-                <option value="Science">Science</option>
-                <option value="Engineering">Engineering</option>
-              </select>
-            </div>
-          )}
-        </div>
-
-        {showQuestions && (
-          <div className=" w-full pt-2 px-3 ">
-            <select
-              className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
-              name="question"
-              required
-              aria-label="question"
-              value={selectedQuestions}
-              onChange={(e) => setSelectedQuestions(e.target.value)}
-            >
-              <option value="">Select Questions</option>
-              {options.map((number) => (
-                <option key={number} value={`${number} Questions`}>
-                  {number} Questions
-                </option>
+          <h1 className="text-2xl font-bold  mb-2">
+            Get Your Free Quote
+          </h1>
+          <p className="text-gray-600 dark:text-gray-300">
+            Professional academic writing services tailored to your needs
+          </p>
+          {/* Service Type Selector */}
+          <div className="p-8 border-b border-gray-100 dark:border-gray-700">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Select Service Type</h3>
+            <div className="flex rounded-2xl bg-gray-100 dark:bg-gray-700 p-1">
+              {["writing", "rewriting", "editing"].map((service) => (
+                <button
+                  key={service}
+                  type="button"
+                  className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${activeButton === service
+                      ? "dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 shadow-lg transform scale-105"
+                      : "text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                    }`}
+                  onClick={() => handleClick(service)}
+                >
+                  {service.charAt(0).toUpperCase() + service.slice(1)}
+                </button>
               ))}
-            </select>
-          </div>
-        )}
-
-        <div className="grid grid-cols-2 gap-2 pt-2 px-3">
-          <div className="">
-            <div className="flex justify-center items-center gap-2 bg-muted dark:bg-zinc-900 rounded-lg border-[2px] w-full py-[6px] px-3 outline-none">
-              <button
-                type="button"
-                onClick={handleDecrement}
-                style={{ padding: "5px 10px" }}
-              >
-                -
-              </button>
-              <span className="text-sm lg:text-base">{wordCount} Words</span>
-              <button
-                type="button"
-                onClick={handleIncrement}
-                style={{ padding: "5px 10px" }}
-              >
-                +
-              </button>
             </div>
           </div>
 
-          <div className="">
-            <DatePickerDemo date={date} setDate={setDate} />
-          </div>
-        </div>
+          {/* Form Fields */}
+          <div className="p-8 space-y-6">
+            {/* Personal Information */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <User className="w-4 h-4 mr-2" />
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your full name"
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
 
-        <div className="flex justify-center items-center mt-5">
-          <button
-          type="submit"
-            disabled={pending}
-            className={`relative w-[80%] lg:w-2/4   transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group bg-gradient-to-r from-gray-900 to-sky-900 
-      ${pending ? 'opacity-70 cursor-not-allowed' : ''}`}
-          >
-            <span className="relative flex items-center justify-center">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+            </div>
+
+            {/* Phone Number */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                <Phone className="w-4 h-4 mr-2" />
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Enter your phone number"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              />
+            </div>
+
+            {/* Service Selection */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className={`space-y-2 ${showSubject ? '' : 'md:col-span-2'}`}>
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Service Required
+                </label>
+                <select
+                  value={selectedService}
+                  onChange={handleServiceChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                >
+                  <option value="">Select a service</option>
+                  <option value="Assignment/ Coursework">Assignment/ Coursework</option>
+                  <option value="Essay">Essay</option>
+                  <option value="Dissertation / Thesis / Proposal">Dissertation / Thesis / Proposal</option>
+                  <option value="Question And Answers">Question And Answers</option>
+                  <option value="SOP">SOP</option>
+                  <option value="Editing / Proofreading">Editing / Proofreading</option>
+                  <option value="PPT">PPT</option>
+                  <option value="Resume / CV">Resume / CV</option>
+                  <option value="Others / Custom Orders">Others / Custom Orders</option>
+                  <option value="Class">Class</option>
+                  <option value="Exam">Exam</option>
+                  <option value="Test">Test</option>
+                  <option value="Quiz">Quiz</option>
+                  <option value="Course">Course</option>
+                  <option value="Homework">Homework</option>
+                </select>
+              </div>
+
+              {showSubject && (
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Subject Area
+                  </label>
+                  <select
+                    value={selectedSubject}
+                    onChange={(e) => setSelectedSubject(e.target.value)}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  >
+                    <option value="">Select subject</option>
+                    <option value="Hospitality">Hospitality</option>
+                    <option value="Management">Management</option>
+                    <option value="Project Cost Management">Project Cost Management</option>
+                    <option value="Law">Law</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Auditing">Auditing</option>
+                    <option value="Research Methodology">Research Methodology</option>
+                    <option value="Economics - Theory">Economics - Theory</option>
+                    <option value="Economics - Calculation">Economics - Calculation</option>
+                    <option value="Arts and Humanities">Arts and Humanities</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Health & Social Care">Health & Social Care</option>
+                    <option value="Nursing">Nursing</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="Physiology">Physiology</option>
+                    <option value="Travel & Tourism">Travel & Tourism</option>
+                    <option value="Biotechnology">Biotechnology</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Programming / Coding">Programming / Coding</option>
+                    <option value="Statistics">Statistics</option>
+                    <option value="ANOVA">ANOVA</option>
+                    <option value="SPSS">SPSS</option>
+                    <option value="NVIVO">NVIVO</option>
+                    <option value="SAS">SAS</option>
+                    <option value="Eviews">Eviews</option>
+                    <option value="Accounts">Accounts</option>
+                    <option value="Education">Education</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Geology">Geology</option>
+                    <option value="English Literature">English Literature</option>
+                    <option value="Mechanics">Mechanics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Science">Science</option>
+                    <option value="Engineering">Engineering</option>
+                  </select>
+                </div>
+              )}
+            </div>
+
+            {/* Questions Selection */}
+            {showQuestions && (
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <Hash className="w-4 h-4 mr-2" />
+                  Number of Questions
+                </label>
+                <select
+                  value={selectedQuestions}
+                  onChange={(e) => setSelectedQuestions(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                >
+                  <option value="">Select number of questions</option>
+                  {options.map((number) => (
+                    <option key={number} value={`${number} Questions`}>
+                      {number} Questions
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            {/* Word Count and Date */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Word Count
+                </label>
+                <div className="flex items-center bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600">
+                  <button
+                    type="button"
+                    onClick={handleDecrement}
+                    className="p-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    <Minus className="w-5 h-5" />
+                  </button>
+                  <div className="flex-1 text-center py-3 font-medium text-gray-800 dark:text-white">
+                    {wordCount} Words
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleIncrement}
+                    className="p-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    <Plus className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Deadline
+                </label>
+                <input
+                  type="date"
+                  value={date?.toISOString().split('T')[0] || ''}
+                  onChange={(e) => setDate(new Date(e.target.value))}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <div className="p-8 ">
+            <button
+              type="submit"
+              disabled={pending}
+              className="w-full dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 font-semibold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+            >
               {pending ? (
                 <>
-                  <Loader2Icon className="animate-spin mr-2" />
-                  Submitting
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Processing...</span>
                 </>
               ) : (
                 <>
-                  <span className='relative flex items-center justify-center'>
-                    Get Free Quote
-                    <span className="absolute left-full  transition-transform duration-500 ease-in-out transform group-hover:rotate-180 text-base ml-1">
-                      <ArrowLeftCircle />
-                    </span>
-                  </span>
+                  <span>Get Your Free Quote</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </>
               )}
-            </span>
-          </button>
-        </div>
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 }
 
 export default BannerForm;
-
-
