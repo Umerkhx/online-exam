@@ -73,7 +73,7 @@ function TestBanner() {
       </div>
 
      
-      <div className="pb-5 px-5 pt-12  ">
+      <div className="pb-5  pt-12  ">
       <BannerForm />
       </div>
     </div>
