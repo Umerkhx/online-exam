@@ -7,7 +7,7 @@ function WorkProcess() {
         <h2 className='text-center font-bold lg:text-5xl text-3xl '>Effortless Workflow</h2>
         <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 lg:mt-5 p-2 md:p-5 scale-90 md:scale-100 '>
                 <div data-aos='flip-up' className='group'>
-                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-200 to-[#77BBB8] p-5'>
+                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
                        <Image loading='eager' src={'/check-out.png'} width={80} height={80} alt='howitworks' ></Image>
                        <Image loading='eager' className='grayscale' src={'/right-arrow.png'} width={32} height={32} alt='arrow'></Image>
@@ -19,7 +19,7 @@ function WorkProcess() {
                 </div>
 
                 <div  className='group'>
-                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-200 to-[#77BBB8] p-5'>
+                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
                        <Image loading='eager' src={'/delivery-service.png'} width={80} height={80} alt='howitworks' ></Image>
                        <Image loading='eager' className='grayscale' src={'/right-arrow.png'} width={32} height={32} alt='arrow'></Image>
@@ -31,7 +31,7 @@ function WorkProcess() {
                 </div>
 
                 <div data-aos='flip-right' className='group'>
-                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-200 to-[#77BBB8] p-5'>
+                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
                        <Image loading='eager' src={'/complete.png'} width={80} height={80} alt='howitworks' ></Image>
                        <Image loading='eager' className='grayscale' src={'/right-arrow.png'} width={32} height={32} alt='arrow'></Image>
@@ -43,7 +43,7 @@ function WorkProcess() {
                 </div>
 
                 <div data-aos='flip-left' className='group'>
-                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-200 to-[#77BBB8] p-5'>
+                    <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 p-5'>
                     <div className='pt-5 flex items-center justify-around'>
                        <Image loading='eager' src={'/feedback.png'} width={80} height={80} alt='howitworks' ></Image>
                        <Image loading='eager' className='grayscale' src={'/right-arrow.png'} width={32} height={32} alt='arrow'></Image>

@@ -5,7 +5,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className=' dark:bg-gradient-to-tr dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-t from-zinc-200 to-[#77BBB8] '>
+    <div className=' dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 '>
       <div className='grid lg:grid-cols-4 grid-cols-1 lg:px-8 px-4 py-7 max-w-screen-xl mx-auto '>
         <div className=''>
           <Image src={'/logo (1).png'} width={200} height={200} alt='logo'></Image>

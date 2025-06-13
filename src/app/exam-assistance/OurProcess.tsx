@@ -7,7 +7,7 @@ function OurProcess() {
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 gap-9 p-8">
       <div
-        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8] hover:scale-105 transition-all duration-300"
+        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 hover:scale-105 transition-all duration-300"
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-300 rounded-full w-12 h-12 flex items-center justify-center  font-bold text-lg group-hover:bg-sky-400 transition-all duration-500 text-zinc-100"
@@ -23,7 +23,7 @@ function OurProcess() {
       </div>
 
       <div
-        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8] hover:scale-105 transition-all duration-500 "
+        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 hover:scale-105 transition-all duration-500 "
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-300 rounded-full w-12 h-12 flex items-center justify-center  font-bold text-lg group-hover:bg-sky-400 transition-all duration-500 text-zinc-100"
@@ -40,7 +40,7 @@ function OurProcess() {
 
     
       <div
-        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8] hover:scale-105 transition-all duration-500"
+        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 hover:scale-105 transition-all duration-500"
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-300 rounded-full w-12 h-12 flex items-center justify-center  font-bold text-lg group-hover:bg-sky-400 transition-all duration-500 text-zinc-100"
@@ -57,7 +57,7 @@ function OurProcess() {
 
 
       <div
-        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-[#000000] dark:to-[#52A39F] bg-gradient-to-b from-zinc-200 to-[#77BBB8] hover:scale-105 transition-all duration-500 "
+        className="relative group p-6 rounded-lg shadow-lg dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 hover:scale-105 transition-all duration-500 "
       >
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-300 rounded-full w-12 h-12 flex items-center justify-center  font-bold text-lg group-hover:bg-sky-400 transition-all duration-500 text-zinc-100"

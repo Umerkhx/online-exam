@@ -123,7 +123,7 @@ function BannerForm() {
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] rounded rounded-tl-lg rounded-bl-lg ${activeButton === "writing"
-                ? "bg-sky-400 text-white"
+                ? "bg-sky-700 text-white"
                 : " bg-zinc-200 text-zinc-800"
               }`}
             onClick={() => handleClick("writing")}
@@ -133,7 +133,7 @@ function BannerForm() {
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px] ${activeButton === "rewriting"
-                ? "bg-sky-400 text-white"
+                ? "bg-sky-700 text-white"
                 : "bg-zinc-200 text-zinc-800"
               }`}
             onClick={() => handleClick("rewriting")}
@@ -143,7 +143,7 @@ function BannerForm() {
           <button
             type="button"
             className={`px-5 py-3 md:text-base text-sm transition ease-in duration-200 delay-200 border-[2px]  rounded rounded-tr-lg rounded-br-lg  ${activeButton === "editing"
-                ? "bg-sky-400 text-white"
+                ? "bg-sky-700 text-white"
                 : "bg-zinc-200 text-zinc-800"
               }`}
             onClick={() => handleClick("editing")}
@@ -154,7 +154,7 @@ function BannerForm() {
 
         <div className="pt-4 w-full px-3">
           <input
-            className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+            className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
             type="text"
             name="name"
             value={name}
@@ -165,7 +165,7 @@ function BannerForm() {
         </div>
         <div className="pt-2 w-full px-3">
           <input
-            className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+            className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
             type="email"
             name="email"
             value={email}
@@ -174,20 +174,20 @@ function BannerForm() {
             required
           />
         </div>
-        <div className="pt-2 w-full px-3">
+        <div className="pt-2 w-full px-3 ">
           <PhoneInput
             placeholder="Enter Your Phone Number"
             defaultCountry="US"
             value={phone}
             onChange={setPhone}
-            className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base bg-white text-black dark:!bg-[#121212] dark:!text-white dark:page-specific"
+            className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base bg-white text-black dark:bg-transparent dark:text-white dark:page-specific"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-2 pt-2 px-3">
           <div className={`col-span-${showSubject ? "1" : "2"}`}>
             <select
-              className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+              className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
               name="service"
               required
               onChange={handleServiceChange}
@@ -225,7 +225,7 @@ function BannerForm() {
               <select
                 value={selectedSubject}
                 onChange={(e) => setSelectedSubject(e.target.value)}
-                className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+                className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
                 name="subject"
                 required
                 aria-label="subject"
@@ -292,7 +292,7 @@ function BannerForm() {
         {showQuestions && (
           <div className=" w-full pt-2 px-3 ">
             <select
-              className="rounded-lg border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
+              className="rounded-lg bg-white text-black dark:bg-transparent dark:text-white border-[2px] w-full py-3 px-3 outline-none text-sm md:text-base"
               name="question"
               required
               aria-label="question"
@@ -339,7 +339,7 @@ function BannerForm() {
           <button
           type="submit"
             disabled={pending}
-            className={`relative w-[80%] lg:w-2/4   transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group bg-gradient-to-r from-[#000000] to-[#52A39F] 
+            className={`relative w-[80%] lg:w-2/4   transition ease-in duration-200 delay-200 text-white text-base rounded-full py-3 overflow-hidden group bg-gradient-to-r from-gray-900 to-sky-900 
       ${pending ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             <span className="relative flex items-center justify-center">
