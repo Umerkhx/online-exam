@@ -10,13 +10,13 @@ function TopBar() {
   return (
     <header className=" px-1 z-50 sticky w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 grid-cols-1  items-center">
+        <div className="grid grid-cols-2 items-center">
           <div className="flex items-center">
-            <div  className="text-base font-semibold text-primary ">
-            🎓Online Exam Relief Helps You Succeed in<FlipWords words={words} /> 
+            <div  className="lg:text-base text-[10px] font-semibold text-primary ">
+            🎓Online Exam Relief Helps You in<FlipWords words={words} /> 
             </div>
           </div>
-          <nav className="  flex justify-end ">
+          <nav className=" flex justify-end ">
             <Button
               aria-label="personal chat"
               className=" border-0 border-r-2 border-gray-200 dark:border-slate-600 rounded-none"
