@@ -23,7 +23,7 @@ function TestBanner() {
   <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
     <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
       <div className='lg:pt-[5rem] pt-12'>
-      <h1 className="text-xl font-bold lg:text-left text-center sm:text-[35px] leading-none">
+      <h1 className="text-xl font-bold lg:text-left text-center sm:text-4xl ">
       Let Experts Help You Prepare for Your Mock Exams and Ace Your Tests!
       </h1>
       <h2 className="text-lg font-medium lg:text-left text-center sm:text-[28px] pt-1 lg:pt-3">
