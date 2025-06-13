@@ -103,7 +103,7 @@ function BannerForm() {
 
   return (
     <div className="  flex items-center justify-center rounded-lg p-4 scale-95">
-      <div className="w-full ">
+      <div className="w-full max-w-2xl">
 
         <form onSubmit={handleSubmit} className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-700/20 overflow-hidden py-5">
           <div className="inline-flex items-center px-4 py-2 dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 rounded-full text-sm font-medium mb-4 shadow-lg">
@@ -117,7 +117,7 @@ function BannerForm() {
             Professional academic writing services tailored to your needs
           </p>
           {/* Service Type Selector */}
-          <div className="p-8 border-b border-gray-100 dark:border-gray-700">
+          <div className="p-4 border-b border-gray-100 dark:border-gray-700">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Select Service Type</h3>
             <div className="flex rounded-2xl bg-gray-100 dark:bg-gray-700 p-1">
               {["writing", "rewriting", "editing"].map((service) => (
