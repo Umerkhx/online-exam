@@ -21,10 +21,10 @@ function Banner() {
         }}
      className="relative overflow-hidden dark:text-zinc-100 text-zinc-800">
 
-    <div className="relative max-w-screen-xl container mx-auto px-5 py-10 sm:px-6 sm:py-8 lg:px-8">
+    <div className="relative max-w-screen-xl container mx-auto px-2 py-10 sm:px-6 sm:py-8 lg:px-8">
       <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
         <div className='lg:pt-[5rem] pt-12'>
-        <h1 className="text-xl font-bold lg:text-left text-center  sm:text-3xl md:text-4xl lg:leading-4">
+        <h1 className="text-xl font-bold lg:text-left text-center  sm:text-3xl md:text-4xl ">
         Let Experts Take Your Online Exam and Ace It for You
         </h1>
         <h2 className="text-lg font-medium lg:text-left text-center sm:text-2xl md:text-[27px] pt-1 lg:pt-3">
@@ -73,7 +73,7 @@ function Banner() {
         </div>
 
        
-        <div className="pb-5 px-5 pt-12  ">
+        <div className="pb-5  pt-12  ">
         <BannerForm />
         </div>
       </div>

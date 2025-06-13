@@ -102,8 +102,8 @@ function BannerForm() {
   };
 
   return (
-    <div className="  flex items-center justify-center rounded-lg p-4 scale-95">
-      <div className="w-full max-w-2xl">
+    <div className="  flex items-center justify-center rounded-lg p-4 scale-95 ">
+      <div className="w-full lg:max-w-2xl max-w-3xl ">
 
         <form onSubmit={handleSubmit} className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-700/20 overflow-hidden py-5">
           <div className="inline-flex items-center px-4 py-2 dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 rounded-full text-sm font-medium mb-4 shadow-lg">
