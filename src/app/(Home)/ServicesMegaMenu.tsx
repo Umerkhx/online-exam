@@ -66,7 +66,7 @@ function ServicesMegaMenu() {
             Services
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="flex justify-center p-4 lg:w-[750px]">
+            <div className="flex justify-center p-4 lg:w-[700px]">
               <div className="w-1/3 border-r pr-4">
                 {services.map((service) => (
                   <NavigationMenuLink key={service.category} asChild>

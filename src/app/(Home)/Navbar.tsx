@@ -75,183 +75,210 @@ function Navbar() {
 
   return (
     <nav className="bg-zinc-50 dark:bg-[#1A1A1D] sticky top-0 shadow-xl z-[99999]">
-    <div className="max-w-7xl py-2 mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between py-2">
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-            <img className="lg:w-44 lg:h-16 w-32 h-12" src={'/navbar-logo.png'}  alt="logo" />
-          </Link>
-        </div>
-        <div className="hidden md:flex items-center justify-center flex-1 gap-2">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <ServicesMegaMenu />
-              </NavigationMenuItem>
-              {navLinks.map((link) => (
-                <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} legacyBehavior passHref>
+      <div className="max-w-7xl py-2 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between py-2">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <img className="lg:w-44 lg:h-16 w-32 h-12" src={'/navbar-logo.png'} alt="logo" />
+            </Link>
+          </div>
+          <div className="hidden md:flex items-center justify-center flex-1 gap-2">
+            <NavigationMenu>
+              <NavigationMenuList>
+            
+
+                <NavigationMenuItem>
+                  <Link href={'/'} legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      {link.label}
+                      Home
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-              ))}
-     
-            </NavigationMenuList>
-          </NavigationMenu>
-          <ModeToggle />
-        </div>
 
-        <div className="hidden md:flex items-center">
-          <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
-            <Button className="bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 transition ease-in duration-200 delay-200">
-              <MessageCircle className="mr-2" /> Chat with us
-            </Button>
-          </Link>
+                
+                <NavigationMenuItem>
+                  <ServicesMegaMenu />
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href={'/about-us'} legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      About us
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+
+                <NavigationMenuItem>
+                  <Link href={'/contact-us'} legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Contact Us
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href={'/order-now'} legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Order Now
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+              </NavigationMenuList>
+            </NavigationMenu>
+            <ModeToggle />
+          </div>
+
+          <div className="hidden md:flex items-center">
+            <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
+              <Button className="bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 transition ease-in duration-200 delay-200">
+                <MessageCircle className="mr-2" /> Chat with us
+              </Button>
+            </Link>
+          </div>
+          
+          <div className="flex items-center md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors duration-200"
+            >
+              <span className="sr-only">Services</span>
+              <AnimatePresence initial={false} mode="wait">
+                {isMobileMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X className="block h-6 w-6" aria-hidden="true" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu className="block h-6 w-6" aria-hidden="true" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
-        <div className="flex items-center md:hidden">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors duration-200"
+      </div>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden z-50"
           >
-            <span className="sr-only">Services</span>
-            <AnimatePresence initial={false} mode="wait">
-              {isMobileMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X className="block h-6 w-6" aria-hidden="true" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu className="block h-6 w-6" aria-hidden="true" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
-        </div>
-      </div>
-    </div>
-    <AnimatePresence>
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:hidden overflow-hidden z-50"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-
-<div className="px-2 py-1">
-      {/* Mobile Menu Button */}
-      <button
-        className="lg:hidden bg-zinc-800 hover:bg-blue-400 hover:text-zinc-50 dark:bg-zinc-200 dark:hover:text-blue-500 dark:text-zinc-800 text-zinc-200 px-2 py-2 rounded-lg font-semibold"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        {isMenuOpen ? "Close Menu" : "Service Menu"}
-      </button>
-
-      {/* Overlay for Mobile */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
-      )}
-
-      {/* Navigation Menu */}
-      <div
-        className={cn(
-          "fixed inset-y-0 left-0 w-4/5 bg-white text-zinc-800 z-50 transform lg:static lg:transform-none lg:block lg:w-auto transition-transform",
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
-        <div className="p-4 space-y-4 lg:flex lg:space-y-0 lg:space-x-4">
-          {services.map((service) => (
-            <div key={service.category} className="lg:w-auto">
-              {/* Main Category */}
-              <div className="flex items-center justify-between w-full px-4 py-2 text-left text-sm rounded-md border lg:border-none hover:bg-gray-100">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navLinks.map((link) => (
                 <Link
-                  href={service.href}
-                  className="text-left  hover:text-blue-500 flex-1"
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {service.category}
+                  {link.label}
                 </Link>
-                <button
-                  className="ml-2 flex items-center"
-                  onClick={() =>
-                    setActiveCategory(
-                      activeCategory === service.category ? null : service.category
-                    )
-                  }
-                >
-                  {activeCategory === service.category ? (
-                    <ChevronDown className="h-4 w-4" />
-                  ) : (
-                    <ChevronRight className="h-4 w-4" />
-                  )}
-                </button>
-              </div>
+              ))}
 
-              {/* Subcategories */}
-              {activeCategory === service.category && (
-                <ul className="mt-2 space-y-1 pl-4">
-                  {service.subcategories.map((subcat) => (
-                    <li key={subcat.name}>
-                      <Link
-                        href={subcat.href}
-                        className="block rounded-md px-2 py-1 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        {subcat.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <div className="px-2 py-1">
+                {/* Mobile Menu Button */}
+                <button
+                  className="lg:hidden bg-zinc-800 hover:bg-blue-400 hover:text-zinc-50 dark:bg-zinc-200 dark:hover:text-blue-500 dark:text-zinc-800 text-zinc-200 px-2 py-2 rounded-lg font-semibold"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                  {isMenuOpen ? "Close Menu" : "Service Menu"}
+                </button>
+
+                {/* Overlay for Mobile */}
+                {isMenuOpen && (
+                  <div
+                    className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                    onClick={() => setIsMenuOpen(false)}
+                  ></div>
+                )}
+
+                {/* Navigation Menu */}
+                <div
+                  className={cn(
+                    "fixed inset-y-0 left-0 w-4/5 bg-white text-zinc-800 z-50 transform lg:static lg:transform-none lg:block lg:w-auto transition-transform",
+                    isMenuOpen ? "translate-x-0" : "-translate-x-full"
+                  )}
+                >
+                  <div className="p-4 space-y-4 lg:flex lg:space-y-0 lg:space-x-4">
+                    {services.map((service) => (
+                      <div key={service.category} className="lg:w-auto">
+                        {/* Main Category */}
+                        <div className="flex items-center justify-between w-full px-4 py-2 text-left text-sm rounded-md border lg:border-none hover:bg-gray-100">
+                          <Link
+                            href={service.href}
+                            className="text-left  hover:text-blue-500 flex-1"
+                          >
+                            {service.category}
+                          </Link>
+                          <button
+                            className="ml-2 flex items-center"
+                            onClick={() =>
+                              setActiveCategory(
+                                activeCategory === service.category ? null : service.category
+                              )
+                            }
+                          >
+                            {activeCategory === service.category ? (
+                              <ChevronDown className="h-4 w-4" />
+                            ) : (
+                              <ChevronRight className="h-4 w-4" />
+                            )}
+                          </button>
+                        </div>
+
+                        {/* Subcategories */}
+                        {activeCategory === service.category && (
+                          <ul className="mt-2 space-y-1 pl-4">
+                            {service.subcategories.map((subcat) => (
+                              <li key={subcat.name}>
+                                <Link
+                                  href={subcat.href}
+                                  className="block rounded-md px-2 py-1 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+                                >
+                                  {subcat.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="px-3 py-2">
+                <ModeToggle />
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
-            <div className="px-3 py-2">
-              <ModeToggle />
+            <div className="pt-4 pb-3 border-t border-gray-200">
+              <div className="px-2">
+                <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
+                  <Button className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                    <MessageCircle className="mr-2" /> Chat with us
+                  </Button>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="pt-4 pb-3 border-t border-gray-200">
-            <div className="px-2">
-              <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
-                <Button className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                  <MessageCircle className="mr-2" /> Chat with us
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   )
 }
 
