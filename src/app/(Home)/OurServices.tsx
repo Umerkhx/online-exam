@@ -4,13 +4,13 @@ import React from 'react'
 
 function OurServices() {
   return (
-    <div className='mt-10 mx-auto max-w-screen-xl'>
+    <div className='lg:mt-10 mt-14 mx-auto max-w-screen-xl'>
       <div className='flex justify-center items-center'>
         <div className='rounded-full px-3 py-1 bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-800 text-zinc-100 text-center w-72'>Your Journey to Success Starts Here</div>
       </div>
-      <h2 className='text-center pt-5 font-bold lg:text-5xl text-3xl'>Get Expert Assistance to Boost Your Grades</h2>
+      <h2 className='text-center pt-5 font-bold lg:text-5xl text-3xl px-4'>Get Expert Assistance to Boost Your Grades</h2>
 
-      <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 p-3 mt-5 scale-90 lg:scale-100'>
+      <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 p-3 lg:mt-0 -mt-6  scale-90 lg:scale-100'>
         <div className='group'>
           <div className='p-4 scale-95 dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 shadow-lg rounded-lg group-hover:-translate-y-3 transition ease-in duration-300 delay-300 h-[320px] '>
             <div className='flex justify-center items-center pt-4'><Image src={'/maths.png'} width={80} height={80} alt='tasklist'></Image></div>
@@ -43,7 +43,7 @@ function OurServices() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center lg:mt-5">
+      <div className="flex justify-center items-center lg:mt-5 -mt-6">
         <Link href={'/order-now'}>
 
           <div className="px-5 py-3 text-center bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 border-white rounded-lg overflow-hidden relative group">

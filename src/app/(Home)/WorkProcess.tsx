@@ -3,9 +3,9 @@ import React from 'react'
 
 function WorkProcess() {
   return (
-    <div className='mt-12 mx-auto max-w-screen-xl'>
+    <div className='mt-16 mx-auto max-w-screen-xl'>
         <h2 className='text-center font-bold lg:text-5xl text-3xl '>Effortless Workflow</h2>
-        <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 lg:mt-5 p-2 md:p-5 scale-90 md:scale-100 '>
+        <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 lg:mt-5 -mt-4 p-2 md:p-5 scale-90 md:scale-100 '>
                 <div data-aos='flip-up' className='group'>
                     <div className='group-hover:scale-105  group-hover:shadow-xl transition ease-in duration-500 delay-400 lg:h-[350px] rounded-xl shadow-xl dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-t from-sky-100 to-blue-300 p-5'>
                     <div className='pt-5 flex items-center justify-around'>

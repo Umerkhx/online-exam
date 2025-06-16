@@ -73,7 +73,7 @@ function Banner() {
         </div>
 
        
-        <div className="lg:-mt-14  lg:scale-75 scale-90">
+        <div className="lg:-mt-14 lg:scale-[0.85] scale-90">
         <BannerForm />
         </div>
       </div>
