@@ -137,7 +137,7 @@ function Order() {
         </div>
 
         <div>
-            <div className=' py-5 px-2 bg-gradient-to-bl from-zinc-200 to-[#77BBB8] dark:bg-gradient-to-tl dark:from-[#000000] dark:to-[#52A39F] rounded-2xl overflow-hidden'>
+            <div className=' py-5 px-2 dark:bg-gradient-to-bl dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 rounded-2xl overflow-hidden'>
                 <div className='text-xl md:text-3xl text-center py-3 font-bold '>Order Summary</div>
                 <div className='flex justify-between items-center px-3 py-3 font-semibold'>
                     <div>Topic Of Paper</div>
