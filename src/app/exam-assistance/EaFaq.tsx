@@ -3,8 +3,8 @@ import React from 'react'
 
 function EaFaq() {
     return (
-        <div className='mx-auto max-w-screen-xl lg:my-20 my-5'>
-            <h2 className='text-center lg:text-5xl text-3xl font-extrabold px-3'>Frequently Asked Questions</h2>
+        <div className='mx-auto max-w-screen-xl lg:my-20 my-3'>
+            <h2 className='text-center lg:text-5xl text-3xl font-extrabold px-5'>Frequently Asked Questions</h2>
             <div className='grid lg:grid-cols-2 grid-cols-1 p-5 gap-3 mt-5'>
                 <div>
                     <Accordion className='space-y-3' type="single" collapsible defaultValue='item-1'>

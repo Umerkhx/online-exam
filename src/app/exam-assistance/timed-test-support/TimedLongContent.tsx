@@ -3,7 +3,7 @@ import React from 'react'
 
 function TimedLongContent() {
   return (
-    <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-screen-xl mx-auto lg:py-12 py-4 px-4 sm:px-6 lg:px-8">
     <div className="">
       <h1 className="lg:text-4xl text-2xl font-extrabold  text-center mb-8">Timed Test Support: Your Key to Success</h1>
       

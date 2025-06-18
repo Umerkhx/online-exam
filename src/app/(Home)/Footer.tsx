@@ -6,8 +6,8 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 '>
-      <div className='grid lg:grid-cols-4 grid-cols-1 lg:px-8 px-4 py-7 max-w-screen-xl mx-auto '>
-        <div className=''>
+      <div className='grid lg:grid-cols-5 grid-cols-2 lg:px-8 px-4 py-7 max-w-screen-xl mx-auto '>
+        <div className='col-span-2'>
           <Image src={'/logo (1).png'} width={200} height={200} alt='logo'></Image>
           <p className='text-sm font-medium p-2'>Online Class Relief offers top-tier solutions with a team of PhD tutors and dependable resources, using a goal-driven approach to achieve desired outcomes.</p>
           <div className='group'>
@@ -16,26 +16,27 @@ function Footer() {
             </Link>
           </div>
         </div>
-        <div className='p-4'>
-          <h2 className='font-bold text-2xl '>Useful Links</h2>
+
+        <div className='p-4 mt-4 lg:mt-0'>
+          <h2 className='font-bold md:text-2xl text-lg '>Useful Links</h2>
           <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
 
-            <Link href={'/'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Home</Link>
-            <Link href={'/about-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>About Us</Link>
-            <Link href={'/contact-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Contact Us</Link>
-            <Link href={'/order-now'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Order Now</Link>
+            <Link href={'/'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Home</Link>
+            <Link href={'/about-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>About Us</Link>
+            <Link href={'/contact-us'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Contact Us</Link>
+            <Link href={'/order-now'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Order Now</Link>
           </div>
         </div>
 
-        <div className='p-4'>
-          <h2 className='font-bold text-2xl '>Our Services</h2>
+        <div className='p-4 mt-4 lg:mt-0'>
+          <h2 className='font-bold md:text-2xl text-lg '>Our Services</h2>
           <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
 
-            <Link href={'/exam-assistance'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Exam Assistance Services</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Subject-Specific Services</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Assignment Help Services</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Test Preparation Packages</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Emergency Exam Support</Link>
+            <Link href={'/exam-assistance'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Exam Assistance Services</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Subject-Specific Services</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Assignment Help Services</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Test Preparation Packages</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Emergency Exam Support</Link>
 
           </div>
         </div>
@@ -43,15 +44,16 @@ function Footer() {
 
 
         <div className='p-4'>
-          <h2 className='font-bold text-2xl '>Get In Touch</h2>
-          <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200'>
-            <Link href={'#'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>Phone: +1-929-322-8709</Link>
-            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200'>E-mail: info@onlineclassrelief.com</Link>
+          <h2 className='font-bold md:text-2xl text-lg '>Get In Touch</h2>
+          <div className='flex flex-col  space-y-2 font-medium transition ease-in duration-200 delay-200 text-sm md:text-base'>
+            <Link href={'#'} className='pt-3 hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>Phone: +1-929-322-8709</Link>
+            <Link href={'#'} className='hover:text-foreground hover:scale-105 transition ease-in duration-200 delay-200 text-sm md:text-base'>E-mail: info@onlineclassrelief.com</Link>
           </div>
         </div>
 
 
       </div>
+
       <div className='lg:flex flex-col lg:flex-row justify-between items-center mt-3  px-8 py-4 max-w-screen-xl mx-auto'>
         <div className='font-medium text-sm '>Copyright © 2024 Online Exam Relief All Rights Reserved</div>
         <div className='space-x-3 font-medium text-sm'>

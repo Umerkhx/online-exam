@@ -10,18 +10,19 @@ function TopBar() {
   return (
     <header className=" px-1 z-50 sticky w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 items-center">
-          <div className="flex items-center">
+        <div className="grid lg:grid-cols-2 grid-cols-1 items-center">
+          <div className="md:flex items-center  hidden">
             <div  className="lg:text-base text-[10px] font-semibold text-primary ">
             🎓Online Exam Relief Helps You in<FlipWords words={words} /> 
             </div>
           </div>
-          <nav className=" flex justify-end ">
+
+          <nav className=" flex md:justify-end justify-center  ">
             <Button
               aria-label="personal chat"
-              className=" border-0 border-r-2 border-gray-200 dark:border-slate-600 rounded-none"
+              className=" md:border-l-0  border-0 border-r-2 border-l-2 border-gray-200 dark:border-slate-600 rounded-none"
               variant="outline"
-              size="default"
+              size="lg"
             >
               <MessageCircleCode className="w-5 h-5 sm:mr-2" />
               <span className="hidden lg:inline">Personal Live Chat</span>
@@ -38,7 +39,7 @@ function TopBar() {
                 aria-label="whatsapp"
                 className="border-0 border-r-2 border-gray-200 dark:border-slate-600 rounded-none"
                 variant="outline"
-                size="default"
+                size="lg"
               >
                 <Image
                   src={"/whatsapp.png"}
@@ -60,7 +61,7 @@ function TopBar() {
                 aria-label="mail"
                 className="border-0 border-r-2 bborder-gray-200 dark:border-slate-600 rounded-none"
                 variant="outline"
-                size="default"
+                size="lg"
               >
                 <MailsIcon className="w-5 h-5 sm:mr-2" />
                 <span className="hidden lg:inline">
@@ -73,7 +74,7 @@ function TopBar() {
               aria-label="number"
               className=" border-0 border-r-2 border-gray-200 dark:border-slate-600 rounded-none"
               variant="outline"
-              size="default"
+              size="lg"
               asChild
             >
               <Link aria-label="Call us" href="tel:3197005034911">

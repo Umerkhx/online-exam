@@ -35,7 +35,7 @@ function TimedTestimonials() {
         },
       ];
   return (
-     <div className='mx-auto max-w-screen-xl mt-10 -z-[999]'>
+     <div className='mx-auto max-w-screen-xl lg:mt-10 mt-5 -z-[999]'>
            <h2 className='text-center  font-extrabold text-3xl md:text-5xl'>Our Testimonials</h2>
            <div className='p-5'>
            <AnimatedTestimonials testimonials={testimonials} />

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Faq() {
     return (
-        <div className='lg:mt-20 mt-12 mx-auto max-w-screen-xl'>
+        <div className='lg:mt-20 mt-5 mx-auto max-w-screen-xl'>
             <h2 className='text-center font-extrabold lg:text-5xl text-3xl px-3'>Frequently Asked Questions</h2>
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-4 p-6 mt-5 '>
                 <div className=''>

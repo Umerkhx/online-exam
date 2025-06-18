@@ -3,8 +3,8 @@ import React from 'react'
 
 function TestFaq() {
   return (
-    <div className='mx-auto max-w-screen-xl my-20'>
-    <h2 className='text-center lg:text-5xl text-3xl font-extrabold'>Frequently Asked Questions</h2>
+    <div className='mx-auto max-w-screen-xl lg:my-20 my-5'>
+    <h2 className='text-center px-5 lg:text-5xl text-3xl font-extrabold'>Frequently Asked Questions</h2>
     <div className='grid lg:grid-cols-2 grid-cols-1 p-4 gap-3 mt-5'>
         <div>
             <Accordion className='space-y-3' type="single" collapsible defaultValue='item-1'>

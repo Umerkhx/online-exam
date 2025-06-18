@@ -43,7 +43,7 @@ function OurServices() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center lg:mt-5 -mt-6">
+      <div className="flex justify-center items-center lg:mt-5 -mt-10">
         <Link href={'/order-now'}>
 
           <div className="px-5 py-3 text-center bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 border-white rounded-lg overflow-hidden relative group">
