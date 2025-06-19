@@ -131,7 +131,7 @@ function Navbar() {
 
           <div className="hidden md:flex items-center">
             <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
-              <Button className="bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 transition ease-in duration-200 delay-200">
+              <Button className="bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 transition-all duration-400 delay-150 hover:rounded-3xl">
                 <MessageCircle className="mr-2" /> Chat with us
               </Button>
             </Link>

@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -43,15 +44,27 @@ function OurServices() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center lg:mt-5 -mt-10">
-        <Link href={'/order-now'}>
 
-          <div className="px-5 py-3 text-center bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 border-white rounded-lg overflow-hidden relative group">
-            <div className="whitespace-nowrap group-hover:animate-marquee">Avail Upto 50% Discount</div>
-          </div>
-        </Link>
 
-      </div>
+<div className="flex justify-center items-center lg:mt-5 -mt-10">
+  <Link href="/order-now">
+    <button className="relative w-56 h-12 bg-zinc-700 dark:bg-zinc-200 text-zinc-100 dark:text-zinc-800 rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-lg hover:rounded-3xl">
+      <span
+        className="absolute inset-0 flex items-center justify-center transform transition-transform duration-500 ease-in-out group-hover:-translate-y-10 "
+      >
+        Avail Upto 50% Discount
+      </span>
+      <span
+        className="absolute inset-0 flex items-center justify-center transform translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0"
+      >
+        Order Now
+      </span>
+    </button>
+  </Link>
+</div>
+
+
+
     </div>
   )
 }

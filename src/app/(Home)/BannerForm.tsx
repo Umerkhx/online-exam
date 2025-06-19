@@ -372,7 +372,7 @@ function BannerForm() {
                 {/* Word Count and Date */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-left text-sm font-medium text-gray-700 dark:text-gray-300">Word Count</label>
+                    <label className="flex justify-start text-sm font-medium text-gray-700 dark:text-gray-300">Word Count</label>
                     <div className="flex items-center bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600">
                       <button
                         type="button"

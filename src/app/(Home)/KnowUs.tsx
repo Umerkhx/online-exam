@@ -29,7 +29,7 @@ function KnowUs() {
       </div>
 
        <Link className='flex justify-center items-center lg:justify-start lg:ml-3' href={'/order-now'}>
-      <div className='scale-95 px-6 py-3 rounded-lg bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-800 text-zinc-100  text-center font-semibold w-36 hover:scale-100 transition ease-in duration-200 delay-200 cursor-pointer'>Join Us Now</div>
+      <div className='scale-95 px-6 py-3 rounded-lg hover:rounded-3xl bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-800 text-zinc-100  text-center font-semibold w-36 hover:scale-100 transition-all duration-300 cursor-pointer'>Join Us Now</div>
       </Link>
 
     </div>

@@ -6,7 +6,7 @@ import React from 'react'
 function EaUrlPin() {
   return (
  <div className="mx-auto max-w-screen-xl">
-      <div className="pt-20 pb-16">
+      <div className="lg:py-16 py-10">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
