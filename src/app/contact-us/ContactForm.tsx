@@ -82,7 +82,7 @@ function ContactForm() {
                   <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
                   <Textarea className="min-h-[100px]" onChange={(e) => setMessage(e.target.value)} id="message" name='message' placeholder="Enter your message here" />
                 </div>
-                <Button className="w-full text-white" type="submit">
+                <Button className="w-full dark:text-black text-white" type="submit">
                   {pending ? (
                     <>
                       <Loader2Icon className="animate-spin mr-2 h-5 w-5" />{" "}

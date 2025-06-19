@@ -8,10 +8,10 @@ function ContactBanner() {
     <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
     <div className="relative container mx-auto px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-200 sm:text-5xl md:text-6xl">
+        <h1 className="text-3xl font-extrabold tracking-tight text-zinc-800 dark:text-zinc-200 sm:text-5xl md:text-6xl">
           Contact Us
         </h1>
-        <p className="mt-6 text-lg text-zinc-950 dark:text-zinc-100 max-w-prose mx-auto">
+        <p className="mt-6 text-sm lg:text-lg text-zinc-950 dark:text-zinc-100 max-w-prose mx-auto">
         We're here to help! Whether you have questions, need assistance, or just want to share your thoughts, feel free to reach out to us. Our dedicated team is ready to assist you and ensure you have the best experience possible. Use the contact form below, drop us an email, or connect with us on social media—we’d love to hear from you! Let’s make things simple and straightforward, together.
         </p>
 

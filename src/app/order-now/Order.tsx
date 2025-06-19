@@ -110,7 +110,7 @@ function Order() {
 
     return (
     <div className='mx-auto max-w-screen-xl pb-10'>
-    <div className='py-16 md:text-4xl text-3xl font-bold text-center px-4'>Order Easily in Just a Few Steps</div>
+    <div className='lg:py-16 py-10 md:text-4xl text-3xl font-bold text-center px-16'>Order Easily in Just a Few Steps</div>
     <Modal/>
     <div>
 
