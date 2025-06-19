@@ -12,14 +12,14 @@ import 'swiper/css';
 function TestBanner() {
      const reviews = [
     {
-      link: "https://www.bark.com/en/us/company/taking-my-classes-online/YNw3pa/",
+      link: "#",
       image: "/bark.webp",
       alt: "bark",
       width: 90,
       height: 90,
     },
     {
-      link: "https://www.brownbook.net/business/53272118/taking-my-classes-online/",
+      link: "#",
       image: "/brownbook.png",
       alt: "brownbook",
       width: 130,

@@ -5,6 +5,8 @@ import Navbar from "./(Home)/Navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Footer from "./(Home)/Footer";
 import TopBar from "./(Home)/TopBar";
+import ClientLayout from "./ClientLayout";
+import FloatingContact from "./FloatingContact";
 
 const inter = Outfit({
   subsets: ["latin"],
@@ -43,6 +45,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+           <ClientLayout/>
+          <FloatingContact/>
         <TopBar/>  
         <Navbar />
         {children}

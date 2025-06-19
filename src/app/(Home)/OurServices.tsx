@@ -55,7 +55,7 @@ function OurServices() {
         Avail Upto 50% Discount
       </span>
       <span
-        className="absolute inset-0 flex items-center justify-center transform translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0"
+        className="absolute inset-0 flex items-center justify-center transform translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0 text-lg"
       >
         Order Now
       </span>

@@ -76,3 +76,43 @@ input.PhoneInputInput {
     background-color: transparent;
     outline: none;
 }
+
+
+.swipe-box {
+  animation: left-swipe 2s ease-in-out;
+}
+
+@keyframes left-swipe {
+  0% {
+    transform: translatey(300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.swipe-box-left {
+  animation: left-swipe 1s ease-in-out forwards;
+}
+
+@keyframes left-swipe {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.swipe-box-right {
+  animation: left-right 1s ease-in-out forwards;
+}
+
+@keyframes left-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(350px);
+  }
+}

@@ -17,6 +17,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about-us', label: 'About' },
   { href: '/contact-us', label: 'Contact' },
+  { href: '/reviews', label: 'Reviews' },
   { href: '/order-now', label: 'Order Now' },
 ]
 
@@ -108,6 +109,14 @@ function Navbar() {
                   </Link>
                 </NavigationMenuItem>
 
+                <NavigationMenuItem>
+                  <Link href={'/reviews'} legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Reviews
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
 
                 <NavigationMenuItem>
                   <Link href={'/contact-us'} legacyBehavior passHref>
@@ -116,6 +125,8 @@ function Navbar() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+
+
                 <NavigationMenuItem>
                   <Link href={'/order-now'} legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
