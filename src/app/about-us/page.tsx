@@ -1,14 +1,16 @@
 import React from 'react'
 import AboutBanner from './AboutBanner'
-import OurStory from './OurStory'
-import OurValues from './OurValues'
+import CoreValues from './CoreValues'
+import Advantages from './Advantages'
+import Achievements from './Achievements'
 
 function page() {
   return (
     <div>
         <AboutBanner/>
-        <OurStory/>
-        <OurValues/>
+        <CoreValues/>
+        <Advantages/>
+        <Achievements/>
     </div>
   )
 }

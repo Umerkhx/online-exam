@@ -35,7 +35,7 @@ export function FloatingContact() {
         onMouseLeave={handleItemLeave}
       >
         <Link
-          href="https://wa.me/3197005034911?text=Hi, Do you Need help? with your online exam? Let us know how we can assist you!"
+          href="https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?  "
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-600 rounded-full shadow-xl hover:shadow-2xl transition-all"
