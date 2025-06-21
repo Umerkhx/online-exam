@@ -109,7 +109,7 @@ function Order() {
     if (error) return <div>Error: {error}</div>;
 
     return (
-    <div className='mx-auto max-w-screen-xl pb-10'>
+    <div className='mx-auto max-w-screen-xl pb-24'>
     <div className='lg:py-16 py-10 md:text-4xl text-3xl font-bold text-center px-16'>Order Easily in Just a Few Steps</div>
     <Modal/>
     <div>

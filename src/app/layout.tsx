@@ -7,6 +7,7 @@ import Footer from "./(Home)/Footer";
 import TopBar from "./(Home)/TopBar";
 import ClientLayout from "./ClientLayout";
 import FloatingContact from "./FloatingContact";
+import { CashbackDivider } from "./(Home)/CashBackDivider";
 
 const inter = Outfit({
   subsets: ["latin"],
@@ -45,12 +46,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-           <ClientLayout/>
-          <FloatingContact/>
-        <TopBar/>  
-        <Navbar />
-        {children}
-        <Footer/>
+          <ClientLayout />
+          <FloatingContact />
+          <TopBar />
+          <Navbar />
+          {children}
+          <CashbackDivider />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

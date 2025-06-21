@@ -7,7 +7,6 @@ import OurServices from "./OurServices";
 import WorkProcess from "./WorkProcess";
 import Faq from "./Faq";
 import Testimonials from "./Testimonials";
-import { CashbackDivider } from "./CashBackDivider";
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
       <WorkProcess/>
       <Faq/>
       <Testimonials/>
-      <CashbackDivider/>
     </>
 
   );
