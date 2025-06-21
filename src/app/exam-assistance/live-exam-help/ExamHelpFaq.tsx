@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 function ExamHelpFaq() {
   return (
-    <div className='mx-auto max-w-screen-xl lg:my-20 '>
+    <div className='mx-auto max-w-screen-xl lg:mt-16 lg:mb-32 mt-5 mb-20 '>
     <h2 className='text-center lg:text-5xl text-3xl font-extrabold px-4'>Frequently Asked Questions</h2>
     <div className='grid lg:grid-cols-2 grid-cols-1 p-4 gap-3 mt-5'>
         <div>

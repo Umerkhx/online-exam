@@ -13,33 +13,6 @@ const BlogCard = ({ blog }: Props) => {
 
   return (
     <Link href={`/blog/${blog.blog_slug}`}>
-      {/* <Card className="cursor-pointer pb-4">
-        <Image
-          className="m-auto h-[399px] object-cover"
-          src={blog.blog_featured_image_url}
-          alt={blog.blog_featured_image_alt}
-          height={400}
-          width={400}
-          priority={true}
-        />
-        <CardHeader>
-          <CardTitle className="font-medium text-xl tracking-normal">
-            {blog.blog_title}
-          </CardTitle>
-          <span
-            style={{
-              marginTop: "1rem",
-              letterSpacing: 0,
-            }}
-            dangerouslySetInnerHTML={{ __html: short_description }}
-          />
-        </CardHeader>
-        <CardFooter className="bg-[#6038bc] shadow-sm shadow-black hover:bg-violet-700 transition-all duration-200 w-fit rounded-md m-auto text-white px-3 py-2 text-center flex items-center hover:scale-110">
-          <span>Read More</span>
-        </CardFooter>
-      </Card> */}
-
-
           <div className='group cursor-pointer'>
       <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/20 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-sky-500/20 hover:-translate-y-2 border border-sky-100 dark:border-gray-700">
         {/* Image container */}

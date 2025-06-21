@@ -3,7 +3,7 @@ import React from 'react'
 
 function EaFaq() {
     return (
-        <div className='mx-auto max-w-screen-xl lg:my-20 my-3'>
+        <div className='mx-auto max-w-screen-xl lg:mt-16 lg:mb-32 mt-5 mb-20'>
             <h2 className='text-center lg:text-5xl text-3xl font-extrabold px-5'>Frequently Asked Questions</h2>
             <div className='grid lg:grid-cols-2 grid-cols-1 p-5 gap-3 mt-5'>
                 <div>

@@ -174,7 +174,7 @@ const BlogDetails = ({ blog }: { blog: any }) => {
         </div>
 
         {/* Social Share */}
-        <div className="pb-20">
+        <div className="lg:pb-36 pb-40">
           <SocialShare
             imageUrl={blog?.blog_featured_image_alt}
             title={blog?.blog_title}

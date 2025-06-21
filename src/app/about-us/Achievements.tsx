@@ -132,7 +132,7 @@ export default function Achievements() {
   }, []);
 
   return (
-    <section className="lg:py-10 py-6 bg-slate-50 dark:bg-gray-950 relative overflow-hidden">
+    <section className="lg:pt-16 lg:pb-32 pt-5 pb-20 bg-slate-50 dark:bg-gray-950 relative overflow-hidden">
       <div className="absolute inset-0" />
       
       <div className="container mx-auto px-4 relative z-10">

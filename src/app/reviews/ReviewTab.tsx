@@ -260,7 +260,7 @@ const ReviewTabs: React.FC = () => {
   };
 
   return (
-    <div className="py-16 max-w-screen-xl mx-auto px-6">
+    <div className="lg:mt-16 lg:mb-32 mt-5 mb-20 max-w-screen-xl mx-auto px-6">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-sky-500 to-zinc-800 dark:from-sky-700 dark:to-zinc-50 bg-clip-text text-transparent mb-4">
           Our Client's Reviews

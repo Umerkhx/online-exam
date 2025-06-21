@@ -2,7 +2,7 @@ import React from 'react'
 
 function TermSection() {
   return (
-    <div className='mx-auto max-w-screen-xl p-5'  >
+    <div className='mx-auto max-w-screen-xl lg:pt-10 lg:pb-32 pt-7 pb-20 '>
     <h2 className='pt-10 font-extrabold text-2xl md:text-3xl'data-aos='flip-up'>Elaborating on Definitions</h2>
     <h3 className='pt-3 font-bold text-xl md:text-2xl'data-aos='flip-up'>Interpreting</h3>
 

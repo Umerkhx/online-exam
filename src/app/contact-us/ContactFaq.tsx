@@ -55,7 +55,7 @@ function ContactFAQ() {
   }
 
   return (
-    <section className="w-full py-12 md:py-20  bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-zinc-950">
+    <section className="w-full lg:pt-16 lg:pb-36 pt-10 pb-28 bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-zinc-950">
       <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-zinc-800 dark:text-zinc-200 mb-4">
