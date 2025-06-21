@@ -6,7 +6,7 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 '>
-      <div className='grid lg:grid-cols-5 grid-cols-2 lg:px-8 px-4 py-32 max-w-screen-xl mx-auto '>
+      <div className='grid lg:grid-cols-5 grid-cols-2 lg:px-8 px-4 lg:pt-32 md:pt-24 pt-[200px] max-w-screen-xl mx-auto '>
         <div className='col-span-2'>
           <Image src={'/logo (1).png'} width={200} height={200} alt='logo'></Image>
           <p className='text-sm font-medium p-2'>Online Class Relief offers top-tier solutions with a team of PhD tutors and dependable resources, using a goal-driven approach to achieve desired outcomes.</p>

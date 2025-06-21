@@ -18,7 +18,7 @@ function CookieConsentMobile({setCookiePopup}:any) {
   return (
     <div className= {`w-[280px] swipe-box p-4 bg-blue-100 border-2 border-blue-500 fixed bottom-32 md:bottom-4 md:left-5 left-[60px] z-[999999] rounded-xl shadow-xl  ${shouldAnimateOut ? "swipe-box-right" : "swipe-box-left"}`}>
     <p className="text-zinc-800 text-sm font-medium leading-normal">
-      Taking My Classes Online Uses Cookies to Ensure You Get the Best User Experience.
+      Online Exam Relief Uses Cookies to Ensure You Get the Best User Experience.
       {" "}
       <Link href="/privacy-policy" target="_blank" className="text-black underline">Our Privacy Policy</Link>
     </p>

@@ -84,7 +84,7 @@ function Navbar() {
               <img className="lg:w-44 lg:h-16 w-32 h-12" src={'/navbar-logo.png'} alt="logo" />
             </Link>
           </div>
-          <div className="hidden md:flex items-center justify-center flex-1 gap-2">
+          <div className="hidden lg:flex items-center justify-center flex-1 gap-2">
             <NavigationMenu>
               <NavigationMenuList>
             
@@ -149,7 +149,7 @@ function Navbar() {
             <ModeToggle />
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <Link href={'https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?'} target="_blank">
               <Button className="bg-zinc-700 dark:bg-zinc-200 dark:text-zinc-800 text-zinc-100 transition-all duration-400 delay-150 hover:rounded-3xl">
                 <MessageCircle className="mr-2" /> Chat with us
@@ -157,7 +157,7 @@ function Navbar() {
             </Link>
           </div>
           
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors duration-200"
@@ -197,7 +197,7 @@ function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden z-50"
+            className="lg:hidden overflow-hidden z-50"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
