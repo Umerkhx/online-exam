@@ -13,7 +13,7 @@ export default function AboutBanner() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-20 lg:py-32">
+    <section className="relative overflow-hidden py-12 lg:py-20">
       <div className="absolute inset-0 bg-gradient-to-t from-gray-600/10 to-sky-600/10 dark:from-gray-800/20 dark:to-sky-800/80" />
       
       {/* Floating elements */}
@@ -37,10 +37,10 @@ export default function AboutBanner() {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-950 to-sky-800 dark:from-blue-100 dark:to-zinc-100 bg-clip-text text-transparent mb-6">
-              Online Exam Relief
+              About Us
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
               Your trusted partner in academic excellence, providing innovative solutions 
               and expert guidance to help students achieve their educational goals with confidence.
             </p>

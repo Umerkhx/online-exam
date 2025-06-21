@@ -5,6 +5,7 @@ export default async function EmailAction2(state: any, formData: FormData) {
   try {
     const name = formData.get("name");
     const email = formData.get("email");
+    const phone = formData.get("phone");
     const subject = formData.get("subject");
     const message = formData.get("message");
 
@@ -96,6 +97,7 @@ export default async function EmailAction2(state: any, formData: FormData) {
         <h2 style="text-align: center;">New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong>${message} </p>
         
