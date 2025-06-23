@@ -19,7 +19,7 @@ export default function Modal() {
   
 
   useEffect(() => {
-    if (coupon === "off55" || coupon === "off40") {
+    if (coupon === "off50" || coupon === "off40") {
       setIsParamMatched(true);
     }
   }, [coupon]);
@@ -40,7 +40,7 @@ export default function Modal() {
               Congratulations! 🎉
             </DialogTitle>
             <DialogDescription className=" text-center py-4 font-semibold text-sm text-zinc-100">
-              You’ve just unlocked an amazing {coupon === "off55" ? "55%" : "40%"}{" "}
+              You’ve just unlocked an amazing {coupon === "off50" ? "50%" : "40%"}{" "}
               OFF discount on your order! We’re thrilled to offer you this
               special savings. Your discount has been successfully applied, so
               you can enjoy even more value from your purchase. Thank you for

@@ -17,8 +17,12 @@ import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 import "react-phone-number-input/style.css"
 import { sendEmails } from "../(backend)/action/formAction"
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import { toast } from "sonner"
+import CustomCaptcha from "@/components/common/CustomCaptcha"
 
-function BannerForm() {
+function BannerForm({ locationDetails }: any) {
   const [date, setDate] = React.useState<Date>()
   const [activeButton, setActiveButton] = useState<string | null>("writing")
   const [wordCount, setWordCount] = useState<number>(250)
@@ -27,6 +31,7 @@ function BannerForm() {
   const [selectedQuestions, setSelectedQuestions] = useState<string>("")
   const [showSubject, setShowSubject] = useState<boolean>(false)
   const [showQuestions, setShowQuestions] = useState<boolean>(false)
+  const [isVerified, setIsVerified] = useState(false);
   const [pending, setPending] = useState(false)
   const router = useRouter()
 
@@ -151,6 +156,10 @@ function BannerForm() {
   // Form submit handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!isVerified) {
+      toast.error("Please Verify the Captcha");
+      return;
+    }
     setPending(true)
 
     const data = {
@@ -218,11 +227,10 @@ function BannerForm() {
                     <button
                       key={service}
                       type="button"
-                      className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
-                        activeButton === service
-                          ? "dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 shadow-lg transform scale-105"
-                          : "text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
-                      }`}
+                      className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${activeButton === service
+                        ? "dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 shadow-lg transform scale-105"
+                        : "text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                        }`}
                       onClick={() => handleClick(service)}
                     >
                       {service.charAt(0).toUpperCase() + service.slice(1)}
@@ -243,11 +251,10 @@ function BannerForm() {
                     <select
                       value={selectedService}
                       onChange={handleServiceChange}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.selectedService 
-                          ? 'border-red-500 dark:border-red-500' 
-                          : 'border-gray-200 dark:border-gray-600'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedService
+                        ? 'border-red-500 dark:border-red-500'
+                        : 'border-gray-200 dark:border-gray-600'
+                        }`}
                     >
                       <option value="">Select a service</option>
                       <option value="Assignment/ Coursework">Assignment/ Coursework</option>
@@ -280,11 +287,10 @@ function BannerForm() {
                       <select
                         value={selectedSubject}
                         onChange={handleSubjectChange}
-                        className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                          errors.selectedSubject 
-                            ? 'border-red-500 dark:border-red-500' 
-                            : 'border-gray-200 dark:border-gray-600'
-                        }`}
+                        className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedSubject
+                          ? 'border-red-500 dark:border-red-500'
+                          : 'border-gray-200 dark:border-gray-600'
+                          }`}
                       >
                         <option value="">Select subject</option>
                         <option value="Hospitality">Hospitality</option>
@@ -347,11 +353,10 @@ function BannerForm() {
                     <select
                       value={selectedQuestions}
                       onChange={handleQuestionsChange}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.selectedQuestions 
-                          ? 'border-red-500 dark:border-red-500' 
-                          : 'border-gray-200 dark:border-gray-600'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedQuestions
+                        ? 'border-red-500 dark:border-red-500'
+                        : 'border-gray-200 dark:border-gray-600'
+                        }`}
                     >
                       <option value="">Select number of questions</option>
                       {options.map((number) => (
@@ -403,11 +408,10 @@ function BannerForm() {
                       type="date"
                       value={date?.toISOString().split("T")[0] || ""}
                       onChange={handleDateChange}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.date 
-                          ? 'border-red-500 dark:border-red-500' 
-                          : 'border-gray-200 dark:border-gray-600'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.date
+                        ? 'border-red-500 dark:border-red-500'
+                        : 'border-gray-200 dark:border-gray-600'
+                        }`}
                     />
                     {errors.date && (
                       <div className="flex items-center text-red-500 text-sm mt-1">
@@ -473,14 +477,19 @@ function BannerForm() {
                     <Phone className="w-4 h-4 mr-2" />
                     Phone Number
                   </label>
-                  <input
-                    type="tel"
-                    required
+
+                  <PhoneInput
+                    placeholder="Enter Your Phone Number"
+                    defaultCountry={locationDetails.countryCode}
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Enter your phone number"
+                    required
+                    international
+                    withCountryCallingCode
+                    onChange={setPhone}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   />
+
+
                 </div>
               </div>
 
@@ -495,6 +504,10 @@ function BannerForm() {
                   <span>Back to service selection</span>
                 </button>
 
+                <div className="w-full mx-auto flex items-center justify-center">
+                  <CustomCaptcha setIsVerified={setIsVerified} />
+                </div>
+
                 <button
                   type="submit"
                   disabled={pending}
@@ -507,7 +520,7 @@ function BannerForm() {
                     </>
                   ) : (
                     <>
-                      <span>Get Your Free Quote</span>
+                      <span>Request a Free Quote</span>
                       <ArrowRight className="w-5 h-5" />
                     </>
                   )}

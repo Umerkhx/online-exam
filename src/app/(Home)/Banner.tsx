@@ -11,7 +11,7 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 
-function Banner() {
+function Banner({locationDetails}:any) {
   const reviews = [
     {
       link: "#",
@@ -92,7 +92,7 @@ function Banner() {
 
        
         <div className="lg:-mt-14  lg:scale-[0.85] scale-90">
-        <BannerForm />
+        <BannerForm locationDetails={locationDetails}/>
         </div>
       </div>
     </div>

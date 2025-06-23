@@ -356,7 +356,7 @@ async function sendEmailClient(data: any) {
       <div style="text-align: center; padding-left: 20px; padding-right: 20px; padding-top: 5px;">
         <div style="display: inline-block; width: 100%; padding: 5px; font-size: 14px; font-weight: 400; ">
           <div style="float: left;">Discount:</div>
-          <div style="float: right;">45% OFF</div>
+          <div style="float: right;">50% OFF</div>
         </div>
         <div style="clear: both;"></div>
       </div>

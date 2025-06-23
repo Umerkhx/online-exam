@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { EmailAction } from "../(backend)/action/EmailAction";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import CustomCaptcha from "@/components/common/CustomCaptcha";
 
 function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
   const {
@@ -49,6 +50,7 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
 
   const [pending, setPending] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [isVerified, setIsVerified] = useState(false);
   const router = useRouter();
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,6 +75,10 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isVerified) {
+      toast.error("Please Verify the Captcha");
+      return;
+    }
     setPending(true);
 
     try {
@@ -207,6 +213,10 @@ function ContactDetails({ onPrevious }: { onPrevious: () => void }) {
                 onChange={handleNotesChange}
                 aria-label="notes"
               ></textarea>
+            </div>
+
+                <div className="w-full mx-auto flex items-center justify-start mt-5">
+              <CustomCaptcha setIsVerified={setIsVerified} />
             </div>
 
             <div className="flex justify-between  ">
