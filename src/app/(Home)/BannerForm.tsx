@@ -21,15 +21,16 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { toast } from "sonner"
 import CustomCaptcha from "@/components/common/CustomCaptcha"
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 
 function BannerForm({ locationDetails }: any) {
-  const [date, setDate] = React.useState<Date>()
+  const [date, setDate] = React.useState<Date>(new Date())
   const [activeButton, setActiveButton] = useState<string | null>("writing")
   const [wordCount, setWordCount] = useState<number>(250)
-  const [selectedService, setSelectedService] = useState<string>("")
-  const [selectedSubject, setSelectedSubject] = useState<string>("")
+  const [selectedService, setSelectedService] = useState<string>("Essay")
+  const [selectedSubject, setSelectedSubject] = useState<string>("Business")
   const [selectedQuestions, setSelectedQuestions] = useState<string>("")
-  const [showSubject, setShowSubject] = useState<boolean>(false)
+  const [showSubject, setShowSubject] = useState<boolean>(true)
   const [showQuestions, setShowQuestions] = useState<boolean>(false)
   const [isVerified, setIsVerified] = useState(false);
   const [pending, setPending] = useState(false)
@@ -42,6 +43,8 @@ function BannerForm({ locationDetails }: any) {
 
   // Step form state
   const [currentStep, setCurrentStep] = useState<number>(1)
+
+  const formattedDate = date ? date.toISOString().split('T')[0] : '';
 
   // Validation errors state
   const [errors, setErrors] = useState<{
@@ -82,7 +85,7 @@ function BannerForm({ locationDetails }: any) {
         "Editing / Proofreading",
         "Resume / CV",
         "Question And Answers",
-      ].includes(value),
+      ].includes(selectedService),
     )
 
     setShowQuestions(value === "Question And Answers")
@@ -282,7 +285,7 @@ function BannerForm({ locationDetails }: any) {
                   </div>
 
                   {showSubject && (
-                    <div className="space-y-2">
+                    <div className="space-y-2 -mt-1">
                       <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
                       <select
                         value={selectedSubject}
@@ -293,6 +296,7 @@ function BannerForm({ locationDetails }: any) {
                           }`}
                       >
                         <option value="">Select subject</option>
+                        <option value="Business">Business</option>
                         <option value="Hospitality">Hospitality</option>
                         <option value="Management">Management</option>
                         <option value="Project Cost Management">Project Cost Management</option>
@@ -406,11 +410,12 @@ function BannerForm({ locationDetails }: any) {
                     </label>
                     <input
                       type="date"
-                      value={date?.toISOString().split("T")[0] || ""}
+                      value={formattedDate}
                       onChange={handleDateChange}
+                      min={new Date().toISOString().split('T')[0]}
                       className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.date
-                        ? 'border-red-500 dark:border-red-500'
-                        : 'border-gray-200 dark:border-gray-600'
+                          ? 'border-red-500 dark:border-red-500'
+                          : 'border-gray-200 dark:border-gray-600'
                         }`}
                     />
                     {errors.date && (
@@ -440,7 +445,7 @@ function BannerForm({ locationDetails }: any) {
           {/* Step 2: Personal Information */}
           {currentStep === 2 && (
             <>
-              <div className="p-8 space-y-6">
+              <div className="p-8 space-y-5">
                 {/* Personal Information */}
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
@@ -491,7 +496,12 @@ function BannerForm({ locationDetails }: any) {
 
 
                 </div>
+                <div className="w-full mx-auto flex items-center justify-start">
+                  <CustomCaptcha setIsVerified={setIsVerified} />
+                </div>
               </div>
+
+                
 
               {/* Back and Submit Buttons */}
               <div className="p-8 flex flex-col space-y-4">
@@ -504,9 +514,7 @@ function BannerForm({ locationDetails }: any) {
                   <span>Back to service selection</span>
                 </button>
 
-                <div className="w-full mx-auto flex items-center justify-center">
-                  <CustomCaptcha setIsVerified={setIsVerified} />
-                </div>
+              
 
                 <button
                   type="submit"
@@ -525,6 +533,10 @@ function BannerForm({ locationDetails }: any) {
                     </>
                   )}
                 </button>
+
+                <div className="flex justify-center items-center ">
+                  <TextGenerateEffect words={"Get reply in minutes"}/> 
+                </div>
               </div>
             </>
           )}

@@ -155,18 +155,18 @@ const SitePopup = ({ setModal, locationDetails }: Props) => {
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[9999]"
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[99999]"
         onClick={closeModal}
       ></div>
 
       {/*------------------ Desktop View Form ------------------------------*/}
-      <div className="fixed w-full  flex  justify-center z-[100000] modal-content p-4 ">
+      <div className="fixed w-full  flex  justify-center z-[100000]  p-1 ">
         <div
           onClick={(e) => e.stopPropagation()}
-          className="w-[95%] md:w-[90%] lg:w-[80%] max-w-5xl rounded-2xl md:flex flex-col lg:flex-row overflow-hidden shadow-2xl mx-auto relative lg:scale-[.72] scale-[.60]   -translate-y-64  hidden"
+          className="w-[95%] md:w-[90%] lg:w-[80%] max-w-5xl rounded-2xl md:flex flex-col lg:flex-row overflow-hidden shadow-2xl mx-auto relative lg:scale-[.72] scale-[.60] lg:-translate-y-56 -translate-y-64 hidden"
         >
           {/* Left Section - Gradient Background with Offer */}
-          <div className="bg-gradient-to-t from-gray-950 to-sky-950 text-white p-6 lg:p-10 lg:w-[40%] hidden lg:block">
+          <div className="bg-gradient-to-t from-gray-950 to-sky-950 text-white p-6  lg:w-[40%] hidden lg:block">
             <div className="flex flex-col  justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-4">
@@ -315,7 +315,7 @@ const SitePopup = ({ setModal, locationDetails }: Props) => {
           </div>
 
           {/* Right Section - Form */}
-          <div className="bg-white p-6 lg:p-10 lg:w-[60%]   ">
+          <div className="bg-white p-6 lg:w-[60%]   ">
             <div className="mb-6">
               <div className="hidden lg:inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium mb-3">
                 Renowned for A+ Grades
@@ -517,11 +517,11 @@ const SitePopup = ({ setModal, locationDetails }: Props) => {
 
       {/*------------------------------ Mobile View Form ------------------------------*/}
 
-      <div className="fixed inset-0 bg-white scale-[.80] h-[119vh] -translate-y-14 rounded-xl z-[100000] overflow-hidden md:hidden">
+      <div className="fixed inset-0 bg-white scale-[.80] h-[115vh] -translate-y-14 rounded-xl z-[100000] overflow-hidden md:hidden">
         <div className=" px-4 py-6 ">
           {/* Header with close button */}
           <div className="flex justify-between items-center mb-4">
-            <div className="bg-orange-500 text-zinc-100 px-3 py-1 mx-auto rounded-full text-sm font-medium">
+            <div className="bg-sky-800 text-zinc-100 px-3 py-1 mx-auto rounded-full text-sm font-medium">
               Get 45% Discount Code on Your Email
             </div>
             <button
@@ -647,7 +647,7 @@ const SitePopup = ({ setModal, locationDetails }: Props) => {
             </div>
 
             {/* Captcha */}
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full flex items-center justify-start">
               <CustomCaptcha setIsVerified={setIsVerified} />
             </div>
 
@@ -655,7 +655,7 @@ const SitePopup = ({ setModal, locationDetails }: Props) => {
             <button
               type="submit"
               disabled={!isVerified}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 shadow-md"
+              className="w-full bg-sky-700 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded-lg transition-all duration-200 shadow-md"
             >
               {pending ? (
                 <div className="flex items-center justify-center gap-2">
