@@ -225,19 +225,19 @@ function BannerForm({ locationDetails }: any) {
   }
 
   return (
-    <div className="flex items-center justify-center rounded-lg p-4 scale-95">
+    <div className="flex items-center justify-center rounded-lg lg:p-4 p-2 scale-95">
       <div className="w-full lg:max-w-2xl max-w-3xl">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-700/20 overflow-hidden py-4 px-2"
+          className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-700/20 overflow-hidden py-3 px-1.5"
         >
           <div className="inline-flex items-center px-4 py-2 dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 rounded-full text-sm font-medium mb-4 shadow-lg">
             <span className="animate-pulse mr-2">✨</span>
             Up to 50% Discount Available
           </div>
           <h1 className="text-2xl font-bold mb-2">Get A Free Quote</h1>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300 md:block hidden">
             Professional academic writing services tailored to your needs
           </p>
 
@@ -310,7 +310,7 @@ function BannerForm({ locationDetails }: any) {
 
                   {showSubject && (
                     <div className="space-y-2 -mt-1">
-                      <label htmlFor="subject-select" className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
+                      <label htmlFor="subject-select" className="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
                       <select
                         id="subject-select"
                         value={selectedSubject}
