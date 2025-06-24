@@ -28,7 +28,7 @@ function ClientLayout() {
                         onClick={() => setCookiePopupMobile(true)}
                         className="md:hidden flex items-center transition-all duration-300 ease-in-out fixed -left-2 top-[45%]  z-[99999] scale-75"
                     >
-                        <button className="w-12 h-12 flex items-center justify-center bg-white rounded rounded-tr-xl rounded-br-xl rounded-tl-none rounded-bl-none shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <button aria-label='cookie-button' className="w-12 h-12 flex items-center justify-center bg-white rounded rounded-tr-xl rounded-br-xl rounded-tl-none rounded-bl-none shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
                             <Cookie className="w-6 h-6 text-purple-600" />
                         </button>
                     </div>

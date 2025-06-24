@@ -389,6 +389,7 @@ function BannerForm({ locationDetails }: any) {
                     <div className="flex items-center bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600">
                       <button
                         type="button"
+                        aria-label="minus-word-count"
                         onClick={handleDecrement}
                         className="p-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                       >
@@ -400,6 +401,7 @@ function BannerForm({ locationDetails }: any) {
                       <button
                         type="button"
                         onClick={handleIncrement}
+                        aria-label="plus-word-count"
                         className="p-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                       >
                         <Plus className="w-5 h-5" />

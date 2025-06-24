@@ -38,6 +38,7 @@ export function FloatingContact() {
           href="https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?  "
           target="_blank"
           rel="noopener noreferrer"
+          aria-label='whatsapp-button'
           className="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-600 rounded-full shadow-xl hover:shadow-2xl transition-all"
         >
           <svg
@@ -61,6 +62,7 @@ export function FloatingContact() {
       >
         <Link
           href="tel:3197005034911"
+          aria-label='call-us-button'
           className="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-700 rounded-full shadow-xl hover:shadow-2xl transition-all"
         >
           <Phone className="w-6 h-6 text-white" />
