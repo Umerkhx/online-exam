@@ -230,6 +230,7 @@ function BannerForm({ locationDetails }: any) {
                     <button
                       key={service}
                       type="button"
+                      aria-label="select-writing-service"
                       className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${activeButton === service
                         ? "dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 shadow-lg transform scale-105"
                         : "text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
@@ -435,6 +436,7 @@ function BannerForm({ locationDetails }: any) {
               {/* Next Step Button */}
               <div className="p-8">
                 <button
+                  aria-label="next-step"
                   type="button"
                   onClick={nextStep}
                   className="w-full dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 font-semibold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2"
@@ -513,6 +515,7 @@ function BannerForm({ locationDetails }: any) {
               {/* Back and Submit Buttons */}
               <div className="p-8 flex flex-col space-y-4">
                 <button
+                  aria-label="back-to-first-step"
                   type="button"
                   onClick={prevStep}
                   className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
@@ -526,6 +529,7 @@ function BannerForm({ locationDetails }: any) {
                 <button
                   type="submit"
                   disabled={pending}
+                  aria-label="order-submitted"
                   className="w-full dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 font-semibold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
                 >
                   {pending ? (
