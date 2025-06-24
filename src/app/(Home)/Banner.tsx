@@ -191,7 +191,7 @@ function Banner({locationDetails}: any) {
             {/* Main Title - Always show immediately for LCP */}
             <h1 
               ref={titleRef}
-              className="text-xl px-8 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
+              className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
               bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
               bg-clip-text text-transparent leading-tight"
             >
@@ -215,7 +215,7 @@ function Banner({locationDetails}: any) {
             {contentLoaded ? (
               <p 
                 ref={descriptionRef}
-                className="md:text-base text-sm lg:text-left text-center px-8 lg:px-0 
+                className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
                 text-gray-600 dark:text-gray-400 leading-relaxed"
               >
                 Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence
@@ -287,7 +287,7 @@ function Banner({locationDetails}: any) {
           {/* Form Section - Always show immediately */}
           <div 
             ref={formRef}
-            className="lg:-mt-8 -mt-2 lg:scale-[0.9] scale-95"
+            className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
           >
             <BannerForm locationDetails={locationDetails} />
           </div>
