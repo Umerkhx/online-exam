@@ -55,33 +55,25 @@ function BannerForm({ locationDetails }: any) {
     date?: string
   }>({})
 
+  const [isMobile, setIsMobile] = useState(false)
   const formRef = useRef<any>(null)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    setIsVisible(true)
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   useEffect(() => {
-    if (isVisible && formRef.current) {
+    // Only animate on desktop
+    if (!isMobile && formRef.current) {
       gsap.fromTo(formRef.current.children,
-        {
-          y: 30,
-          opacity: 0,
-          scale: 0.95
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          delay: 0.3,
-          ease: "back.out(1.7)"
-        }
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.2, ease: "power2.out" }
       )
     }
-  }, [isVisible])
+  }, [isMobile])
 
   const handleClick = (buttonName: string) => {
     setActiveButton(buttonName)
