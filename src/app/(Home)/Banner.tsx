@@ -1,20 +1,66 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
-import BannerForm from './BannerForm'
+import React, { useEffect, useRef, useState, Suspense } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { Package2, Sparkles, BookOpen, Award } from 'lucide-react'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import dynamic from 'next/dynamic'
+import {Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-import 'swiper/css'
+
+// Dynamically import heavy components with loading states
+const BannerForm = dynamic(() => import('./BannerForm'), {
+  loading: () => <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 h-[500px] flex items-center justify-center">Loading form...</div>,
+  ssr: false
+})
+
+
 
 // Content skeleton for specific elements
 const ContentSkeleton = ({ className = "" }: { className?: string }) => (
   <div className={`bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`} />
 )
 
-export const CtaButtons = () => {
+// Full section skeleton
+const BannerSkeleton = () => (
+  <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
+    {/* Left content skeleton */}
+    <div className='lg:pt-12 pt-6 space-y-6'>
+      <ContentSkeleton className="h-12 w-full max-w-[600px]" />
+      <ContentSkeleton className="h-8 w-full max-w-[500px]" />
+      <ContentSkeleton className="h-6 w-full max-w-[400px]" />
+      
+      <div className="bg-white/20 py-2 px-4 mt-6 rounded-xl w-full max-w-[500px]">
+        <div className="flex justify-center gap-4 py-4">
+          <ContentSkeleton className="w-16 h-16 rounded-lg" />
+          <ContentSkeleton className="w-16 h-16 rounded-lg" />
+          <ContentSkeleton className="w-16 h-16 rounded-lg" />
+        </div>
+      </div>
+      
+      <div className="flex gap-3 justify-center lg:justify-start mt-4">
+        <ContentSkeleton className="h-11 w-32 rounded-full" />
+        <ContentSkeleton className="h-11 w-28 rounded-full" />
+      </div>
+    </div>
+    
+    {/* Right form skeleton */}
+    <div className="lg:mt-8 mt-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg mx-auto w-[450px] p-6 h-[500px]">
+        <ContentSkeleton className="h-10 w-3/4 mb-6 mx-auto" />
+        <div className="space-y-4">
+          <ContentSkeleton className="h-12 w-full" />
+          <ContentSkeleton className="h-12 w-full" />
+          <ContentSkeleton className="h-12 w-full" />
+          <ContentSkeleton className="h-12 w-full" />
+          <ContentSkeleton className="h-12 w-full mt-8" />
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const CtaButtons = dynamic(() => Promise.resolve(() => {
   const buttonsRef = useRef<HTMLDivElement>(null)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -26,7 +72,6 @@ export const CtaButtons = () => {
   }, [])
 
   useEffect(() => {
-    // Only animate on desktop
     if (!isMobile && buttonsRef.current) {
       gsap.fromTo(buttonsRef.current.children,
         { y: 20, opacity: 0 },
@@ -80,7 +125,12 @@ export const CtaButtons = () => {
       </div>
     </div>
   )
-}
+}), {
+  loading: () => <div className="flex gap-3 justify-center lg:justify-start mt-4">
+    <div className="h-11 w-32 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+    <div className="h-11 w-28 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+  </div>
+})
 
 function Banner({locationDetails}: any) {
   const [contentLoaded, setContentLoaded] = useState(false)
@@ -124,16 +174,15 @@ function Banner({locationDetails}: any) {
   }, [])
 
   useEffect(() => {
-    // Simulate content loading - keep this short for LCP
+    // Very short delay for skeleton (just enough to avoid flash on fast connections)
     const timer = setTimeout(() => {
       setContentLoaded(true)
-    }, 200)
+    }, 100)
 
     return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
-    // Only run animations on desktop after content loads
     if (contentLoaded && !isMobile && bannerRef.current) {
       const tl = gsap.timeline()
 
@@ -152,7 +201,6 @@ function Banner({locationDetails}: any) {
         "-=0.3"
       )
 
-      // Subtle floating animation for desktop only
       gsap.to(".floating-icon", {
         y: -8,
         duration: 4,
@@ -166,7 +214,7 @@ function Banner({locationDetails}: any) {
 
   return (
     <div className="relative overflow-hidden min-h-screen">
-      {/* Simple background - no complex animations */}
+      {/* Background - always visible */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:to-sky-900/90" />
 
       {/* Floating Elements - Desktop only */}
@@ -185,21 +233,21 @@ function Banner({locationDetails}: any) {
       )}
 
       <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
-          {/* Text Content */}
-          <div className='lg:pt-12 pt-6 space-y-4'>
-            {/* Main Title - Always show immediately for LCP */}
-            <h1 
-              ref={titleRef}
-              className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
-              bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
-              bg-clip-text text-transparent leading-tight"
-            >
-              Let Experts Take Your Online Exam and Ace It for You
-            </h1>
+        {!contentLoaded ? (
+          <BannerSkeleton />
+        ) : (
+          <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
+            {/* Text Content */}
+            <div className='lg:pt-12 pt-6 space-y-4'>
+              <h1 
+                ref={titleRef}
+                className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
+                bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
+                bg-clip-text text-transparent leading-tight"
+              >
+                Let Experts Take Your Online Exam and Ace It for You
+              </h1>
 
-            {/* Subtitle - Show skeleton briefly */}
-            {contentLoaded ? (
               <h2 
                 ref={subtitleRef}
                 className="text-base font-semibold lg:text-left text-center sm:text-xl md:text-2xl 
@@ -207,91 +255,82 @@ function Banner({locationDetails}: any) {
               >
                 Secure Academic Success with Affordable Online Exam Assistance
               </h2>
-            ) : (
-              <ContentSkeleton className="h-8 w-4/5 mx-auto lg:mx-0" />
-            )}
-            
-            {/* Description - Show skeleton briefly */}
-            {/* {contentLoaded ? (
-              <p 
+              
+              {/* <p 
                 ref={descriptionRef}
                 className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
                 text-gray-600 dark:text-gray-400 leading-relaxed"
               >
                 Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence
-              </p>
-            ) : (
-              <ContentSkeleton className="h-6 w-3/4 mx-auto lg:mx-0" />
-            )} */}
+              </p> */}
 
-            {/* Reviews Slider - Show skeleton while loading */}
-            <div 
-              ref={reviewsRef}
-              className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
-              scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
-              shadow-md border border-white/20"
-            >
-              {contentLoaded ? (
-                <Swiper
-                  slidesPerView={2}
-                  spaceBetween={8}
-                  breakpoints={{
-                    1025: { slidesPerView: 3, spaceBetween: 12 },
-                  }}
-                  autoplay={{ delay: 3000, disableOnInteraction: false }}
-                  modules={[Autoplay]}
-                  className="reviews-swiper"
-                >
-                  {reviews.map((review, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="flex flex-col items-center justify-center p-3 rounded-lg 
-                      hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
-                        <a href={review.link} className="group">
-                          <div className="relative overflow-hidden rounded-lg">
-                            <Image
-                              src={review.image}
-                              alt={review.alt}
-                              width={review.width}
-                              height={review.height}
-                              className="transition-transform duration-200 group-hover:scale-105"
-                              loading={index === 0 ? "eager" : "lazy"}
-                              priority={index === 0}
-                            />
-                          </div>
-                          <div className="mt-2 text-sm">⭐⭐⭐⭐⭐</div>
-                        </a>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              ) : (
-                <div className="flex justify-center gap-4 py-4">
-                  <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                  <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                  <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                </div>
-              )}
+              <div 
+                ref={reviewsRef}
+                className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
+                scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
+                shadow-md border border-white/20"
+              >
+                <Suspense fallback={<div className="flex justify-center gap-4 py-4">
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
+                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
+                </div>}>
+                  <Swiper
+                    slidesPerView={2}
+                    spaceBetween={8}
+                    breakpoints={{
+                      1025: { slidesPerView: 3, spaceBetween: 12 },
+                    }}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    modules={[Autoplay]}
+                    className="reviews-swiper"
+                  >
+                    {reviews.map((review, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="flex flex-col items-center justify-center p-3 rounded-lg 
+                        hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
+                          <a href={review.link} className="group">
+                            <div className="relative overflow-hidden rounded-lg">
+                              <Image
+                                src={review.image}
+                                alt={review.alt}
+                                width={review.width}
+                                height={review.height}
+                                className="transition-transform duration-200 group-hover:scale-105"
+                                loading={index === 0 ? "eager" : "lazy"}
+                                priority={index === 0}
+                              />
+                            </div>
+                            <div className="mt-2 text-sm">⭐⭐⭐⭐⭐</div>
+                          </a>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </Suspense>
+              </div>
+
+              <Suspense fallback={<div className="flex gap-3 justify-center lg:justify-start mt-4">
+                <div className="h-11 w-32 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+                <div className="h-11 w-28 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+              </div>}>
+                <CtaButtons />
+              </Suspense>
             </div>
 
-            {/* CTA Buttons - Show skeleton briefly */}
-            {contentLoaded ? (
-              <CtaButtons />
-            ) : (
-              <div className="flex gap-3 justify-center lg:justify-start mt-4">
-                <ContentSkeleton className="h-11 w-32 rounded-full" />
-                <ContentSkeleton className="h-11 w-28 rounded-full" />
-              </div>
-            )}
+            {/* Form Section */}
+            <div 
+              ref={formRef}
+              className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
+            >
+              <Suspense fallback={<div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 h-[500px] flex items-center justify-center">
+                Loading form...
+              </div>}>
+                <BannerForm locationDetails={locationDetails} />
+              </Suspense>
+            </div>
           </div>
-
-          {/* Form Section - Always show immediately */}
-          <div 
-            ref={formRef}
-            className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
-          >
-            <BannerForm locationDetails={locationDetails} />
-          </div>
-        </div>
+        )}
       </div>
     </div>
   )
