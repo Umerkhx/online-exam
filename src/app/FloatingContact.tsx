@@ -79,6 +79,7 @@ export function FloatingContact() {
         onMouseLeave={handleItemLeave}
       >
         <Link
+        aria-label='mail-us'
           href="#"
           className="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-red-400 to-red-600 rounded-full shadow-xl hover:shadow-2xl transition-all"
         >

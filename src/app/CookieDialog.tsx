@@ -23,7 +23,7 @@ export function CookieDialog({ isOpen, setIsOpen }: CookieDialogProps) {
   return (
     <div className="md:hidden  bottom-4 left-5 right-5 w-auto p-4 bg-blue-100 border-2 border-blue-500 z-[99999999] rounded-xl shadow-xl">
       <p className="text-zinc-800 text-sm font-medium leading-normal">
-        Taking My Classes Online Uses Cookies to Ensure You Get the Best User Experience.{" "}
+        Online Exam Relief Uses Cookies to Ensure You Get the Best User Experience.{" "}
         <Link href="/privacy-policy" target="_blank" className="text-black underline">
           Our Privacy Policy
         </Link>
