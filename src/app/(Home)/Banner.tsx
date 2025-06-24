@@ -86,7 +86,6 @@ function Banner({locationDetails}: any) {
                             width={review.width}
                             height={review.height}
                             className="translate-y-2"
-                            loading="lazy"
                             priority={index === 0} // Only prioritize first image
                           />
                           <div className="mt-2">⭐⭐⭐⭐⭐</div>
