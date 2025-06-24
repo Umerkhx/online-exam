@@ -14,7 +14,7 @@ import {
   AlertCircle,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import "react-phone-number-input/style.css"
 import { sendEmails } from "../(backend)/action/formAction"
 import "react-phone-number-input/style.css";
@@ -22,6 +22,7 @@ import PhoneInput from "react-phone-number-input";
 import { toast } from "sonner"
 import CustomCaptcha from "@/components/common/CustomCaptcha"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
+import gsap from "gsap"
 
 function BannerForm({ locationDetails }: any) {
   const [date, setDate] = React.useState<Date>(new Date())
@@ -53,6 +54,34 @@ function BannerForm({ locationDetails }: any) {
     selectedQuestions?: string
     date?: string
   }>({})
+
+  const formRef = useRef<any>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
+  useEffect(() => {
+    if (isVisible && formRef.current) {
+      gsap.fromTo(formRef.current.children,
+        {
+          y: 30,
+          opacity: 0,
+          scale: 0.95
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          delay: 0.3,
+          ease: "back.out(1.7)"
+        }
+      )
+    }
+  }, [isVisible])
 
   const handleClick = (buttonName: string) => {
     setActiveButton(buttonName)
@@ -207,6 +236,7 @@ function BannerForm({ locationDetails }: any) {
     <div className="flex items-center justify-center rounded-lg p-4 scale-95">
       <div className="w-full lg:max-w-2xl max-w-3xl">
         <form
+          ref={formRef}
           onSubmit={handleSubmit}
           className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-700/20 overflow-hidden py-4 px-2"
         >
