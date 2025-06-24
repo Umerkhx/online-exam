@@ -212,7 +212,7 @@ function Banner({locationDetails}: any) {
             )}
             
             {/* Description - Show skeleton briefly */}
-            {contentLoaded ? (
+            {/* {contentLoaded ? (
               <p 
                 ref={descriptionRef}
                 className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
@@ -222,7 +222,7 @@ function Banner({locationDetails}: any) {
               </p>
             ) : (
               <ContentSkeleton className="h-6 w-3/4 mx-auto lg:mx-0" />
-            )}
+            )} */}
 
             {/* Reviews Slider - Show skeleton while loading */}
             <div 
