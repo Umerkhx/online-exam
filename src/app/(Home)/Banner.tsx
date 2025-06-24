@@ -228,7 +228,7 @@ function Banner({locationDetails}: any) {
             <div 
               ref={reviewsRef}
               className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
-              scale-[.80] md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
+              scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
             >
               {contentLoaded ? (
@@ -245,7 +245,7 @@ function Banner({locationDetails}: any) {
                   {reviews.map((review, index) => (
                     <SwiperSlide key={index}>
                       <div className="flex flex-col items-center justify-center p-3 rounded-lg 
-                      hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200 ">
+                      hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
                         <a href={review.link} className="group">
                           <div className="relative overflow-hidden rounded-lg">
                             <Image
