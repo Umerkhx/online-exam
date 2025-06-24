@@ -53,7 +53,7 @@ function Banner({locationDetails}:any) {
         <h1 className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center  sm:text-3xl md:text-4xl ">
         Let Experts Take Your Online Exam and Ace It for You
         </h1>
-        <h2 className="text-lg font-medium lg:text-left text-center sm:text-2xl md:text-[27px] pt-2 lg:pt-3 px-10 lg:px-0">
+        <h2 className="text-base font-semibold lg:text-left text-center sm:text-2xl md:text-[27px] pt-2 lg:pt-3 px-16 lg:px-0">
         Secure Academic Success with Affordable Online Exam Assistance
         </h2>
         <p className="mt-2 md:text-base text-sm lg:text-left text-center px-10 lg:px-0">Our mission is to transform the industry with groundbreaking solutions</p>
@@ -91,7 +91,7 @@ function Banner({locationDetails}:any) {
         </div>
 
        
-        <div className="lg:-mt-14  lg:scale-[0.85] scale-90">
+        <div className="lg:-mt-14 -mt-5  lg:scale-[0.85] scale-90">
         <BannerForm locationDetails={locationDetails}/>
         </div>
       </div>

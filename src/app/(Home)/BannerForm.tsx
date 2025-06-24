@@ -247,11 +247,12 @@ function BannerForm({ locationDetails }: any) {
                 {/* Service Selection */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className={`space-y-2 ${showSubject ? "" : "md:col-span-2"}`}>
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                    <label htmlFor="service-select" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
                       <FileText className="w-4 h-4 mr-2" />
                       Service Required *
                     </label>
                     <select
+                      id="service-select"
                       value={selectedService}
                       onChange={handleServiceChange}
                       className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedService
@@ -286,8 +287,9 @@ function BannerForm({ locationDetails }: any) {
 
                   {showSubject && (
                     <div className="space-y-2 -mt-1">
-                      <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
+                      <label htmlFor="subject-select" className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
                       <select
+                        id="subject-select"
                         value={selectedSubject}
                         onChange={handleSubjectChange}
                         className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedSubject
@@ -350,11 +352,12 @@ function BannerForm({ locationDetails }: any) {
                 {/* Questions Selection */}
                 {showQuestions && (
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                    <label htmlFor="questions-select" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
                       <Hash className="w-4 h-4 mr-2" />
                       Number of Questions *
                     </label>
                     <select
+                      id="questions-select"
                       value={selectedQuestions}
                       onChange={handleQuestionsChange}
                       className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedQuestions
@@ -404,18 +407,19 @@ function BannerForm({ locationDetails }: any) {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                    <label htmlFor="deadline-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
                       <Calendar className="w-4 h-4 mr-2" />
                       Deadline *
                     </label>
                     <input
+                      id="deadline-input"
                       type="date"
                       value={formattedDate}
                       onChange={handleDateChange}
                       min={new Date().toISOString().split('T')[0]}
                       className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.date
-                          ? 'border-red-500 dark:border-red-500'
-                          : 'border-gray-200 dark:border-gray-600'
+                        ? 'border-red-500 dark:border-red-500'
+                        : 'border-gray-200 dark:border-gray-600'
                         }`}
                     />
                     {errors.date && (
@@ -448,11 +452,12 @@ function BannerForm({ locationDetails }: any) {
               <div className="p-8 space-y-5">
                 {/* Personal Information */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <label htmlFor="name-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
                     <User className="w-4 h-4 mr-2" />
                     Full Name
                   </label>
                   <input
+                    id="name-input"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -463,11 +468,12 @@ function BannerForm({ locationDetails }: any) {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <label htmlFor="email-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
                     <Mail className="w-4 h-4 mr-2" />
                     Email Address
                   </label>
                   <input
+                    id="email-input"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -478,12 +484,13 @@ function BannerForm({ locationDetails }: any) {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <label htmlFor="phone-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
                     <Phone className="w-4 h-4 mr-2" />
                     Phone Number
                   </label>
 
                   <PhoneInput
+                    id="phone-input"
                     placeholder="Enter Your Phone Number"
                     defaultCountry={locationDetails.countryCode}
                     value={phone}
@@ -501,7 +508,7 @@ function BannerForm({ locationDetails }: any) {
                 </div>
               </div>
 
-                
+
 
               {/* Back and Submit Buttons */}
               <div className="p-8 flex flex-col space-y-4">
@@ -514,7 +521,7 @@ function BannerForm({ locationDetails }: any) {
                   <span>Back to service selection</span>
                 </button>
 
-              
+
 
                 <button
                   type="submit"
@@ -535,7 +542,7 @@ function BannerForm({ locationDetails }: any) {
                 </button>
 
                 <div className="flex justify-center items-center ">
-                  <TextGenerateEffect words={"Get reply in minutes"}/> 
+                  <TextGenerateEffect words={"Get reply in minutes"} />
                 </div>
               </div>
             </>
