@@ -1,20 +1,13 @@
 "use client"
-import React, { useEffect, useRef, useState, Suspense } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import BannerForm from './BannerForm'
 import Image from 'next/image'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { Package2, Sparkles, BookOpen, Award } from 'lucide-react'
-import dynamic from 'next/dynamic'
-import {Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-
-// Dynamically import heavy components with loading states
-const BannerForm = dynamic(() => import('./BannerForm'), {
-  loading: () => <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 h-[500px] flex items-center justify-center">Loading form...</div>,
-  ssr: false
-})
-
-
+import 'swiper/css'
 
 // Content skeleton for specific elements
 const ContentSkeleton = ({ className = "" }: { className?: string }) => (
@@ -30,7 +23,7 @@ const BannerSkeleton = () => (
       <ContentSkeleton className="h-8 w-full max-w-[500px]" />
       <ContentSkeleton className="h-6 w-full max-w-[400px]" />
       
-      <div className="bg-white/20 py-2 px-4 mt-6 rounded-xl w-full max-w-[500px]">
+      <div className="bg-white/20  py-2 px-4 mt-6 rounded-xl w-full max-w-[500px]">
         <div className="flex justify-center gap-4 py-4">
           <ContentSkeleton className="w-16 h-16 rounded-lg" />
           <ContentSkeleton className="w-16 h-16 rounded-lg" />
@@ -60,7 +53,7 @@ const BannerSkeleton = () => (
   </div>
 )
 
-const CtaButtons = dynamic(() => Promise.resolve(() => {
+export const CtaButtons = () => {
   const buttonsRef = useRef<HTMLDivElement>(null)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -125,12 +118,7 @@ const CtaButtons = dynamic(() => Promise.resolve(() => {
       </div>
     </div>
   )
-}), {
-  loading: () => <div className="flex gap-3 justify-center lg:justify-start mt-4">
-    <div className="h-11 w-32 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-    <div className="h-11 w-28 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-  </div>
-})
+}
 
 function Banner({locationDetails}: any) {
   const [contentLoaded, setContentLoaded] = useState(false)
@@ -256,13 +244,11 @@ function Banner({locationDetails}: any) {
                 Secure Academic Success with Affordable Online Exam Assistance
               </h2>
               
-              {/* <p 
-                ref={descriptionRef}
+              <p ref={descriptionRef}
                 className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
-                text-gray-600 dark:text-gray-400 leading-relaxed"
-              >
+                text-gray-800 dark:text-gray-100 leading-relaxed">
                 Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence
-              </p> */}
+              </p>
 
               <div 
                 ref={reviewsRef}
@@ -270,52 +256,41 @@ function Banner({locationDetails}: any) {
                 scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
                 shadow-md border border-white/20"
               >
-                <Suspense fallback={<div className="flex justify-center gap-4 py-4">
-                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
-                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
-                  <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
-                </div>}>
-                  <Swiper
-                    slidesPerView={2}
-                    spaceBetween={8}
-                    breakpoints={{
-                      1025: { slidesPerView: 3, spaceBetween: 12 },
-                    }}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    modules={[Autoplay]}
-                    className="reviews-swiper"
-                  >
-                    {reviews.map((review, index) => (
-                      <SwiperSlide key={index}>
-                        <div className="flex flex-col items-center justify-center p-3 rounded-lg 
-                        hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
-                          <a href={review.link} className="group">
-                            <div className="relative overflow-hidden rounded-lg">
-                              <Image
-                                src={review.image}
-                                alt={review.alt}
-                                width={review.width}
-                                height={review.height}
-                                className="transition-transform duration-200 group-hover:scale-105"
-                                loading={index === 0 ? "eager" : "lazy"}
-                                priority={index === 0}
-                              />
-                            </div>
-                            <div className="mt-2 text-sm">⭐⭐⭐⭐⭐</div>
-                          </a>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </Suspense>
+                <Swiper
+                  slidesPerView={2}
+                  spaceBetween={8}
+                  breakpoints={{
+                    1025: { slidesPerView: 3, spaceBetween: 12 },
+                  }}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  modules={[Autoplay]}
+                  className="reviews-swiper"
+                >
+                  {reviews.map((review, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="flex flex-col items-center justify-center p-3 rounded-lg 
+                      hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
+                        <a href={review.link} className="group">
+                          <div className="relative overflow-hidden rounded-lg">
+                            <Image
+                              src={review.image}
+                              alt={review.alt}
+                              width={review.width}
+                              height={review.height}
+                              className="transition-transform duration-200 group-hover:scale-105"
+                              loading={index === 0 ? "eager" : "lazy"}
+                              priority={index === 0}
+                            />
+                          </div>
+                          <div className="mt-2 text-sm">⭐⭐⭐⭐⭐</div>
+                        </a>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
 
-              <Suspense fallback={<div className="flex gap-3 justify-center lg:justify-start mt-4">
-                <div className="h-11 w-32 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-                <div className="h-11 w-28 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-              </div>}>
-                <CtaButtons />
-              </Suspense>
+              <CtaButtons />
             </div>
 
             {/* Form Section */}
@@ -323,11 +298,7 @@ function Banner({locationDetails}: any) {
               ref={formRef}
               className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
             >
-              <Suspense fallback={<div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 h-[500px] flex items-center justify-center">
-                Loading form...
-              </div>}>
-                <BannerForm locationDetails={locationDetails} />
-              </Suspense>
+              <BannerForm locationDetails={locationDetails} />
             </div>
           </div>
         )}
