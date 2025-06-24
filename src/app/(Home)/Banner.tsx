@@ -9,12 +9,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
-// Content skeleton for specific elements
 const ContentSkeleton = ({ className = "" }: { className?: string }) => (
   <div className={`bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`} />
 )
 
-// Full section skeleton
 const BannerSkeleton = () => (
   <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
     {/* Left content skeleton */}
@@ -244,11 +242,11 @@ function Banner({locationDetails}: any) {
                 Secure Academic Success with Affordable Online Exam Assistance
               </h2>
               
-              <p ref={descriptionRef}
+              {/* <p ref={descriptionRef}
                 className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
                 text-gray-800 dark:text-gray-100 leading-relaxed">
                 Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence
-              </p>
+              </p> */}
 
               <div 
                 ref={reviewsRef}
