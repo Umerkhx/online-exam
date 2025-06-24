@@ -103,7 +103,7 @@ export default function Home() {
     if (!modalData || modalData === "false") {
       const timer = setTimeout(() => {
         setModal(true);
-      }, 60000);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, []);
