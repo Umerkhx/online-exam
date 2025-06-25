@@ -168,6 +168,18 @@ input.PhoneInputInput {
 }
 
 /* Optimized scrollbar */
+/* globals.css */
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollable {
+  max-height: 400px; /* adjust as needed */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -185,6 +197,9 @@ input.PhoneInputInput {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #5a6fd8 0%, #6a4190 100%);
 }
+
+
+
 
 /* Performance optimizations */
 .will-change-transform {
