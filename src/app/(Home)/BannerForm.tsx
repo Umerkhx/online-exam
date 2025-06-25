@@ -77,7 +77,6 @@ function BannerForm({ locationDetails }: any) {
     const value = e.target.value
     setSelectedService(value)
 
-    // Clear service error when user selects a service
     if (errors.selectedService) {
       setErrors(prev => ({ ...prev, selectedService: undefined }))
     }
@@ -209,7 +208,7 @@ function BannerForm({ locationDetails }: any) {
   }
 
   return (
-    <div className="flex items-center justify-center rounded-lg lg:p-4 p-2 scale-95">
+    <div className="flex items-center justify-center rounded-lg lg:p-4 p-1 md:mb-0 -mb-6 scale-95">
       <div className="w-full lg:max-w-2xl max-w-3xl">
         <form
           ref={formRef}
@@ -442,7 +441,7 @@ function BannerForm({ locationDetails }: any) {
               </div>
 
               {/* Next Step Button */}
-              <div className="p-8">
+              <div className="lg:px-8 lg:py-8 py-2 px-6">
                 <button
                   aria-label="next-step"
                   type="button"

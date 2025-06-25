@@ -184,21 +184,19 @@ function Banner({locationDetails}: any) {
         </div>
       )}
 
-      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-4 sm:px-6 lg:px-8">
         <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
           {/* Text Content */}
-          <div className='lg:pt-12 pt-6 space-y-4'>
-            {/* Main Title - Always show immediately for LCP */}
+          <div className='lg:pt-12 pt-8 space-y-2'>
             <h1 
               ref={titleRef}
-              className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
+              className="text-xl px-12 lg:px-0 font-extrabold lg:text-left text-center sm:text-3xl md:text-4xl 
               bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
               bg-clip-text text-transparent leading-tight"
             >
               Let Experts Take Your Online Exam and Ace It for You
             </h1>
 
-            {/* Subtitle - Show skeleton briefly */}
             {contentLoaded ? (
               <h2 
                 ref={subtitleRef}
@@ -224,11 +222,11 @@ function Banner({locationDetails}: any) {
               <ContentSkeleton className="h-6 w-3/4 mx-auto lg:mx-0" />
             )} */}
 
-            {/* Reviews Slider - Show skeleton while loading */}
+            <div className='scale-[0.80] md:scale-100'>
             <div 
               ref={reviewsRef}
               className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
-              scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
+               rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
             >
               {contentLoaded ? (
@@ -272,6 +270,8 @@ function Banner({locationDetails}: any) {
                 </div>
               )}
             </div>
+            </div>
+
 
             {/* CTA Buttons - Show skeleton briefly */}
             {contentLoaded ? (
