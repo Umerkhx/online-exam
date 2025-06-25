@@ -1,5 +1,18 @@
 "use client"
-import {ArrowLeftCircle,ArrowRight,Calendar,FileText,Hash,Loader2,Mail,Minus,Phone,Plus,User,AlertCircle,} from "lucide-react"
+import {
+  ArrowLeftCircle,
+  ArrowRight,
+  Calendar,
+  FileText,
+  Hash,
+  Loader2,
+  Mail,
+  Minus,
+  Phone,
+  Plus,
+  User,
+  AlertCircle,
+} from "lucide-react"
 import { useRouter } from "next/navigation"
 import React, { useEffect, useRef, useState } from "react"
 import "react-phone-number-input/style.css"
@@ -16,19 +29,22 @@ function BannerForm({ locationDetails }: any) {
   const [activeButton, setActiveButton] = useState<string | null>("writing")
   const [wordCount, setWordCount] = useState<number>(250)
   const [selectedService, setSelectedService] = useState<string>("Essay")
-  const [selectedSubject, setSelectedSubject] = useState<string>("")
+  const [selectedSubject, setSelectedSubject] = useState<string>("Business")
   const [selectedQuestions, setSelectedQuestions] = useState<string>("")
-  const [showSubject, setShowSubject] = useState<boolean>(false)
+  const [showSubject, setShowSubject] = useState<boolean>(true)
   const [showQuestions, setShowQuestions] = useState<boolean>(false)
   const [isVerified, setIsVerified] = useState(false);
   const [pending, setPending] = useState(false)
   const router = useRouter()
+
+  // New state for form data
   const [name, setName] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [phone, setPhone] = useState<any>("")
+
+  // Step form state
   const [currentStep, setCurrentStep] = useState<number>(1)
 
-  
   const formattedDate = date ? date.toISOString().split('T')[0] : '';
 
   // Validation errors state
@@ -77,6 +93,7 @@ function BannerForm({ locationDetails }: any) {
     const value = e.target.value
     setSelectedService(value)
 
+    // Clear service error when user selects a service
     if (errors.selectedService) {
       setErrors(prev => ({ ...prev, selectedService: undefined }))
     }
@@ -208,7 +225,7 @@ function BannerForm({ locationDetails }: any) {
   }
 
   return (
-    <div className="flex items-center justify-center rounded-lg lg:p-4 p-1 md:mb-0 -mb-6 scale-95">
+    <div className="flex items-center justify-center rounded-lg lg:p-4 p-2 scale-95">
       <div className="w-full lg:max-w-2xl max-w-3xl">
         <form
           ref={formRef}
@@ -441,7 +458,7 @@ function BannerForm({ locationDetails }: any) {
               </div>
 
               {/* Next Step Button */}
-              <div className="lg:px-8 lg:py-6 py-2 px-6">
+              <div className="p-8">
                 <button
                   aria-label="next-step"
                   type="button"
