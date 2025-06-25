@@ -17,8 +17,8 @@ import { useRouter } from "next/navigation"
 import React, { useEffect, useRef, useState } from "react"
 import "react-phone-number-input/style.css"
 import { sendEmails } from "../(backend)/action/formAction"
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css"
+import PhoneInput from "react-phone-number-input"
 import { toast } from "sonner"
 import CustomCaptcha from "@/components/common/CustomCaptcha"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
@@ -26,14 +26,14 @@ import gsap from "gsap"
 
 function BannerForm({ locationDetails }: any) {
   const [date, setDate] = React.useState<Date>(new Date())
-  const [activeButton, setActiveButton] = useState<string | null>("writing")
+  const [activeButton, setActiveButton] = useState<string>("")
   const [wordCount, setWordCount] = useState<number>(250)
   const [selectedService, setSelectedService] = useState<string>("Essay")
   const [selectedSubject, setSelectedSubject] = useState<string>("Business")
   const [selectedQuestions, setSelectedQuestions] = useState<string>("")
   const [showSubject, setShowSubject] = useState<boolean>(true)
   const [showQuestions, setShowQuestions] = useState<boolean>(false)
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(false)
   const [pending, setPending] = useState(false)
   const router = useRouter()
 
@@ -45,10 +45,11 @@ function BannerForm({ locationDetails }: any) {
   // Step form state
   const [currentStep, setCurrentStep] = useState<number>(1)
 
-  const formattedDate = date ? date.toISOString().split('T')[0] : '';
+  const formattedDate = date ? date.toISOString().split("T")[0] : ""
 
   // Validation errors state
   const [errors, setErrors] = useState<{
+    activeButton?: string
     selectedService?: string
     selectedSubject?: string
     selectedQuestions?: string
@@ -57,26 +58,44 @@ function BannerForm({ locationDetails }: any) {
 
   const [isMobile, setIsMobile] = useState(false)
   const formRef = useRef<any>(null)
+  const [showServiceFields, setShowServiceFields] = useState<boolean>(false)
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
     checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
   useEffect(() => {
     // Only animate on desktop
     if (!isMobile && formRef.current) {
-      gsap.fromTo(formRef.current.children,
+      gsap.fromTo(
+        formRef.current.children,
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.2, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, delay: 0.2, ease: "power2.out" },
       )
     }
   }, [isMobile])
 
-  const handleClick = (buttonName: string) => {
-    setActiveButton(buttonName)
+  useEffect(() => {
+    setShowServiceFields(!!activeButton)
+  }, [activeButton])
+
+  const handleServiceTypeChange = (e: any) => {
+    const value = e.target.value
+    setActiveButton(value)
+
+    // Reset service selection when service type changes
+    if (!value) {
+      setSelectedService("")
+      setSelectedSubject("")
+    }
+
+    // Clear activeButton error when user selects a service type
+    if (errors.activeButton) {
+      setErrors((prev) => ({ ...prev, activeButton: undefined }))
+    }
   }
 
   const handleIncrement = () => {
@@ -95,7 +114,7 @@ function BannerForm({ locationDetails }: any) {
 
     // Clear service error when user selects a service
     if (errors.selectedService) {
-      setErrors(prev => ({ ...prev, selectedService: undefined }))
+      setErrors((prev) => ({ ...prev, selectedService: undefined }))
     }
 
     setShowSubject(
@@ -116,7 +135,7 @@ function BannerForm({ locationDetails }: any) {
     setSelectedSubject(e.target.value)
     // Clear subject error when user selects a subject
     if (errors.selectedSubject) {
-      setErrors(prev => ({ ...prev, selectedSubject: undefined }))
+      setErrors((prev) => ({ ...prev, selectedSubject: undefined }))
     }
   }
 
@@ -124,7 +143,7 @@ function BannerForm({ locationDetails }: any) {
     setSelectedQuestions(e.target.value)
     // Clear questions error when user selects questions
     if (errors.selectedQuestions) {
-      setErrors(prev => ({ ...prev, selectedQuestions: undefined }))
+      setErrors((prev) => ({ ...prev, selectedQuestions: undefined }))
     }
   }
 
@@ -132,20 +151,25 @@ function BannerForm({ locationDetails }: any) {
     setDate(new Date(e.target.value))
     // Clear date error when user selects a date
     if (errors.date) {
-      setErrors(prev => ({ ...prev, date: undefined }))
+      setErrors((prev) => ({ ...prev, date: undefined }))
     }
   }
 
   // Validation function for step 1
   const validateStep1 = () => {
     const newErrors: {
+      activeButton?: string
       selectedService?: string
       selectedSubject?: string
       selectedQuestions?: string
       date?: string
     } = {}
 
-    if (!selectedService) {
+    if (!activeButton) {
+      newErrors.activeButton = "Please select a service type"
+    }
+
+    if (showServiceFields && !selectedService) {
       newErrors.selectedService = "Please select a service"
     }
 
@@ -181,8 +205,8 @@ function BannerForm({ locationDetails }: any) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!isVerified) {
-      toast.error("Please Verify the Captcha");
-      return;
+      toast.error("Please Verify the Captcha")
+      return
     }
     setPending(true)
 
@@ -244,138 +268,163 @@ function BannerForm({ locationDetails }: any) {
           {/* Step 1: Service Selection */}
           {currentStep === 1 && (
             <>
-              {/* Service Type Selector */}
-              <div className="p-4 border-b border-gray-100 dark:border-gray-700">
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Select Service Type</h3>
-                <div className="flex rounded-2xl bg-gray-100 dark:bg-gray-700 p-1">
-                  {["writing", "rewriting", "editing"].map((service) => (
-                    <button
-                      key={service}
-                      type="button"
-                      aria-label="select-writing-service"
-                      className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${activeButton === service
-                        ? "dark:bg-gradient-to-r dark:from-gray-900 dark:to-sky-900 bg-gradient-to-r from-sky-100 to-blue-200 shadow-lg transform scale-105"
-                        : "text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
-                        }`}
-                      onClick={() => handleClick(service)}
-                    >
-                      {service.charAt(0).toUpperCase() + service.slice(1)}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
               {/* Form Fields */}
               <div className="p-8 space-y-6">
-                {/* Service Selection */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className={`space-y-2 ${showSubject ? "" : "md:col-span-2"}`}>
-                    <label htmlFor="service-select" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
-                      <FileText className="w-4 h-4 mr-2" />
-                      Service Required *
-                    </label>
-                    <select
-                      id="service-select"
-                      value={selectedService}
-                      onChange={handleServiceChange}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedService
-                        ? 'border-red-500 dark:border-red-500'
-                        : 'border-gray-200 dark:border-gray-600'
-                        }`}
-                    >
-                      <option value="">Select a service</option>
-                      <option value="Assignment/ Coursework">Assignment/ Coursework</option>
-                      <option value="Essay">Essay</option>
-                      <option value="Dissertation / Thesis / Proposal">Dissertation / Thesis / Proposal</option>
-                      <option value="Question And Answers">Question And Answers</option>
-                      <option value="SOP">SOP</option>
-                      <option value="Editing / Proofreading">Editing / Proofreading</option>
-                      <option value="PPT">PPT</option>
-                      <option value="Resume / CV">Resume / CV</option>
-                      <option value="Others / Custom Orders">Others / Custom Orders</option>
-                      <option value="Class">Class</option>
-                      <option value="Exam">Exam</option>
-                      <option value="Test">Test</option>
-                      <option value="Quiz">Quiz</option>
-                      <option value="Course">Course</option>
-                      <option value="Homework">Homework</option>
-                    </select>
-                    {errors.selectedService && (
-                      <div className="flex items-center text-red-500 text-sm mt-1">
-                        <AlertCircle className="w-4 h-4 mr-1" />
-                        {errors.selectedService}
-                      </div>
-                    )}
-                  </div>
-
-                  {showSubject && (
-                    <div className="space-y-2 -mt-1">
-                      <label htmlFor="subject-select" className="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
-                      <select
-                        id="subject-select"
-                        value={selectedSubject}
-                        onChange={handleSubjectChange}
-                        className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedSubject
-                          ? 'border-red-500 dark:border-red-500'
-                          : 'border-gray-200 dark:border-gray-600'
-                          }`}
-                      >
-                        <option value="">Select subject</option>
-                        <option value="Business">Business</option>
-                        <option value="Hospitality">Hospitality</option>
-                        <option value="Management">Management</option>
-                        <option value="Project Cost Management">Project Cost Management</option>
-                        <option value="Law">Law</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Auditing">Auditing</option>
-                        <option value="Research Methodology">Research Methodology</option>
-                        <option value="Economics - Theory">Economics - Theory</option>
-                        <option value="Economics - Calculation">Economics - Calculation</option>
-                        <option value="Arts and Humanities">Arts and Humanities</option>
-                        <option value="Psychology">Psychology</option>
-                        <option value="Health & Social Care">Health & Social Care</option>
-                        <option value="Nursing">Nursing</option>
-                        <option value="Medical">Medical</option>
-                        <option value="Pharmacy">Pharmacy</option>
-                        <option value="Physiology">Physiology</option>
-                        <option value="Travel & Tourism">Travel & Tourism</option>
-                        <option value="Biotechnology">Biotechnology</option>
-                        <option value="Biology">Biology</option>
-                        <option value="Information Technology">Information Technology</option>
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Programming / Coding">Programming / Coding</option>
-                        <option value="Statistics">Statistics</option>
-                        <option value="ANOVA">ANOVA</option>
-                        <option value="SPSS">SPSS</option>
-                        <option value="NVIVO">NVIVO</option>
-                        <option value="SAS">SAS</option>
-                        <option value="Eviews">Eviews</option>
-                        <option value="Accounts">Accounts</option>
-                        <option value="Education">Education</option>
-                        <option value="Architecture">Architecture</option>
-                        <option value="Geology">Geology</option>
-                        <option value="English Literature">English Literature</option>
-                        <option value="Mechanics">Mechanics</option>
-                        <option value="Chemistry">Chemistry</option>
-                        <option value="Physics">Physics</option>
-                        <option value="Science">Science</option>
-                        <option value="Engineering">Engineering</option>
-                      </select>
-                      {errors.selectedSubject && (
-                        <div className="flex items-center text-red-500 text-sm mt-1">
-                          <AlertCircle className="w-4 h-4 mr-1" />
-                          {errors.selectedSubject}
-                        </div>
-                      )}
+                {/* Service Type Dropdown */}
+                <div className="space-y-2">
+                  <label
+                    htmlFor="service-type-select"
+                    className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                  >
+                    Service Type *
+                  </label>
+                  <select
+                    id="service-type-select"
+                    value={activeButton}
+                    onChange={handleServiceTypeChange}
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                      errors.activeButton
+                        ? "border-red-500 dark:border-red-500"
+                        : "border-gray-200 dark:border-gray-600"
+                    }`}
+                  >
+                    <option value="">Select service type</option>
+                    <option value="writing">Writing</option>
+                    <option value="rewriting">Rewriting</option>
+                    <option value="editing">Editing</option>
+                  </select>
+                  {errors.activeButton && (
+                    <div className="flex items-center text-red-500 text-sm mt-1">
+                      <AlertCircle className="w-4 h-4 mr-1" />
+                      {errors.activeButton}
                     </div>
                   )}
                 </div>
 
-                {/* Questions Selection */}
-                {showQuestions && (
+                {/* Service Selection - Only show when service type is selected */}
+                {showServiceFields && (
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className={`space-y-2 ${showSubject ? "" : "md:col-span-2"}`}>
+                      <label
+                        htmlFor="service-select"
+                        className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                      >
+                        <FileText className="w-4 h-4 mr-2" />
+                        Service Required *
+                      </label>
+                      <select
+                        id="service-select"
+                        value={selectedService}
+                        onChange={handleServiceChange}
+                        className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                          errors.selectedService
+                            ? "border-red-500 dark:border-red-500"
+                            : "border-gray-200 dark:border-gray-600"
+                        }`}
+                      >
+                        <option value="">Select a service</option>
+                        <option value="Assignment/ Coursework">Assignment/ Coursework</option>
+                        <option value="Essay">Essay</option>
+                        <option value="Dissertation / Thesis / Proposal">Dissertation / Thesis / Proposal</option>
+                        <option value="Question And Answers">Question And Answers</option>
+                        <option value="SOP">SOP</option>
+                        <option value="Editing / Proofreading">Editing / Proofreading</option>
+                        <option value="PPT">PPT</option>
+                        <option value="Resume / CV">Resume / CV</option>
+                        <option value="Others / Custom Orders">Others / Custom Orders</option>
+                        <option value="Class">Class</option>
+                        <option value="Exam">Exam</option>
+                        <option value="Test">Test</option>
+                        <option value="Quiz">Quiz</option>
+                        <option value="Course">Course</option>
+                        <option value="Homework">Homework</option>
+                      </select>
+                      {errors.selectedService && (
+                        <div className="flex items-center text-red-500 text-sm mt-1">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {errors.selectedService}
+                        </div>
+                      )}
+                    </div>
+
+                    {showSubject && (
+                      <div className="space-y-2 -mt-1">
+                        <label
+                          htmlFor="subject-select"
+                          className="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300"
+                        >
+                          Subject Area *
+                        </label>
+                        <select
+                          id="subject-select"
+                          value={selectedSubject}
+                          onChange={handleSubjectChange}
+                          className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                            errors.selectedSubject
+                              ? "border-red-500 dark:border-red-500"
+                              : "border-gray-200 dark:border-gray-600"
+                          }`}
+                        >
+                          <option value="">Select subject</option>
+                          <option value="Business">Business</option>
+                          <option value="Hospitality">Hospitality</option>
+                          <option value="Management">Management</option>
+                          <option value="Project Cost Management">Project Cost Management</option>
+                          <option value="Law">Law</option>
+                          <option value="Finance">Finance</option>
+                          <option value="Auditing">Auditing</option>
+                          <option value="Research Methodology">Research Methodology</option>
+                          <option value="Economics - Theory">Economics - Theory</option>
+                          <option value="Economics - Calculation">Economics - Calculation</option>
+                          <option value="Arts and Humanities">Arts and Humanities</option>
+                          <option value="Psychology">Psychology</option>
+                          <option value="Health & Social Care">Health & Social Care</option>
+                          <option value="Nursing">Nursing</option>
+                          <option value="Medical">Medical</option>
+                          <option value="Pharmacy">Pharmacy</option>
+                          <option value="Physiology">Physiology</option>
+                          <option value="Travel & Tourism">Travel & Tourism</option>
+                          <option value="Biotechnology">Biotechnology</option>
+                          <option value="Biology">Biology</option>
+                          <option value="Information Technology">Information Technology</option>
+                          <option value="Computer Science">Computer Science</option>
+                          <option value="Mathematics">Mathematics</option>
+                          <option value="Programming / Coding">Programming / Coding</option>
+                          <option value="Statistics">Statistics</option>
+                          <option value="ANOVA">ANOVA</option>
+                          <option value="SPSS">SPSS</option>
+                          <option value="NVIVO">NVIVO</option>
+                          <option value="SAS">SAS</option>
+                          <option value="Eviews">Eviews</option>
+                          <option value="Accounts">Accounts</option>
+                          <option value="Education">Education</option>
+                          <option value="Architecture">Architecture</option>
+                          <option value="Geology">Geology</option>
+                          <option value="English Literature">English Literature</option>
+                          <option value="Mechanics">Mechanics</option>
+                          <option value="Chemistry">Chemistry</option>
+                          <option value="Physics">Physics</option>
+                          <option value="Science">Science</option>
+                          <option value="Engineering">Engineering</option>
+                        </select>
+                        {errors.selectedSubject && (
+                          <div className="flex items-center text-red-500 text-sm mt-1">
+                            <AlertCircle className="w-4 h-4 mr-1" />
+                            {errors.selectedSubject}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Questions Selection - Only show when service type is selected and questions are needed */}
+                {showServiceFields && showQuestions && (
                   <div className="space-y-2">
-                    <label htmlFor="questions-select" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                    <label
+                      htmlFor="questions-select"
+                      className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                    >
                       <Hash className="w-4 h-4 mr-2" />
                       Number of Questions *
                     </label>
@@ -383,10 +432,11 @@ function BannerForm({ locationDetails }: any) {
                       id="questions-select"
                       value={selectedQuestions}
                       onChange={handleQuestionsChange}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedQuestions
-                        ? 'border-red-500 dark:border-red-500'
-                        : 'border-gray-200 dark:border-gray-600'
-                        }`}
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.selectedQuestions
+                          ? "border-red-500 dark:border-red-500"
+                          : "border-gray-200 dark:border-gray-600"
+                      }`}
                     >
                       <option value="">Select number of questions</option>
                       {options.map((number) => (
@@ -407,7 +457,9 @@ function BannerForm({ locationDetails }: any) {
                 {/* Word Count and Date */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="flex justify-start text-sm font-medium text-gray-700 dark:text-gray-300">Word Count</label>
+                    <label className="flex justify-start text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Word Count
+                    </label>
                     <div className="flex items-center bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-200 dark:border-gray-600">
                       <button
                         type="button"
@@ -432,7 +484,10 @@ function BannerForm({ locationDetails }: any) {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="deadline-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                    <label
+                      htmlFor="deadline-input"
+                      className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                    >
                       <Calendar className="w-4 h-4 mr-2" />
                       Deadline *
                     </label>
@@ -441,11 +496,10 @@ function BannerForm({ locationDetails }: any) {
                       type="date"
                       value={formattedDate}
                       onChange={handleDateChange}
-                      min={new Date().toISOString().split('T')[0]}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.date
-                        ? 'border-red-500 dark:border-red-500'
-                        : 'border-gray-200 dark:border-gray-600'
-                        }`}
+                      min={new Date().toISOString().split("T")[0]}
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                        errors.date ? "border-red-500 dark:border-red-500" : "border-gray-200 dark:border-gray-600"
+                      }`}
                     />
                     {errors.date && (
                       <div className="flex items-center text-red-500 text-sm mt-1">
@@ -478,7 +532,10 @@ function BannerForm({ locationDetails }: any) {
               <div className="p-8 space-y-5">
                 {/* Personal Information */}
                 <div className="space-y-2">
-                  <label htmlFor="name-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <label
+                    htmlFor="name-input"
+                    className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                  >
                     <User className="w-4 h-4 mr-2" />
                     Full Name
                   </label>
@@ -494,7 +551,10 @@ function BannerForm({ locationDetails }: any) {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="email-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <label
+                    htmlFor="email-input"
+                    className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                  >
                     <Mail className="w-4 h-4 mr-2" />
                     Email Address
                   </label>
@@ -510,7 +570,10 @@ function BannerForm({ locationDetails }: any) {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="phone-input" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center">
+                  <label
+                    htmlFor="phone-input"
+                    className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center"
+                  >
                     <Phone className="w-4 h-4 mr-2" />
                     Phone Number
                   </label>
@@ -526,15 +589,11 @@ function BannerForm({ locationDetails }: any) {
                     onChange={setPhone}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   />
-
-
                 </div>
                 <div className="w-full mx-auto flex items-center justify-start">
                   <CustomCaptcha setIsVerified={setIsVerified} />
                 </div>
               </div>
-
-
 
               {/* Back and Submit Buttons */}
               <div className="p-8 flex flex-col space-y-4">
@@ -547,8 +606,6 @@ function BannerForm({ locationDetails }: any) {
                   <ArrowLeftCircle className="w-5 h-5" />
                   <span>Back to service selection</span>
                 </button>
-
-
 
                 <button
                   type="submit"

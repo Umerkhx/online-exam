@@ -163,7 +163,7 @@ function Banner({ locationDetails }: any) {
   }, [contentLoaded, isMobile])
 
   return (
-    <div className="relative overflow-hidden min-h-screen">
+    <div className="relative overflow-hidden ">
       {/* Simple background - no complex animations */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:to-sky-900/90" />
 
@@ -182,8 +182,8 @@ function Banner({ locationDetails }: any) {
         </div>
       )}
 
-      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-4 lg:py-8 sm:px-6 lg:px-8">
-        <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
+      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 pt-4 pb-4 lg:pt-8 lg:pb-0  sm:px-6 lg:px-8">
+        <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-3 lg:gap-4">
           {/* Text Content */}
           <div className='lg:pt-12 pt-6 space-y-4'>
             <h1
