@@ -31,7 +31,6 @@ function BannerForm({ locationDetails }: any) {
   
   const formattedDate = date ? date.toISOString().split('T')[0] : '';
 
-  // Validation errors state
   const [errors, setErrors] = useState<{
     selectedService?: string
     selectedSubject?: string
@@ -48,6 +47,8 @@ function BannerForm({ locationDetails }: any) {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  
 
   useEffect(() => {
     // Only animate on desktop
@@ -73,27 +74,27 @@ function BannerForm({ locationDetails }: any) {
 
   const options: number[] = Array.from({ length: 50 }, (_, i) => i + 1)
 
-  const handleServiceChange = (e: any) => {
-    const value = e.target.value
-    setSelectedService(value)
+const handleServiceChange = (e: any) => {
+  const value = e.target.value
+  setSelectedService(value)
 
-    if (errors.selectedService) {
-      setErrors(prev => ({ ...prev, selectedService: undefined }))
-    }
-
-    setShowSubject(
-      [
-        "Assignment/ Coursework",
-        "Essay",
-        "Dissertation / Thesis / Proposal",
-        "Editing / Proofreading",
-        "Resume / CV",
-        "Question And Answers",
-      ].includes(selectedService),
-    )
-
-    setShowQuestions(value === "Question And Answers")
+  if (errors.selectedService) {
+    setErrors(prev => ({ ...prev, selectedService: undefined }))
   }
+
+  // Always show subject field when relevant service is selected
+  const shouldShowSubject = [
+    "Assignment/ Coursework",
+    "Essay",
+    "Dissertation / Thesis / Proposal",
+    "Editing / Proofreading",
+    "Resume / CV",
+    "Question And Answers",
+  ].includes(value)
+  
+  setShowSubject(shouldShowSubject)
+  setShowQuestions(value === "Question And Answers")
+}
 
   const handleSubjectChange = (e: any) => {
     setSelectedSubject(e.target.value)
@@ -291,7 +292,7 @@ function BannerForm({ locationDetails }: any) {
                     )}
                   </div>
 
-                  {showSubject && (
+                 {showSubject && (!isMobile || selectedService) && (
                     <div className="space-y-2 -mt-1">
                       <label htmlFor="subject-select" className="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">Subject Area *</label>
                       <select
@@ -301,8 +302,7 @@ function BannerForm({ locationDetails }: any) {
                         className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedSubject
                           ? 'border-red-500 dark:border-red-500'
                           : 'border-gray-200 dark:border-gray-600'
-                          }`}
-                      >
+                          }`}>
                         <option value="">Select subject</option>
                         <option value="Business">Business</option>
                         <option value="Hospitality">Hospitality</option>
@@ -441,7 +441,7 @@ function BannerForm({ locationDetails }: any) {
               </div>
 
               {/* Next Step Button */}
-              <div className="lg:px-8 lg:py-8 py-2 px-6">
+              <div className="lg:px-8 lg:py-6 py-2 px-6">
                 <button
                   aria-label="next-step"
                   type="button"
