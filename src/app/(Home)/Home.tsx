@@ -9,6 +9,7 @@ import Faq from "./Faq";
 import Testimonials from "./Testimonials";
 import { Suspense, useEffect, useState } from "react";
 import SitePopup from "@/components/SitePopup";
+import LongContent from "./LongContent";
 
 export default function Home() {
   const [country, setCountry] = useState("");
@@ -131,6 +132,7 @@ export default function Home() {
         <KnowUs />
         <Divider />
         <OurServices />
+        <LongContent/>
         <WorkProcess />
         <Faq />
         <Testimonials />

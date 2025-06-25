@@ -1,18 +1,5 @@
 "use client"
-import {
-  ArrowLeftCircle,
-  ArrowRight,
-  Calendar,
-  FileText,
-  Hash,
-  Loader2,
-  Mail,
-  Minus,
-  Phone,
-  Plus,
-  User,
-  AlertCircle,
-} from "lucide-react"
+import {ArrowLeftCircle,ArrowRight,Calendar,FileText,Hash,Loader2,Mail,Minus,Phone,Plus,User,AlertCircle,} from "lucide-react"
 import { useRouter } from "next/navigation"
 import React, { useEffect, useRef, useState } from "react"
 import "react-phone-number-input/style.css"
@@ -36,15 +23,12 @@ function BannerForm({ locationDetails }: any) {
   const [isVerified, setIsVerified] = useState(false);
   const [pending, setPending] = useState(false)
   const router = useRouter()
-
-  // New state for form data
   const [name, setName] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [phone, setPhone] = useState<any>("")
-
-  // Step form state
   const [currentStep, setCurrentStep] = useState<number>(1)
 
+  
   const formattedDate = date ? date.toISOString().split('T')[0] : '';
 
   // Validation errors state
