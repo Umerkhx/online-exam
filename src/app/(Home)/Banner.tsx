@@ -285,21 +285,23 @@ function Banner({ locationDetails }: any) {
             )}
           </div>
 
-          <div className="min-h-[500px]"> 
-            {contentLoaded ? (
-              <div
-                ref={formRef}
-                className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
-              >
-                <BannerForm locationDetails={locationDetails} />
-              </div>
-            ) : (
-              <div className="flex gap-3 justify-center lg:justify-start mt-4">
-                <ContentSkeleton className="h-[450px] w-[300px] rounded-xl" />
-                
-              </div>
-            )}
+          <div className="min-h-[500px]">
+            <div className="h-[450px] w-[300px] relative">
+              {contentLoaded ? (
+                <div
+                  ref={formRef}
+                  className="absolute inset-0 transition-opacity duration-300 opacity-100"
+                >
+                  <BannerForm locationDetails={locationDetails} />
+                </div>
+              ) : (
+                <div className="absolute inset-0 flex justify-center items-center">
+                  <ContentSkeleton className="h-full w-full rounded-xl" />
+                </div>
+              )}
+            </div>
           </div>
+
 
         </div>
       </div>
