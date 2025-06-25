@@ -109,7 +109,7 @@ function Banner({ locationDetails }: any) {
       link: "https://online-exam-relief.vercel.app/",
       image: "/navbar-logo.png",
       alt: "company logo",
-      width: 200,
+      width: 100,
       height: 90,
     },
   ]
@@ -182,7 +182,7 @@ function Banner({ locationDetails }: any) {
         </div>
       )}
 
-      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-4 lg:py-8 sm:px-6 lg:px-8">
         <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
           {/* Text Content */}
           <div className='lg:pt-12 pt-6 space-y-4'>
@@ -220,10 +220,10 @@ function Banner({ locationDetails }: any) {
               <ContentSkeleton className="h-6 w-3/4 mx-auto lg:mx-0" />
             )} */}
 
-            <div className='scale-90 md:scale-100'>
+            <div className='scale-[0.80] md:scale-100'>
               <div
                 ref={reviewsRef}
-                className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
+                className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-0 lg:mt-6 
               scale-90 md:scale-100 h-28 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
               >
@@ -281,7 +281,7 @@ function Banner({ locationDetails }: any) {
 
           <div
             ref={formRef}
-            className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
+            className="lg:-mt-8 -mt-6 lg:scale-90 scale-95"
           >
             <BannerForm locationDetails={locationDetails} />
           </div>
