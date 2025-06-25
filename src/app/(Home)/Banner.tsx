@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
-// Content skeleton for specific elements
+// Content skeleton for specific elements (only used on desktop)
 const ContentSkeleton = ({ className = "" }: { className?: string }) => (
   <div className={`bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`} />
 )
@@ -32,6 +32,9 @@ export const CtaButtons = () => {
         { y: 20, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.3, ease: "power2.out" }
       )
+    } else if (isMobile && buttonsRef.current) {
+      // Immediately show on mobile
+      gsap.set(buttonsRef.current.children, { opacity: 1 })
     }
   }, [isMobile])
 
@@ -83,8 +86,8 @@ export const CtaButtons = () => {
 }
 
 function Banner({ locationDetails }: any) {
-  const [contentLoaded, setContentLoaded] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [contentLoaded, setContentLoaded] = useState(false)
   const bannerRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLHeadingElement>(null)
@@ -116,20 +119,28 @@ function Banner({ locationDetails }: any) {
   ]
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      // If mobile, set content as loaded immediately
+      if (mobile) {
+        setContentLoaded(true)
+      }
+    }
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   useEffect(() => {
-    // Simulate content loading - keep this short for LCP
-    const timer = setTimeout(() => {
-      setContentLoaded(true)
-    }, 200)
-
-    return () => clearTimeout(timer)
-  }, [])
+    // Only simulate loading for desktop
+    if (!isMobile) {
+      const timer = setTimeout(() => {
+        setContentLoaded(true)
+      }, 200)
+      return () => clearTimeout(timer)
+    }
+  }, [isMobile])
 
   useEffect(() => {
     // Only run animations on desktop after content loads
@@ -156,7 +167,19 @@ function Banner({ locationDetails }: any) {
         stagger: 0.3
       })
     }
+    
+    // For mobile, ensure elements are visible immediately
+    if (isMobile) {
+      gsap.set([titleRef.current, subtitleRef.current, descriptionRef.current, formRef.current], {
+        y: 0,
+        x: 0,
+        opacity: 1
+      })
+    }
   }, [contentLoaded, isMobile])
+
+  // On mobile, we consider content always loaded
+  const showContent = isMobile || contentLoaded
 
   return (
     <div className="relative overflow-hidden min-h-screen">
@@ -182,7 +205,7 @@ function Banner({ locationDetails }: any) {
         <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
           {/* Text Content */}
           <div className='lg:pt-12 pt-8 lg:space-y-4 space-y-2'>
-            {contentLoaded ? (
+            {showContent ? (
               <h1 ref={titleRef} className="text-xl px-12 lg:px-0 font-extrabold lg:text-left text-center sm:text-3xl md:text-4xl 
               bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
               bg-clip-text text-transparent leading-tight">
@@ -192,7 +215,7 @@ function Banner({ locationDetails }: any) {
               <ContentSkeleton className="h-8 w-4/5 mx-auto lg:mx-0" />
             )}
 
-            {contentLoaded ? (
+            {showContent ? (
               <h2 ref={subtitleRef} className="text-base font-semibold lg:text-left text-center sm:text-xl md:text-2xl 
                 px-12 lg:px-0 text-gray-700 dark:text-gray-300">
                 Secure Academic Success with Affordable Online Exam Assistance
@@ -201,26 +224,13 @@ function Banner({ locationDetails }: any) {
               <ContentSkeleton className="h-8 w-4/5 mx-auto lg:mx-0" />
             )}
 
-            {/* Description - Show skeleton briefly */}
-            {/* {contentLoaded ? (
-              <p 
-                ref={descriptionRef}
-                className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
-                text-gray-600 dark:text-gray-400 leading-relaxed"
-              >
-                Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence
-              </p>
-            ) : (
-              <ContentSkeleton className="h-6 w-3/4 mx-auto lg:mx-0" />
-            )} */}
-
             <div className='scale-[0.80] md:scale-100 mb-4'>
               <div
                 className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
                rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
               >
-                {contentLoaded ? (
+                {showContent ? (
                   <Swiper
                     slidesPerView={2}
                     spaceBetween={8}
@@ -253,17 +263,16 @@ function Banner({ locationDetails }: any) {
                     ))}
                   </Swiper>
                 ) : (
-               <div className="flex justify-center gap-4 py-2">
-                  <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                  <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                  <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                </div>
+                  <div className="flex justify-center gap-4 py-2">
+                    <ContentSkeleton className="w-16 h-16 rounded-lg" />
+                    <ContentSkeleton className="w-16 h-16 rounded-lg" />
+                    <ContentSkeleton className="w-16 h-16 rounded-lg" />
+                  </div>
                 )}
               </div>
             </div>
 
-
-            {contentLoaded ? (
+            {showContent ? (
               <CtaButtons />
             ) : (
               <div className="flex gap-3 justify-center lg:justify-start mt-4">
@@ -273,7 +282,7 @@ function Banner({ locationDetails }: any) {
             )}
           </div>
 
-          {contentLoaded ? (
+          {showContent ? (
             <div ref={formRef} className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95">
               <BannerForm locationDetails={locationDetails} />
             </div>
