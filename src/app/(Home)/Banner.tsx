@@ -187,21 +187,23 @@ function Banner({locationDetails}: any) {
       <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-4 sm:px-6 lg:px-8">
         <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
           {/* Text Content */}
-          <div className='lg:pt-12 pt-8 lg:space-y-4 space-y-2'>
+          <div className='lg:pt-12 pt-6  lg:space-y-4'>
+            {/* Main Title - Always show immediately for LCP */}
             <h1 
               ref={titleRef}
-              className="text-xl px-12 lg:px-0 font-extrabold lg:text-left text-center sm:text-3xl md:text-4xl 
+              className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
               bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
               bg-clip-text text-transparent leading-tight"
             >
               Let Experts Take Your Online Exam and Ace It for You
             </h1>
 
+            {/* Subtitle - Show skeleton briefly */}
             {contentLoaded ? (
               <h2 
                 ref={subtitleRef}
                 className="text-base font-semibold lg:text-left text-center sm:text-xl md:text-2xl 
-                px-12 lg:px-0 text-gray-700 dark:text-gray-300"
+                px-12 lg:px-0 text-gray-700 dark:text-gray-300 pt-2"
               >
                 Secure Academic Success with Affordable Online Exam Assistance
               </h2>
@@ -222,11 +224,12 @@ function Banner({locationDetails}: any) {
               <ContentSkeleton className="h-6 w-3/4 mx-auto lg:mx-0" />
             )} */}
 
-            <div className='scale-[0.80] md:scale-100 mb-4'>
+            {/* Reviews Slider - Show skeleton while loading */}
+            <div className='scale-75 md:scale-100'>
             <div 
               ref={reviewsRef}
-              className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
-               rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
+              className="bg-white/80 backdrop-blur-sm py-3 px-4 lg:mt-6 mt-0 
+              scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
             >
               {contentLoaded ? (
@@ -242,7 +245,7 @@ function Banner({locationDetails}: any) {
                 >
                   {reviews.map((review, index) => (
                     <SwiperSlide key={index}>
-                      <div className="flex flex-col items-center justify-center p-3 rounded-lg 
+                      <div className="flex flex-col items-center justify-center p-2 rounded-lg 
                       hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
                         <a href={review.link} className="group">
                           <div className="relative overflow-hidden rounded-lg">
@@ -252,7 +255,6 @@ function Banner({locationDetails}: any) {
                               width={review.width}
                               height={review.height}
                               className="transition-transform duration-200 group-hover:scale-105"
-                              loading={index === 0 ? "eager" : "lazy"}
                               priority={index === 0}
                             />
                           </div>
@@ -272,7 +274,7 @@ function Banner({locationDetails}: any) {
             </div>
             </div>
 
-
+            {/* CTA Buttons - Show skeleton briefly */}
             {contentLoaded ? (
               <CtaButtons />
             ) : (
@@ -283,6 +285,7 @@ function Banner({locationDetails}: any) {
             )}
           </div>
 
+          {/* Form Section - Always show immediately */}
           <div 
             ref={formRef}
             className="lg:-mt-8 -mt-6 lg:scale-[0.9] scale-95"
