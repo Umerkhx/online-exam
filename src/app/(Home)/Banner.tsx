@@ -184,10 +184,10 @@ function Banner({locationDetails}: any) {
         </div>
       )}
 
-      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py- sm:px-6 lg:px-8">
         <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
           {/* Text Content */}
-          <div className='lg:pt-12 pt-6  lg:space-y-4'>
+          <div className='lg:pt-12 pt-6 space-y-4'>
             {/* Main Title - Always show immediately for LCP */}
             <h1 
               ref={titleRef}
@@ -203,7 +203,7 @@ function Banner({locationDetails}: any) {
               <h2 
                 ref={subtitleRef}
                 className="text-base font-semibold lg:text-left text-center sm:text-xl md:text-2xl 
-                px-12 lg:px-0 text-gray-700 dark:text-gray-300 pt-2"
+                px-12 lg:px-0 text-gray-700 dark:text-gray-300"
               >
                 Secure Academic Success with Affordable Online Exam Assistance
               </h2>
@@ -225,10 +225,10 @@ function Banner({locationDetails}: any) {
             )} */}
 
             {/* Reviews Slider - Show skeleton while loading */}
-            <div className='scale-75 md:scale-100'>
+            <div className='scale-90 md:scale-100'>
             <div 
               ref={reviewsRef}
-              className="bg-white/80 backdrop-blur-sm py-3 px-4 lg:mt-6 mt-0 
+              className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-6 
               scale-90 md:scale-100 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
             >
@@ -245,7 +245,7 @@ function Banner({locationDetails}: any) {
                 >
                   {reviews.map((review, index) => (
                     <SwiperSlide key={index}>
-                      <div className="flex flex-col items-center justify-center p-2 rounded-lg 
+                      <div className="flex flex-col items-center justify-center p-3 rounded-lg 
                       hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
                         <a href={review.link} className="group">
                           <div className="relative overflow-hidden rounded-lg">
