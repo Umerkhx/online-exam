@@ -187,7 +187,7 @@ function Banner({ locationDetails }: any) {
       <div ref={bannerRef} className="relative max-w-screen-xl container mx-auto px-4 py- sm:px-6 lg:px-8">
         <div className="mx-auto text-center grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-8">
           {/* Text Content */}
-          <div className='lg:pt-12 pt-6 space-y-4'>
+          <div className='lg:pt-16 pt-6 space-y-4'>
             {/* Main Title - Always show immediately for LCP */}
             <h1
               ref={titleRef}
@@ -285,23 +285,21 @@ function Banner({ locationDetails }: any) {
             )}
           </div>
 
-          <div className="min-h-[500px]">
-            <div className="h-[450px] w-[300px] relative">
-              {contentLoaded ? (
-                <div
-                  ref={formRef}
-                  className="absolute inset-0 transition-opacity duration-300 opacity-100"
-                >
-                  <BannerForm locationDetails={locationDetails} />
-                </div>
-              ) : (
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <ContentSkeleton className="h-full w-full rounded-xl" />
-                </div>
-              )}
-            </div>
+          <div className="min-h-[500px]"> 
+            {contentLoaded ? (
+              <div
+                ref={formRef}
+                className="lg:mt-8 -mt-6 transform transition lg:scale-90 scale-95"
+              >
+                <BannerForm locationDetails={locationDetails} />
+              </div>
+            ) : (
+              <div className="flex gap-3 justify-center  lg:mt-20 -mt-6">
+                <ContentSkeleton className="h-[450px] lg:w-[500px] w-[300px] rounded-xl" />
+                
+              </div>
+            )}
           </div>
-
 
         </div>
       </div>
