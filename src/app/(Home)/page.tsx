@@ -1,7 +1,5 @@
 import React from 'react'
-import dynamic from 'next/dynamic';
-
-const Home = dynamic(() => import('./Home'), { ssr: false });
+import Home from './Home'
 
 function page() {
   return (
