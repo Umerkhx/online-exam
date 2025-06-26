@@ -90,7 +90,7 @@ function Banner({ locationDetails }: any) {
             <div className="relative">
               <h1
                 ref={titleRef}
-                className="text-2xl px-6 lg:px-0 font-extrabold lg:text-left text-center sm:text-3xl md:text-4xl 
+                className="text-xl px-6 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
                 bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
                 bg-clip-text text-transparent leading-tight"
               >
