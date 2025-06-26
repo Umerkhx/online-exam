@@ -31,7 +31,7 @@ function Banner({ locationDetails }: any) {
       height: 110,
     },
     {
-      link: "https://online-exam-relief.vercel.app/",
+      link: "https://online-exam-zeta-eight.vercel.app/",
       image: "/navbar-logo.png",
       alt: "company logo",
       width: 200,

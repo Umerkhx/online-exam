@@ -26,7 +26,7 @@ function ExamHelpBanner() {
       height: 130,
     },
     {
-      link: "https://online-exam-relief.vercel.app/",
+      link: "https://online-exam-zeta-eight.vercel.app/",
       image: "/logo (1).png",
       alt: "logo",
       width: 100,

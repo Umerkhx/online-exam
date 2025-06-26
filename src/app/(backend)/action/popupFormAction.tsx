@@ -60,7 +60,7 @@ export async function sendPopupEmails(
           <div style="padding: 10px 0; text-align: center;">
             <div style="margin: 10px 0;">
             <p style="font-size: 20px;  text-align: center; font-weight: 500;">Get FLAT 50% OFF on your order <br /> with this exclusive promo code</p>
-            <a href="https://https://online-exam-relief.vercel.app//order-now?coupon=FLAT50OFF">
+            <a href="https://https://online-exam-zeta-eight.vercel.app//order-now?coupon=FLAT50OFF">
               <img style="border-radius: 10px;"  height="100" src="https://muhammadumer.sirv.com/promo-img-edu.png"  alt="">
             </a>
             </div>
