@@ -34,7 +34,7 @@ function Banner({ locationDetails }: any) {
       link: "https://online-exam-relief.vercel.app/",
       image: "/navbar-logo.png",
       alt: "company logo",
-      width: 100,
+      width: 200,
       height: 90,
     },
   ]
