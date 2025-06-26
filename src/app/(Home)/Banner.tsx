@@ -5,16 +5,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { Package2, Sparkles, BookOpen, Award } from 'lucide-react'
-import 'swiper/css'
 import dynamic from 'next/dynamic'
+const BannerSwiper = dynamic(() => import ('@/components/common/BannerSwiper'),{
+  ssr:false
+})
 
-const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), {
-  ssr: false,
-})
-const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), {
-  ssr: false,
-})
-import { Autoplay } from 'swiper/modules'
 
 const ContentSkeleton = ({ className = "" }: { className?: string }) => (
   <div className={`bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`} />
@@ -227,52 +222,7 @@ function Banner({ locationDetails }: any) {
             )} */}
 
             <div className='scale-[0.80] md:scale-100'>
-              <div
-                ref={reviewsRef}
-                className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-0 lg:mt-6 
-              scale-90 md:scale-100 h-28 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
-              shadow-md border border-white/20"
-              >
-                {contentLoaded ? (
-                  <Swiper
-                    slidesPerView={2}
-                    spaceBetween={8}
-                    breakpoints={{
-                      1025: { slidesPerView: 3, spaceBetween: 12 },
-                    }}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    modules={[Autoplay]}
-                    className="reviews-swiper"
-                  >
-                    {reviews.map((review, index) => (
-                      <SwiperSlide key={index}>
-                        <div className="flex flex-col items-center justify-center p-3 rounded-lg 
-                      hover:bg-white/50 dark:hover:bg-white/20 transition-all duration-200">
-                          <a href={review.link} className="group">
-                            <div className="relative overflow-hidden rounded-lg">
-                              <Image
-                                src={review.image}
-                                alt={review.alt}
-                                width={review.width}
-                                height={review.height}
-                                className="transition-transform duration-200 group-hover:scale-105"
-                                priority={index === 0}
-                              />
-                            </div>
-                            <div className="mt-2 text-sm">⭐⭐⭐⭐⭐</div>
-                          </a>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                ) : (
-                  <div className="flex justify-center gap-4 py-4">
-                    <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                    <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                    <ContentSkeleton className="w-16 h-16 rounded-lg" />
-                  </div>
-                )}
-              </div>
+              <BannerSwiper reviewsRef={reviewsRef} reviews={reviews} contentLoaded={contentLoaded} contentSkeleton={ContentSkeleton} />
             </div>
 
             {contentLoaded ? (
@@ -298,3 +248,5 @@ function Banner({ locationDetails }: any) {
 }
 
 export default Banner
+
+
