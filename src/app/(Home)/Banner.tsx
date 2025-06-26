@@ -6,11 +6,10 @@ import Link from 'next/link'
 import { Package2 } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { AuroraBackground } from '@/components/ui/aurora-background'
+import BannerSwiper from '@/components/common/BannerSwiper'
 
 
-const BannerSwiper = dynamic(() => import ('@/components/common/BannerSwiper'),{
-  ssr:false
-})
+
 
 
 function Banner({ locationDetails }: any) {
@@ -50,7 +49,7 @@ function Banner({ locationDetails }: any) {
         className="relative overflow-hidden dark:text-zinc-100 text-zinc-800">
         <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
           <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
-            <div className='lg:pt-12 pt-6 space-y-4'>
+            <div className='lg:pt-12 pt-6 lg:space-y-4 space-y-2'>
               <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl  leading-none px-16 lg:px-0">
                 Let Experts Take Your Online Exam and Ace It for You
               </h1>
@@ -60,7 +59,7 @@ function Banner({ locationDetails }: any) {
               {/* <p className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
                 text-gray-600 dark:text-gray-400 leading-relaxed ">Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence</p> */}
              
-              <div className='scale-[0.80] md:scale-100'>
+              <div className='scale-[0.85] md:scale-100'>
                  <BannerSwiper  reviews={reviews} />
               </div>
 
