@@ -15,72 +15,7 @@ const ContentSkeleton = ({ className = "" }: { className?: string }) => (
   <div className={`bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`} />
 )
 
-export const CtaButtons = () => {
-  const buttonsRef = useRef<HTMLDivElement>(null)
-  const [isMobile, setIsMobile] = useState(false)
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
-  useEffect(() => {
-    if (!isMobile && buttonsRef.current) {
-      gsap.fromTo(buttonsRef.current.children,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.3, ease: "power2.out" }
-      )
-    }
-  }, [isMobile])
-
-  return (
-    <div ref={buttonsRef} className="flex flex-row lg:justify-start justify-center items-center mt-4 gap-3 scale-90 md:scale-100">
-      {/* WhatsApp Button */}
-      <div className='flex justify-center items-center'>
-        <Link
-          href={"https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group"
-        >
-          <button
-            className="relative inline-flex h-11 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-          >
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl gap-2 group-hover:bg-slate-900 transition-colors">
-              <Image
-                src={'/whatsapp.png'}
-                width={20}
-                height={20}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              WhatsApp Now
-            </span>
-          </button>
-        </Link>
-      </div>
-
-      {/* Order Now Button */}
-      <div className='flex justify-center items-center'>
-        <Link href={'/order-now'} className="group">
-          <button
-            className="relative inline-flex h-11 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-          >
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl group-hover:bg-slate-900 transition-colors">
-              <Package2 className='mr-2 h-4 w-4' aria-hidden="true" />
-              Order Now
-            </span>
-          </button>
-        </Link>
-      </div>
-    </div>
-  )
-}
 
 function Banner({ locationDetails }: any) {
   const [contentLoaded, setContentLoaded] = useState(false)
@@ -189,7 +124,7 @@ function Banner({ locationDetails }: any) {
           <div className='lg:pt-12 pt-6 space-y-4'>
             <h1
               ref={titleRef}
-              className="text-xl px-12 lg:px-0 font-bold lg:text-left text-center sm:text-3xl md:text-4xl 
+              className="text-2xl px-6 lg:px-0 font-extrabold lg:text-left text-center sm:text-3xl md:text-4xl 
               bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-white dark:via-blue-100 dark:to-indigo-100 
               bg-clip-text text-transparent leading-tight"
             >
@@ -250,3 +185,69 @@ function Banner({ locationDetails }: any) {
 export default Banner
 
 
+export const CtaButtons = () => {
+  const buttonsRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (!isMobile && buttonsRef.current) {
+      gsap.fromTo(buttonsRef.current.children,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.3, ease: "power2.out" }
+      )
+    }
+  }, [isMobile])
+
+  return (
+    <div ref={buttonsRef} className="flex flex-row lg:justify-start justify-center items-center mt-4 gap-3 scale-90 md:scale-100">
+      {/* WhatsApp Button */}
+      <div className='flex justify-center items-center'>
+        <Link
+          href={"https://wa.me/3197005034911?text=Hi, I urgently need academic assistance. Could you help me submit my assignment before the deadline?"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <button
+            className="relative inline-flex h-11 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl gap-2 group-hover:bg-slate-900 transition-colors">
+              <Image
+                src={'/whatsapp.png'}
+                width={20}
+                height={20}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              WhatsApp Now
+            </span>
+          </button>
+        </Link>
+      </div>
+
+      {/* Order Now Button */}
+      <div className='flex justify-center items-center'>
+        <Link href={'/order-now'} className="group">
+          <button
+            className="relative inline-flex h-11 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl group-hover:bg-slate-900 transition-colors">
+              <Package2 className='mr-2 h-4 w-4' aria-hidden="true" />
+              Order Now
+            </span>
+          </button>
+        </Link>
+      </div>
+    </div>
+  )
+}

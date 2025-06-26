@@ -256,7 +256,7 @@ function BannerForm({ locationDetails }: any) {
 
           {currentStep === 1 && (
             <>
-              <div className="p-8 space-y-6">
+              <div className="py-4 px-6 lg:py-6 lg:space-y-4 space-y-2">
                 <div className="space-y-2">
                   <label
                     htmlFor="service-type-select"
@@ -492,7 +492,7 @@ function BannerForm({ locationDetails }: any) {
               </div>
 
               {/* Next Step Button */}
-              <div className="p-8">
+              <div className="py-2 px-6 lg:py-4 ">
                 <button
                   aria-label="next-step"
                   type="button"

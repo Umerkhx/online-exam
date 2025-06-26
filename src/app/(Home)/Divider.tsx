@@ -37,7 +37,7 @@ function Divider() {
   }, []);
 
   return (
-    <div className="relative lg:mt-24 mt-[400px] mb-20 overflow-hidden">
+    <div className="relative lg:my-16 my-10 overflow-hidden">
       <div className="absolute inset-0  dark:bg-gradient-to-t dark:from-gray-900 dark:to-sky-900 bg-gradient-to-b from-sky-100 to-blue-200 ">
         <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full opacity-20 -translate-x-32 -translate-y-32 blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 rounded-full opacity-20 translate-x-32 translate-y-32 blur-3xl"></div>
