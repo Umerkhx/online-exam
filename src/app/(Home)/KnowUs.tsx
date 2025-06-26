@@ -56,15 +56,15 @@ export default function KnowUs() {
                 style={{ transitionDelay: "200ms" }}
               >
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <div className="flex md:flex-row flex-col md:items-start items-center gap-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition ease-linear duration-500 delay-200 shadow-lg shadow-blue-500/25">
                       <BookOpen className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="md:text-2xl text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                      <h3 className="md:text-left text-center md:text-2xl text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                         Help For All Subjects
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed md:text-lg">
+                      <p className="md:text-left text-center text-slate-600 dark:text-slate-300 leading-snug text-sm md:text-lg px-5 md:px-0">
                         Our expert tutors cover diverse fields with best practices, offering comprehensive online
                         classes, exams, and homework assistance for all students.
                       </p>
@@ -78,15 +78,15 @@ export default function KnowUs() {
                 style={{ transitionDelay: "400ms" }}
               >
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-lg shadow-emerald-500/25">
+                  <div className="flex md:flex-row flex-col md:items-start items-center gap-6">
+                    <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition ease-linear duration-500 delay-200 shadow-lg shadow-emerald-500/25">
                       <DollarSign className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="md:text-2xl text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                      <h3 className="md:text-left text-center md:text-2xl text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
                         Affordable Packages
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed md:text-lg">
+                      <p className="md:text-left text-center text-slate-600 dark:text-slate-300 leading-snug text-sm md:text-lg px-5 md:px-0">
                         We provide highly-affordable, quality solutions ensuring every student can achieve their
                         academic goals without financial stress.
                       </p>
