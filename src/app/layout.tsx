@@ -11,6 +11,7 @@ import { CashbackDivider } from "./(Home)/CashBackDivider";
 
 const inter = Outfit({
   subsets: ["latin"],
+  variable: "--font-outfit",
 });
 export const metadata: Metadata = {
   title: "Online Exam Relief",
