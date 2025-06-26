@@ -25,7 +25,7 @@ export default function KnowUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content Section */}
           <div
-            className={`space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            className={`space-y-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             <div className="text-center lg:text-left px-6">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-semibold mb-6 shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 hover:scale-105">
@@ -98,7 +98,7 @@ export default function KnowUs() {
 
             {/* CTA Button */}
             <div
-              className={`flex justify-center lg:justify-start md:pt-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+              className={`flex justify-center lg:justify-start px-6 md:pt-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
               style={{ transitionDelay: "600ms" }}
             >
               <Button
