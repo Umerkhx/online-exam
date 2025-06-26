@@ -5,8 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
 type BannerSwiperProps = {
-  contentLoaded: boolean;
-  contentSkeleton: React.ElementType;
   reviews: Array<{
     link: string;
     image: string;
@@ -14,18 +12,16 @@ type BannerSwiperProps = {
     width: number;
     height: number;
   }>;
-  reviewsRef?: React.RefObject<HTMLDivElement>;
 };
 
-function BannerSwiper({ contentLoaded, contentSkeleton: ContentSkeleton, reviews, reviewsRef }: BannerSwiperProps){
+function BannerSwiper({ reviews }: BannerSwiperProps) {
   return (
-   <div
-    ref={reviewsRef}
-    className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-0 lg:mt-6 
+    <div
+      className="bg-white/80 backdrop-blur-sm py-3 px-4 mt-0 lg:mt-6 
               scale-90 md:scale-100 h-28 rounded-xl w-full max-w-[500px] mx-auto lg:mx-0 
               shadow-md border border-white/20"
-  >
-    {contentLoaded ? (
+    >
+
       <Swiper
         slidesPerView={2}
         spaceBetween={8}
@@ -57,14 +53,7 @@ function BannerSwiper({ contentLoaded, contentSkeleton: ContentSkeleton, reviews
           </SwiperSlide>
         ))}
       </Swiper>
-    ) : (
-      <div className="flex justify-center gap-4 py-4">
-        <ContentSkeleton className="w-16 h-16 rounded-lg" />
-        <ContentSkeleton className="w-16 h-16 rounded-lg" />
-        <ContentSkeleton className="w-16 h-16 rounded-lg" />
-      </div>
-    )}
-  </div>
+    </div>
   )
 }
 

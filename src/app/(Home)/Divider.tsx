@@ -1,6 +1,6 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react';
-import { ChevronRight, Sparkles, Target, Users } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { CtaButtons } from './Banner';
 
 function Divider() {
@@ -15,7 +15,6 @@ function Divider() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Delay text animation slightly for better effect
           setTimeout(() => setTextVisible(true), 300);
         }
       },
@@ -54,8 +53,8 @@ function Divider() {
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
+              animationDelay: `${i * 0.2}s`,
+              animationDuration: `${1 + Math.random() * 1}s`
             }}
           />
         ))}
