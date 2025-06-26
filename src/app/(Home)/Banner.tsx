@@ -5,9 +5,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { Package2, Sparkles, BookOpen, Award } from 'lucide-react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
+import dynamic from 'next/dynamic'
+
+const Swiper = dynamic(() => import('swiper/react').then(mod => mod.Swiper), {
+  ssr: false,
+})
+const SwiperSlide = dynamic(() => import('swiper/react').then(mod => mod.SwiperSlide), {
+  ssr: false,
+})
+import { Autoplay } from 'swiper/modules'
 
 const ContentSkeleton = ({ className = "" }: { className?: string }) => (
   <div className={`bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`} />
@@ -164,7 +171,6 @@ function Banner({ locationDetails }: any) {
 
   return (
     <div className="relative overflow-hidden ">
-      {/* Simple background - no complex animations */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:to-sky-900/90" />
 
       {/* Floating Elements - Desktop only */}

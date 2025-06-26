@@ -118,7 +118,6 @@ input.PhoneInputInput {
 }
 
 
-/* Mobile-first approach - disable animations on mobile */
 @media (max-width: 767px) {
   * {
     animation-duration: 0.01ms !important;
@@ -131,7 +130,6 @@ input.PhoneInputInput {
   }
 }
 
-/* Desktop animations */
 @media (min-width: 768px) {
   @keyframes shimmer {
     0% { transform: translateX(-100%); }
@@ -153,7 +151,6 @@ input.PhoneInputInput {
   }
 }
 
-/* Optimized Swiper styles */
 .reviews-swiper .swiper-slide {
   transition: transform 0.2s ease;
 }
@@ -162,24 +159,20 @@ input.PhoneInputInput {
   transform: translateY(-2px);
 }
 
-/* Fast transitions for better performance */
 * {
   transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
-/* Optimized scrollbar */
-/* globals.css */
 html {
   scroll-behavior: smooth;
 }
 
 .scrollable {
-  max-height: 400px; /* adjust as needed */
+  max-height: 400px; 
   overflow-y: auto;
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -201,7 +194,6 @@ html {
 
 
 
-/* Performance optimizations */
 .will-change-transform {
   will-change: transform;
 }
@@ -210,7 +202,6 @@ html {
   will-change: opacity;
 }
 
-/* Respect user preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

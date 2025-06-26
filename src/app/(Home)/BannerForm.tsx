@@ -1,28 +1,16 @@
 "use client"
-import {
-  ArrowLeftCircle,
-  ArrowRight,
-  Calendar,
-  FileText,
-  Hash,
-  Loader2,
-  Mail,
-  Minus,
-  Phone,
-  Plus,
-  User,
-  AlertCircle,
-} from "lucide-react"
+import { ArrowLeftCircle, ArrowRight, Calendar, FileText, Hash, Loader2, Mail, Minus, Phone, Plus, User, AlertCircle } from "lucide-react"
+import dynamic from 'next/dynamic'
 import { useRouter } from "next/navigation"
 import React, { useEffect, useRef, useState } from "react"
-import "react-phone-number-input/style.css"
 import { sendEmails } from "../(backend)/action/formAction"
-import "react-phone-number-input/style.css"
-import PhoneInput from "react-phone-number-input"
 import { toast } from "sonner"
 import CustomCaptcha from "@/components/common/CustomCaptcha"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import gsap from "gsap"
+const PhoneInput = dynamic(() => import('react-phone-number-input'), {
+  ssr: false,
+})
 
 function BannerForm({ locationDetails }: any) {
   const [date, setDate] = React.useState<Date>(new Date())
@@ -60,6 +48,8 @@ function BannerForm({ locationDetails }: any) {
   const formRef = useRef<any>(null)
   const [showServiceFields, setShowServiceFields] = useState<boolean>(false)
 
+
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
     checkMobile()
@@ -68,7 +58,6 @@ function BannerForm({ locationDetails }: any) {
   }, [])
 
   useEffect(() => {
-    // Only animate on desktop
     if (!isMobile && formRef.current) {
       gsap.fromTo(
         formRef.current.children,
@@ -265,12 +254,9 @@ function BannerForm({ locationDetails }: any) {
             Professional academic writing services tailored to your needs
           </p>
 
-          {/* Step 1: Service Selection */}
           {currentStep === 1 && (
             <>
-              {/* Form Fields */}
               <div className="p-8 space-y-6">
-                {/* Service Type Dropdown */}
                 <div className="space-y-2">
                   <label
                     htmlFor="service-type-select"
@@ -282,11 +268,10 @@ function BannerForm({ locationDetails }: any) {
                     id="service-type-select"
                     value={activeButton}
                     onChange={handleServiceTypeChange}
-                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.activeButton
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.activeButton
                         ? "border-red-500 dark:border-red-500"
                         : "border-gray-200 dark:border-gray-600"
-                    }`}
+                      }`}
                   >
                     <option value="">Select service type</option>
                     <option value="writing">Writing</option>
@@ -301,7 +286,6 @@ function BannerForm({ locationDetails }: any) {
                   )}
                 </div>
 
-                {/* Service Selection - Only show when service type is selected */}
                 {showServiceFields && (
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className={`space-y-2 ${showSubject ? "" : "md:col-span-2"}`}>
@@ -316,11 +300,10 @@ function BannerForm({ locationDetails }: any) {
                         id="service-select"
                         value={selectedService}
                         onChange={handleServiceChange}
-                        className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                          errors.selectedService
+                        className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedService
                             ? "border-red-500 dark:border-red-500"
                             : "border-gray-200 dark:border-gray-600"
-                        }`}
+                          }`}
                       >
                         <option value="">Select a service</option>
                         <option value="Assignment/ Coursework">Assignment/ Coursework</option>
@@ -359,11 +342,10 @@ function BannerForm({ locationDetails }: any) {
                           id="subject-select"
                           value={selectedSubject}
                           onChange={handleSubjectChange}
-                          className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                            errors.selectedSubject
+                          className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedSubject
                               ? "border-red-500 dark:border-red-500"
                               : "border-gray-200 dark:border-gray-600"
-                          }`}
+                            }`}
                         >
                           <option value="">Select subject</option>
                           <option value="Business">Business</option>
@@ -432,11 +414,10 @@ function BannerForm({ locationDetails }: any) {
                       id="questions-select"
                       value={selectedQuestions}
                       onChange={handleQuestionsChange}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.selectedQuestions
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.selectedQuestions
                           ? "border-red-500 dark:border-red-500"
                           : "border-gray-200 dark:border-gray-600"
-                      }`}
+                        }`}
                     >
                       <option value="">Select number of questions</option>
                       {options.map((number) => (
@@ -497,9 +478,8 @@ function BannerForm({ locationDetails }: any) {
                       value={formattedDate}
                       onChange={handleDateChange}
                       min={new Date().toISOString().split("T")[0]}
-                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.date ? "border-red-500 dark:border-red-500" : "border-gray-200 dark:border-gray-600"
-                      }`}
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.date ? "border-red-500 dark:border-red-500" : "border-gray-200 dark:border-gray-600"
+                        }`}
                     />
                     {errors.date && (
                       <div className="flex items-center text-red-500 text-sm mt-1">
@@ -596,7 +576,7 @@ function BannerForm({ locationDetails }: any) {
               </div>
 
               {/* Back and Submit Buttons */}
-              <div className="p-8 flex flex-col space-y-4">
+              <div className="py-2 px-8 flex flex-col space-y-3">
                 <button
                   aria-label="back-to-first-step"
                   type="button"
