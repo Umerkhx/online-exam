@@ -51,14 +51,14 @@ function Banner({ locationDetails }: any) {
         <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
           <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
             <div className='lg:pt-12 pt-6 space-y-4'>
-              <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl  leading-none px-20 lg:px-0">
+              <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl  leading-none px-16 lg:px-0">
                 Let Experts Take Your Online Exam and Ace It for You
               </h1>
-              <h2 className="text-lg font-medium lg:text-left text-center sm:text-2xl md:text-[27px] px-12 lg:px-0 pt-2 lg:pt-3">
+              <h2 className="text-base font-semibold lg:text-left text-center sm:text-2xl md:text-[27px] px-12 lg:px-0  lg:pt-3">
                 Secure Academic Success with Affordable Online Exam Assistance
               </h2>
-              <p className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
-                text-gray-600 dark:text-gray-400 leading-relaxed ">Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence</p>
+              {/* <p className="md:text-base text-sm font-semibold lg:text-left text-center px-8 lg:px-0 
+                text-gray-600 dark:text-gray-400 leading-relaxed ">Our mission is to transform the industry with groundbreaking solutions that ensure your academic excellence</p> */}
              
               <div className='scale-[0.80] md:scale-100'>
                  <BannerSwiper  reviews={reviews} />
@@ -68,7 +68,7 @@ function Banner({ locationDetails }: any) {
             </div>
 
 
-            <div className="lg:mt-2 -mt-6 lg:scale-90 scale-95">
+            <div className="mt-2  lg:scale-90 scale-95">
              <BannerForm locationDetails={locationDetails} />
             </div>
 
