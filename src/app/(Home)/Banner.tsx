@@ -47,10 +47,10 @@ function Banner({ locationDetails }: any) {
  <AuroraBackground>
       <div
         className="relative overflow-hidden dark:text-zinc-100 text-zinc-800">
-        <div className="relative max-w-screen-xl container mx-auto px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
+        <div className="relative max-w-screen-xl container mx-auto px-4 py-8 sm:px-6 sm:py-8 lg:px-8">
           <div className=" mx-auto text-center grid lg:grid-cols-2 grid-cols-1 ">
-            <div className='lg:pt-12 pt-6 lg:space-y-4 space-y-2'>
-              <h1 className="text-xl font-bold lg:text-left text-center  sm:text-4xl  leading-none px-16 lg:px-0">
+            <div className='lg:pt-12 pt-4 lg:space-y-4 space-y-2'>
+              <h1 className="text-lg font-bold lg:text-left text-center sm:text-4xl leading-tight px-12 lg:px-0">
                 Let Experts Take Your Online Exam and Ace It for You
               </h1>
               <h2 className="text-base font-semibold lg:text-left text-center sm:text-2xl md:text-[27px] px-12 lg:px-0  lg:pt-3">
